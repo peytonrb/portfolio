@@ -27,12 +27,16 @@ import {
 
 export const navLinks = [
     {
-        id: "about",
-        title: "About",
+        id: "projects",
+        title: "Games",
     },
     {
         id: "work",
         title: "Work",
+    },
+    {
+        id: "about",
+        title: "About",
     },
     {
         id: "contact",
@@ -42,19 +46,19 @@ export const navLinks = [
 
 const services = [
     {
-        title: "Web Developer",
+        title: "Creative Director",
         icon: web,
     },
     {
-        title: "React Native Developer",
+        title: "Gameplay Programmer",
         icon: mobile,
     },
     {
-        title: "Backend Developer",
+        title: "Technical Artist",
         icon: backend,
     },
     {
-        title: "Content Creator",
+        title: "Technical Designer",
         icon: creator,
     },
 ];
@@ -198,7 +202,7 @@ const testimonials = [
 
 const projects = [
     {
-        name: "Car Rent",
+        name: "Interweaver",
         description:
             "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
         tags: [
@@ -219,7 +223,7 @@ const projects = [
         source_code_link: "https://github.com/",
     },
     {
-        name: "Job IT",
+        name: "Kitty Casino",
         description:
             "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
         tags: [
@@ -240,7 +244,7 @@ const projects = [
         source_code_link: "https://github.com/",
     },
     {
-        name: "Trip Guide",
+        name: "Love to Death",
         description:
             "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
         tags: [
