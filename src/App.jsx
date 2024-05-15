@@ -41,14 +41,11 @@ const App = () => {
           <Navbar />
           <Hero />
         </div>
-        <div className="relative z-0">
-          <Projects />
-          <StarsCanvas />
-        </div>
+        <Projects />
         <Experience />
-        <About />
 
         <div className="relative z-0">
+          <About />
           <Contact />
           <StarsCanvas />
         </div>
