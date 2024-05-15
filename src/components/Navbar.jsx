@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { styles } from '../styles.js';
 import { navLinks } from '../constants';
 import { logo, menu, close } from '../assets';
+import { github } from '../assets';
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -17,7 +18,10 @@ const Navbar = () => {
             setActive("");
             window.scrollTo(0, 0);
           }}>
-          <img src={logo} alt="logo" className="w-12 h-12 object-contain" /> 
+          <div onClick={() => window.open("https://github.com/peytonrb", "_blank")} /** GITHUB LINK */
+            className="list-none w-10 h-10 rounded-full flex items-center cursor-pointer">
+            <img src={github} alt="github" className="object-contain" />
+          </div>
           <p className="text-white text-[18px] font-bold cursor-pointer">Peyton Bischof </p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">
@@ -38,7 +42,7 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <li key={link.id}
                   className={`${active === link.title ? "text-white" : "text-secondary"} font-poppins font-medium cursor-pointer text-[16px]`}
-                  onClick={() => { 
+                  onClick={() => {
                     setToggle(!toggle);
                     setActive(link.title);
                   }}>
