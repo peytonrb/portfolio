@@ -7,6 +7,7 @@ import Experience from './Experience';
 import Projects from './Projects';
 import Skills from './Skills';
 import Contact from './Contact';
+import Card from './Card';
 
 export {
   Hero,
@@ -20,5 +21,6 @@ export {
   EarthCanvas, 
   BallCanvas, 
   ComputersCanvas, 
-  StarsCanvas
+  StarsCanvas,
+  Card
 }
