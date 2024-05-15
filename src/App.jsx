@@ -33,7 +33,7 @@ const App = () => {
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center"> { /** somehow scroll */}
-          <motion.div className="absolute left-0 flex gap-4" ref={ref} style={{x: xTranslation}}>
+          <motion.div className="absolute left-0 flex gap-4" ref={ref} style={{ x: xTranslation }}>
             {[...images, ...images].map((item, index) => (
               <Card image={item} key={index} />
             ))}
@@ -41,7 +41,10 @@ const App = () => {
           <Navbar />
           <Hero />
         </div>
-        <Projects />
+        <div className="relative z-0">
+          <Projects />
+          <StarsCanvas />
+        </div>
         <Experience />
         <About />
 
