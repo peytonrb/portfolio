@@ -19,10 +19,10 @@ import {
     starbucks,
     tesla,
     shopify,
-    carrent,
-    jobit,
-    tripguide,
+    interweaver,
+    kittycasino,
     threejs,
+    lovetodeath,
 } from "../assets";
 
 export const navLinks = [
@@ -120,83 +120,66 @@ const technologies = [
 
 const experiences = [
     {
-        title: "React.js Developer",
-        company_name: "Starbucks",
+        title: "Creative Director, Gameplay Programmer, Lead Technical Artist",
+        company_name: "Aurora Interactive",
         icon: starbucks,
         iconBg: "#383E56",
-        date: "March 2020 - April 2021",
+        date: "September 2023 - May 2024",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Proposed and spearheaded the development of my senior capstone project, assembled a leadership team, and led a team of 14 students from a variety of disciplines to develop the title in 35 weeks, on-time and within budget.",
+            "Reduced designer workload by 30% by streamlining all gameplay systems with custom tools and functions.",
+            "Orchestrated the visual direction as the sole technical artist, crafted intricate VFX, particle systems, and shaders to elevate gameplay immersion and effectively communicate gameplay mechanics.",
+            "<need one more>",
         ],
     },
     {
-        title: "React Native Developer",
-        company_name: "Tesla",
+        title: "Lead Gameplay Programmer, Project Manager",
+        company_name: "Vault Studios",
         icon: tesla,
         iconBg: "#E6DEDD",
-        date: "Jan 2021 - Feb 2022",
+        date: "January 2023 - May 2024",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Founded and led a game development studio that successfully developed and released 3 games on Itch.io.",
+            "<bullet>",
+            "<bullet>",
+            "<bullet>",
         ],
     },
     {
-        title: "Web Developer",
-        company_name: "Shopify",
+        title: "Full-Stack Game Developer",
+        company_name: "University of Central Florida",
         icon: shopify,
         iconBg: "#383E56",
-        date: "Jan 2022 - Jan 2023",
+        date: "January 2023 - December 2023",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Designed and programmed a game using geospatial data in collaboration with UCF professor using Unreal Engine and C++, resulting in highly realistic character behavior and dynamic gameplay experiences that received a 9.5/10 rating from UCF panelists.",
+            "<bullet>",
+            "<bullet>",
         ],
     },
     {
-        title: "Full stack Developer",
-        company_name: "Meta",
+        title: "Game Design Instructor",
+        company_name: "iDTech",
         icon: meta,
         iconBg: "#E6DEDD",
-        date: "Jan 2023 - Present",
+        date: "October 2020 - August 2021",
         points: [
-            "Developing and maintaining web applications using React.js and other related technologies.",
-            "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-            "Implementing responsive design and ensuring cross-browser compatibility.",
-            "Participating in code reviews and providing constructive feedback to other developers.",
+            "Taught classes on Game Development in Unity, C#, C++, coding Minecraft plugins in Java, Adobe Photoshop and Illustrator, advanced math, physics, and more.",
+            "Observed student learning and guided them through 2D and 3D game design software, taking students with little to no technical experience to creating fully playable games of their own in an average of 5 weeks.",
+            "Improved learning outcomes of my students by customizing generic training material to skill-level appropriate content.",
         ],
     },
-];
-
-const testimonials = [
     {
-        testimonial:
-            "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-        name: "Sara Lee",
-        designation: "CFO",
-        company: "Acme Co",
-        image: "https://randomuser.me/api/portraits/women/4.jpg",
-    },
-    {
-        testimonial:
-            "I've never met a web developer who truly cares about their clients' success like Rick does.",
-        name: "Chris Brown",
-        designation: "COO",
-        company: "DEF Corp",
-        image: "https://randomuser.me/api/portraits/men/5.jpg",
-    },
-    {
-        testimonial:
-            "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-        name: "Lisa Wang",
-        designation: "CTO",
-        company: "456 Enterprises",
-        image: "https://randomuser.me/api/portraits/women/6.jpg",
+        title: "Junior Gameplay Engineer, User Researcher, Playtester",
+        company_name: "Microsoft",
+        icon: meta,
+        iconBg: "#E6DEDD",
+        date: "August 2018 - August 2021",
+        points: [
+            "Developed innovative gameplay mechanics, matchmaking, and network-based multiplayer systems.",
+            "Performed pre-release compatibility testing, debugged test cases, gameplay functionality by finding, reproducing, documenting bugs, and verifying fixes.",
+            "Tested new entities, maps, items, and gameplay modes to ensure playability and gameplay balance.",
+        ],
     },
 ];
 
@@ -204,66 +187,24 @@ const projects = [
     {
         name: "Interweaver",
         description:
-            "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
-        tags: [
-            {
-                name: "react",
-                color: "blue-text-gradient",
-            },
-            {
-                name: "mongodb",
-                color: "green-text-gradient",
-            },
-            {
-                name: "tailwind",
-                color: "pink-text-gradient",
-            },
-        ],
-        image: carrent,
+            "<description here>",
+        image: interweaver,
         source_code_link: "https://github.com/",
     },
     {
         name: "Kitty Casino",
         description:
-            "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-        tags: [
-            {
-                name: "react",
-                color: "blue-text-gradient",
-            },
-            {
-                name: "restapi",
-                color: "green-text-gradient",
-            },
-            {
-                name: "scss",
-                color: "pink-text-gradient",
-            },
-        ],
-        image: jobit,
+            "<description here>",
+        image: kittycasino,
         source_code_link: "https://github.com/",
     },
     {
         name: "Love to Death",
         description:
-            "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-        tags: [
-            {
-                name: "nextjs",
-                color: "blue-text-gradient",
-            },
-            {
-                name: "supabase",
-                color: "green-text-gradient",
-            },
-            {
-                name: "css",
-                color: "pink-text-gradient",
-            },
-        ],
-        image: tripguide,
+            "<description here>",
+        image: lovetodeath,
         source_code_link: "https://github.com/",
     },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, projects };
