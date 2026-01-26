@@ -11,8 +11,8 @@
 # ordered by weight from lowest to highest.
 
 [[main]]
-  name = "Portfolio"
-  pageRef = "/"
+  name = "Work"
+  pageRef = "work"
   weight = 1
 
 [[main]]
