@@ -3,31 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://localhost:50550/work/</loc>
     <lastmod>2024-07-07T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/work/burbank/</loc>
+    <loc>http://localhost:50550/</loc>
     <lastmod>2024-07-07T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/work/</loc>
+    <loc>http://localhost:50550/work/burbank/</loc>
     <lastmod>2024-07-07T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/work/interweaver/</loc>
-    <lastmod>2023-09-15T00:00:00+00:00</lastmod>
+    <loc>http://localhost:50550/work/interweaver/</loc>
+    <lastmod>2024-04-15T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/resume/</loc>
+    <loc>http://localhost:50550/resume/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
