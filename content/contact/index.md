@@ -1,6 +1,5 @@
 ---
-title: "Contact"
-description: "About me + Contact"
+title: "About"
 showDate: false
 showAuthor: false
 ---

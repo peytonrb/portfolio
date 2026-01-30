@@ -1,7 +1,7 @@
 ---
 title: "Interweaver"
-date: 2024-05-04
-description: "testing again"
+date: 2024-05-20
+showAuthor: false
 params:
    studio: "Aurora Interactive"
 ---
