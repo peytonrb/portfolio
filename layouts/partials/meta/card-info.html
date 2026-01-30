@@ -3,4 +3,10 @@
    {{ . }}
 </span>
 {{ end }}
+
+{{ with .Params.displayDescription }}
+   <p>
+      {{ . }}
+   </p>
+  {{ end }}
 {{- /* Trim EOF */ -}}
