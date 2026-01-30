@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
+  <div class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+   <div class="flex flex-row flex-wrap items-center"></div>
+  </div>
+  <section class="mt-0 prose flex max-w-full flex-col dark:prose-invert lg:flex-row mb-10">
+   <div class="min-w-0 min-h-0 max-w-prose w-full">
+      <p>You can view or download my resume below :)</p>
+   </div>
+  </section>
+  
+   <div class="mt-10 flex justify-center">
+      <embed src="/resume.jpg" type="application/pdf" width="80%" height="800px" />
+   </div>
+
+   <div class="mt-10 flex justify-center">
+       <button class="bg-transparent hover:text-primary-500 prose dark:prose-invert font-semibold py-2 px-4 border border-primary-500 hover:border-transparent rounded">
+         <p><a href="/resume.pdf" download="resume.pdf">Download</a></p>
+      </button>
+   </div>
+{{ end }}

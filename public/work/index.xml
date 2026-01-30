@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Games on Peyton Bischof</title>
-    <link>http://localhost:50550/work/</link>
+    <link>http://localhost:1313/work/</link>
     <description>Recent content in Games on Peyton Bischof</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; 2026 Peyton Bischof</copyright>
-    <lastBuildDate>Sun, 07 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:50550/work/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/work/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Unannounced Game</title>
-      <link>http://localhost:50550/work/burbank/</link>
+      <link>http://localhost:1313/work/burbank/</link>
       <pubDate>Sun, 07 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50550/work/burbank/</guid>
+      <guid>http://localhost:1313/work/burbank/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:50550/work/burbank/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/work/burbank/featured.png" />
     </item>
     
     <item>
       <title>Interweaver</title>
-      <link>http://localhost:50550/work/interweaver/</link>
+      <link>http://localhost:1313/work/interweaver/</link>
       <pubDate>Sat, 04 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:50550/work/interweaver/</guid>
+      <guid>http://localhost:1313/work/interweaver/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:50550/work/interweaver/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/work/interweaver/featured.png" />
     </item>
     
   </channel>

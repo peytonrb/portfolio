@@ -22,6 +22,7 @@
 
 [[main]]
   name = "Contact"
+  pageRef = "contact"
   weight = 3
   
 [[main]]
