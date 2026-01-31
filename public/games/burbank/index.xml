@@ -16,7 +16,7 @@
       
       <guid>http://localhost:1313/games/burbank/game-entry/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/burbank/game-entry/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/burbank/game-entry/featured.png" />
     </item>
     
     <item>
@@ -30,13 +30,13 @@
     </item>
     
     <item>
-      <title>Relationships and Character Map</title>
+      <title>Relationships and Character Memories</title>
       <link>http://localhost:1313/games/burbank/relationships/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/games/burbank/relationships/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/burbank/relationships/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/burbank/relationships/featured.png" />
     </item>
     
     <item>
@@ -46,7 +46,7 @@
       
       <guid>http://localhost:1313/games/burbank/slate-ui/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/burbank/slate-ui/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/burbank/slate-ui/featured.png" />
     </item>
     
   </channel>

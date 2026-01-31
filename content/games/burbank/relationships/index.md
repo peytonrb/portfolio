@@ -1,5 +1,5 @@
 ---
-title: "Relationships and Character Map"
+title: "Relationships and Character Memories"
 showDate: false
 weight: 3
 params:
