@@ -202,7 +202,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "151"
+    "wordCount": "324"
   }]
   </script>
 
@@ -654,8 +654,8 @@
         width="96"
         height="96"
         alt="Peyton Bischof"
-        src="/profile_hu_35a7ffc96211dfb7.png"
-        data-zoom-src="/profile_hu_c35e6eb9279179ed.png">
+        src="/profile_hu_701db3ced3c48d20.png"
+        data-zoom-src="/profile_hu_f62d246c15ac504c.png">
     
   
   <div class="place-self-center">
@@ -706,9 +706,9 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
-    <li><a href="#gameplay-implementation">Gameplay Implementation</a></li>
+    <li><a href="#in-game-representation">In-Game Representation</a></li>
     <li><a href="#technical-spec">Technical Spec</a></li>
-    <li><a href="#pcg-exploration">PCG Exploration</a></li>
+    <li><a href="#key-learnings">Key Learnings</a></li>
   </ul>
 </nav>
   </div>
@@ -723,9 +723,9 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
-    <li><a href="#gameplay-implementation">Gameplay Implementation</a></li>
+    <li><a href="#in-game-representation">In-Game Representation</a></li>
     <li><a href="#technical-spec">Technical Spec</a></li>
-    <li><a href="#pcg-exploration">PCG Exploration</a></li>
+    <li><a href="#key-learnings">Key Learnings</a></li>
   </ul>
 </nav>
   </div>
@@ -752,22 +752,29 @@
     </span>
     
 </h2>
-<p>Project Burbank is a platform for players to create and play out any story imaginable - it takes players&rsquo; gameplay decisions and responds uniquely to further set the stage for individually customized interactions. I supported this feature physically in game with, what is internally called, the <strong>Set Deco System</strong>. This procedural interior decoration system is responsible for intaking information about the unique story being followed by the player at runtime and filling subsequent Levels with contextually appropriate assets, while also maintaining navigable space and realistic orientations.</p>
-<p>This system required deep understanding of a variety of Unreal systems, including <strong>Procedural Content Generation (PCG)</strong>, <strong>World Partition and Data Layers</strong>, <strong>Choosers</strong> (RandTable?), and more.</p>
+<p>Project Burbank is a storytelling platform for players to immerse themselves in any narrative imaginable - it takes players&rsquo; decisions and alters the campaign at hand to create surprising, one-of-a-kind gameplay experiences. I supported this characteristic by creating a procedural interior decoration system that intakes information about the player&rsquo;s campaign at runtime and filling subsequent Levels with contextually appropriate assets, while also maintaining navigable space and realistic orientations.</p>
+<p>This system was not only instrumental in establishing the mood and feel of a Level in game, but it was also visually and mechanically obvious if there were any logical flaws. It also had to handle external systems like lighting, BP Actors in the Level, player-placed objects, cameras, and more. It was imperative that I ensured this system was able to handle not only our technical limitations, but also uplifted the player&rsquo;s experience.</p>
+<p>This system required deep understanding of a variety of Unreal systems, including <strong>Procedural Content Generation (PCG)</strong>, <strong>World Partition</strong> and <strong>Data Layers</strong>, <strong>Choosers</strong> (RandTable?), and more.</p>
 
-<h2 class="relative group">Gameplay Implementation
-    <div id="gameplay-implementation" class="anchor"></div>
+<h2 class="relative group">In-Game Representation
+    <div id="in-game-representation" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#gameplay-implementation" aria-label="Anchor">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#in-game-representation" aria-label="Anchor">#</a>
     </span>
     
 </h2>
-<ul>
-<li>Screenshot Data Layers and empty socketed Layer</li>
-<li>show progress as stuff gets added over time</li>
-</ul>
+<p>Each Level is constructed at design-time with base 3D models as a greybox to outline the general shape and orientation of objects in space. Each Level in UE is constructed with a variety of Data Layers containing different Socket Actors to hold contextual data and act as a base in order to preserve navigable space and Actor Slot requirements. The Decoration system then reads the Socket Actors and the current campaign information and chooses assets to sort and where to place them accordingly.</p>
+<p>You can see 2 base Layout examples from our Apartment Level below:</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/SocketLayer_Default.png" alt="Default Data Layer" style="width: 60%;" />
+  <img src="/SocketLayer_WatchParty.png" alt="Watch Party Data Layer" style="width: 60%;" />
+</div>
+<p>After the Decoration system finishes placing assets on the determined base layout, the final in-game Level now contextually fits the unique story being played out and also furthers player immersion:</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/DecoratedLevel.png" alt="Default Data Layer"/>
+</div>
 
 <h2 class="relative group">Technical Spec
     <div id="technical-spec" class="anchor"></div>
@@ -778,14 +785,14 @@
     </span>
     
 </h2>
-<p>Below is the official Technical Design Document that I wrote for this system&rsquo;s development.</p>
+<p>Below I&rsquo;ve condensed the official Technical Design Document I wrote for this system to give an idea of how the system worked.</p>
 
-<h2 class="relative group">PCG Exploration
-    <div id="pcg-exploration" class="anchor"></div>
+<h2 class="relative group">Key Learnings
+    <div id="key-learnings" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#pcg-exploration" aria-label="Anchor">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#key-learnings" aria-label="Anchor">#</a>
     </span>
     
 </h2>
@@ -849,7 +856,7 @@
               class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
               href="/games/burbank/game-entry/">
               <span class="leading-6">
-                Game Entry&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
+                Pre- and Post-Game Flow&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
               </span>
             </a>
             
