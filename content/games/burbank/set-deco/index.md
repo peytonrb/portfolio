@@ -18,13 +18,13 @@ Each Level is constructed at design-time with base 3D models as a greybox to out
 
 You can see 2 base Layout examples from our Apartment Level below: 
 <div style="display: flex; gap: 1rem;">
-  <img src="/SocketLayer_Default.png" alt="Default Data Layer" style="width: 60%;" />
-  <img src="/SocketLayer_WatchParty.png" alt="Watch Party Data Layer" style="width: 60%;" />
+  <img src="/set-deco/SocketLayer1.png" alt="Default Data Layer" style="width: 60%;" />
+  <img src="/set-deco/SocketLayer2.png" alt="Watch Party Data Layer" style="width: 60%;" />
 </div>
 
 After the Decoration system finishes placing assets on the determined base layout, the final in-game Level now contextually fits the unique story being played out and also furthers player immersion:
 <div style="display: flex; gap: 1rem;">
-  <img src="/DecoratedLevel.png" alt="Default Data Layer"/>
+  <img src="/set-deco/DecoratedLevel.png" alt="Default Data Layer"/>
 </div>
 
 ## Technical Spec
