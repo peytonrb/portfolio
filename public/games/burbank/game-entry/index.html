@@ -202,7 +202,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "834"
+    "wordCount": "839"
   }]
   </script>
 
@@ -654,8 +654,8 @@
         width="96"
         height="96"
         alt="Peyton Bischof"
-        src="/profile_hu_35a7ffc96211dfb7.png"
-        data-zoom-src="/profile_hu_c35e6eb9279179ed.png">
+        src="/profile_hu_701db3ced3c48d20.png"
+        data-zoom-src="/profile_hu_f62d246c15ac504c.png">
     
   
   <div class="place-self-center">
@@ -880,7 +880,7 @@
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">TSharedPtr&lt;TPromise&lt;TArray&lt;ACustomCharacterActor*&gt;&gt;&gt; Promise = MakeShared&lt;TPromise&lt;TArray&lt;ACustomCharacterActor*&gt;&gt;&gt;();
 </span></span><span class="line"><span class="cl">TWeakObjectPtr&lt;ACustomCharacterActor&gt; WeakSelf(this);
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">CreateCharacterAsync().Next([WeakSelf, Promise](const FNewCharacterSpec&amp; Result)) --&gt; void
+</span></span><span class="line"><span class="cl">CreateCharacterAsync().Next([WeakSelf, Promise](const TArray&lt;FNewCharacterSpec&gt;&amp; CharacterSpecs)) --&gt; void
 </span></span><span class="line"><span class="cl">{
 </span></span><span class="line"><span class="cl">   if (!WeakSelf.IsValid())
 </span></span><span class="line"><span class="cl">	{
@@ -889,11 +889,10 @@
 </span></span><span class="line"><span class="cl">	}
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">   TArray&lt;TFuture&lt;ACustomCharacterActor*&gt;&gt; Futures;
-</span></span><span class="line"><span class="cl">	for (FInstancedStruct Struct : StructResult)
+</span></span><span class="line"><span class="cl">	for (FInstancedStruct Spec : CharacterSpecs)
 </span></span><span class="line"><span class="cl">	{
 </span></span><span class="line"><span class="cl">		...
-</span></span><span class="line"><span class="cl">			
-</span></span><span class="line"><span class="cl">		Futures.Add(CreateCharacterFromSpec(*Result));
+</span></span><span class="line"><span class="cl">		Futures.Add(CreateCharacterFromSpec(*Spec));
 </span></span><span class="line"><span class="cl">	}
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">	WhenAll(MoveTemp(Futures)).Next([Promise](const TArray&lt;ACustomCharacterActor*&gt;&amp; Results)
@@ -903,6 +902,8 @@
 </span></span><span class="line"><span class="cl">});
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">return Promise-&gt;GetFuture();</span></span></code></pre></div></div>
+<p>Where:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">TFuture&lt;ACustomCharacterActor*&gt; CreateCharacterFromSpec(const FInstancedStruct&amp; CharacterSpec);</span></span></code></pre></div></div>
 <p>DISCUSS CODE SNIPPET HERE</p>
 
           

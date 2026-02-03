@@ -71,7 +71,7 @@ It was especially common to require multiple Actors or specs that were created a
 TSharedPtr<TPromise<TArray<ACustomCharacterActor*>>> Promise = MakeShared<TPromise<TArray<ACustomCharacterActor*>>>();
 TWeakObjectPtr<ACustomCharacterActor> WeakSelf(this);
 
-CreateCharacterAsync().Next([WeakSelf, Promise](const FNewCharacterSpec& Result)) --> void
+CreateCharacterAsync().Next([WeakSelf, Promise](const TArray<FNewCharacterSpec>& CharacterSpecs)) --> void
 {
    if (!WeakSelf.IsValid())
 	{
@@ -80,11 +80,10 @@ CreateCharacterAsync().Next([WeakSelf, Promise](const FNewCharacterSpec& Result)
 	}
 
    TArray<TFuture<ACustomCharacterActor*>> Futures;
-	for (FInstancedStruct Struct : StructResult)
+	for (FInstancedStruct Spec : CharacterSpecs)
 	{
 		...
-			
-		Futures.Add(CreateCharacterFromSpec(*Result));
+		Futures.Add(CreateCharacterFromSpec(*Spec));
 	}
 
 	WhenAll(MoveTemp(Futures)).Next([Promise](const TArray<ACustomCharacterActor*>& Results)
@@ -94,6 +93,10 @@ CreateCharacterAsync().Next([WeakSelf, Promise](const FNewCharacterSpec& Result)
 });
 
 return Promise->GetFuture();
+```
+Where:
+```
+TFuture<ACustomCharacterActor*> CreateCharacterFromSpec(const FInstancedStruct& CharacterSpec);
 ```
 
 DISCUSS CODE SNIPPET HERE
