@@ -202,7 +202,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "0"
+    "wordCount": "834"
   }]
   </script>
 
@@ -654,8 +654,8 @@
         width="96"
         height="96"
         alt="Peyton Bischof"
-        src="/profile_hu_35a7ffc96211dfb7.png"
-        data-zoom-src="/profile_hu_c35e6eb9279179ed.png">
+        src="/profile_hu_701db3ced3c48d20.png"
+        data-zoom-src="/profile_hu_f62d246c15ac504c.png">
     
   
   <div class="place-self-center">
@@ -691,6 +691,71 @@
       
       
       
+        <div class="order-first lg:ms-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-[140px]">
+            <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain bf-scrollbar rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#in-game-representation">In-Game Representation</a>
+      <ul>
+        <li><a href="#pre-game">Pre-Game</a></li>
+        <li><a href="#post-game">Post-Game</a></li>
+      </ul>
+    </li>
+    <li><a href="#system-architecture">System Architecture</a>
+      <ul>
+        <li><a href="#modular-state-tree-based-design">Modular State Tree-Based Design</a></li>
+        <li><a href="#mvvm-patterns">MVVM Patterns</a></li>
+        <li><a href="#tfutures-and-tpromises">TFutures and TPromises</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#in-game-representation">In-Game Representation</a>
+      <ul>
+        <li><a href="#pre-game">Pre-Game</a></li>
+        <li><a href="#post-game">Post-Game</a></li>
+      </ul>
+    </li>
+    <li><a href="#system-architecture">System Architecture</a>
+      <ul>
+        <li><a href="#modular-state-tree-based-design">Modular State Tree-Based Design</a></li>
+        <li><a href="#mvvm-patterns">MVVM Patterns</a></li>
+        <li><a href="#tfutures-and-tpromises">TFutures and TPromises</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+
+          </div>
+        </div>
+      
 
 
       <div class="min-w-0 min-h-0 max-w-fit">
@@ -698,6 +763,148 @@
 
         <div class="article-content max-w-prose mb-20">
           
+<h2 class="relative group">Overview
+    <div id="overview" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#overview" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Project Burbank allowed the player to take the role of the Director in the campaign they played out during the game. Burbank uniquely allowed players to customize not just their Main Character and the narrative they were directing, but allowed them to edit a cast of characters&rsquo; memories and backstories, change the genre of the story, and more systemic characteristics. I was responsible for the Pre- and Post-Game systems, ensured that they created an experience as engaging as the core gameplay, and they became integral parts of the gameplay loop as a result.</p>
+<p>These systems were instrumental in establishing the core experience for the player and also ensured the game remained compelling for those who did not want to direct the entire experience. Both Pre- and Post-Game flows consisted of a series of stages containing a mix of UI and game camera that the player progressed through to set up and view the results of their campaign. These systems were built in <strong>C++</strong> with <strong>Blueprint</strong> and required heavy use of <strong>MVVM</strong>, <strong>State Tree</strong>, <strong>TFutures</strong> and <strong>TPromises</strong>, and more.</p>
+
+<h2 class="relative group">In-Game Representation
+    <div id="in-game-representation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#in-game-representation" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+
+<h3 class="relative group">Pre-Game
+    <div id="pre-game" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#pre-game" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>The Pre-Game flow was responsible for guiding the player through character and campaign customziations, and had Stages like <strong>Character Customization</strong>, <strong>Cast Customization</strong>, <strong>Campaign</strong> and <strong>Story Setup</strong>. It was essential that Pre-Game not only introduced players to all the system-defining customization options, but was also a creative outlet and fun in its own right.</p>
+<p>Some examples of Pre-Game Stages:</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/game-entry/CharacterCreator.png" alt="Cast Creator Screenshot"/>
+</div>
+<div style="display: flex; gap: 1rem;">
+  <img src="/game-entry/CastCreator.png" alt="Cast Creator Screenshot"/>
+</div>
+
+<h3 class="relative group">Post-Game
+    <div id="post-game" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#post-game" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>There are many unique and interesting ways to display game stats at the end of a campaign, which made designing this system even more fun. The Post-Game flow consisted of <strong>Studio Notes</strong> (our recap screen), <strong>Level Up</strong>, and the <strong>Next Scene Chooser</strong>. Because each playthrough was so interactive and unique to itself, it was important that we encapsulated the nuances of each playthrough in this flow.</p>
+<p>Some examples of Post-Game Stages:</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/game-entry/StudioNotes.png" alt="Cast Creator Screenshot"/>
+</div>
+
+<h2 class="relative group">System Architecture
+    <div id="system-architecture" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#system-architecture" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Each Stage of the Pre- and Post-Game flows were treated as individual entities, though they existed in the same world and were pre-loaded to avoid any additional buffer. A State Tree managed the entirety of the flow due to its modular nature, and each player-facing step was treated as a State. Each State followed the same general pattern: A custom C++ Manager Actor was spawned as it entered the State and gets assigned the associated UI&rsquo;s View Model.</p>
+<p>The Manager Actor and View Model manage the all of the gameplay logic and update the widget via bindings. The majority of the logic is kept in C++ to avoid checking out Assets in Perforce to maintain design and iteration speed.</p>
+
+<h3 class="relative group">Modular State Tree-Based Design
+    <div id="modular-state-tree-based-design" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#modular-state-tree-based-design" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Each player-facing screen was treated as its own individual State, and each State was able to have unique children States that allowed us to further customize the internal functionality of each Stage. This was exceptionally important due to the asynchronous nature of the systems in a few Stages.</p>
+<p><strong>New Game</strong></p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/game-entry/StateTree_NewGame.png" alt="New Game State Tree"/>
+</div>
+<p><strong>Post Game</strong></p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/game-entry/StateTree_PostGame.png" alt="New Game State Tree"/>
+</div>
+<p>In Stages where the player is not able to progress until internal asynchronous background logic is processed, I utilized &lsquo;In Progress&rsquo; child stages to stop progression until the Manager Actor broadcasts a delegate to flag that all asynchronous processes have fully finished and it is safe to transition. This modular design also makes it easy to swap out or add in screens without editing any &lsquo;Back&rsquo; or &lsquo;Next&rsquo; functionality by hand.</p>
+
+<h3 class="relative group">MVVM Patterns
+    <div id="mvvm-patterns" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#mvvm-patterns" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>To manage the UI widgets per stage and the game state itself, I utilized <strong>MVVM</strong> to connect player-inputted data to internal gameplay systems to dynamically generate new narrative campaigns and to collect and record campaign state data in these two systems.</p>
+<p>Below is an example of the View Model on the Character Creator Stage:</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/game-entry/ViewModel.png" alt="New Game State Tree"/>
+</div>
+<p>Since the View Model references the Manager Actor and vice versa, making changes or running logic for the UI from C++ becomes very simple. View Models are heavily used on all Stages during these flows, and handled a variety of tasks from updating UI, processing player-inputted data, and customizing each individual playthrough. The base Manager Actor and View Model classes set this functionality up by default for ease of creating new Stages in the future.</p>
+
+<h3 class="relative group">TFutures and TPromises
+    <div id="tfutures-and-tpromises" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#tfutures-and-tpromises" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Asynchronous coding was heavily used during these flows because Stages were dependent on the information gained from the Stage prior - however not all necessary data was instantly transmitted or readable. This created a lot of complexity as I was designing the system and was the forcing function behind a few systemic decisions that were made.</p>
+<p>It was especially common to require multiple Actors or specs that were created asynchronously during this process. Below I&rsquo;ve attached a pseudocode snippet of a pattern I employed heavily to manage this requirement:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">TSharedPtr&lt;TPromise&lt;TArray&lt;ACustomCharacterActor*&gt;&gt;&gt; Promise = MakeShared&lt;TPromise&lt;TArray&lt;ACustomCharacterActor*&gt;&gt;&gt;();
+</span></span><span class="line"><span class="cl">TWeakObjectPtr&lt;ACustomCharacterActor&gt; WeakSelf(this);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">CreateCharacterAsync().Next([WeakSelf, Promise](const FNewCharacterSpec&amp; Result)) --&gt; void
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">   if (!WeakSelf.IsValid())
+</span></span><span class="line"><span class="cl">	{
+</span></span><span class="line"><span class="cl">		Promise-&gt;EmplaceValue(TArray&lt;ACustomCharacterActor*&gt;());
+</span></span><span class="line"><span class="cl">		return;
+</span></span><span class="line"><span class="cl">	}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   TArray&lt;TFuture&lt;ACustomCharacterActor*&gt;&gt; Futures;
+</span></span><span class="line"><span class="cl">	for (FInstancedStruct Struct : StructResult)
+</span></span><span class="line"><span class="cl">	{
+</span></span><span class="line"><span class="cl">		...
+</span></span><span class="line"><span class="cl">			
+</span></span><span class="line"><span class="cl">		Futures.Add(CreateCharacterFromSpec(*Result));
+</span></span><span class="line"><span class="cl">	}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	WhenAll(MoveTemp(Futures)).Next([Promise](const TArray&lt;ACustomCharacterActor*&gt;&amp; Results)
+</span></span><span class="line"><span class="cl">	{
+</span></span><span class="line"><span class="cl">		Promise-&gt;EmplaceValue(Results);
+</span></span><span class="line"><span class="cl">	});
+</span></span><span class="line"><span class="cl">});
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">return Promise-&gt;GetFuture();</span></span></code></pre></div></div>
+<p>DISCUSS CODE SNIPPET HERE</p>
+
           
           
           

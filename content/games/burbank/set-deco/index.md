@@ -14,7 +14,7 @@ This system was not only instrumental in establishing the mood and feel of a Lev
 This system required deep understanding of a variety of Unreal systems, including **Procedural Content Generation (PCG)**, **World Partition** and **Data Layers**, **Choosers** (RandTable?), and more.
 
 ## In-Game Representation
-Each Level is constructed at design-time with base 3D models as a greybox to outline the general shape and orientation of objects in space. Each Level in UE is constructed with a variety of Data Layers containing different Socket Actors to hold contextual data and act as a base in order to preserve navigable space and Actor Slot requirements. The Decoration system then reads the Socket Actors and the current campaign information and chooses assets to sort and where to place them accordingly.
+Each Level is constructed at design-time with base 3D models as a greybox to outline the general shape and orientation of objects in space. Each Level in UE is constructed with a variety of Data Layers containing different Socket Actors to hold contextual data and act as a base in order to preserve character pathfinding and Actor Slot requirements. The Decoration system then reads the Socket Actors and the current campaign information and chooses assets to sort and where to place them accordingly.
 
 You can see 2 base Layout examples from our Apartment Level below: 
 <div style="display: flex; gap: 1rem;">
