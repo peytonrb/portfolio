@@ -202,7 +202,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "324"
+    "wordCount": "314"
   }]
   </script>
 
@@ -654,8 +654,8 @@
         width="96"
         height="96"
         alt="Peyton Bischof"
-        src="/profile_hu_701db3ced3c48d20.png"
-        data-zoom-src="/profile_hu_f62d246c15ac504c.png">
+        src="/profile_hu_35a7ffc96211dfb7.png"
+        data-zoom-src="/profile_hu_c35e6eb9279179ed.png">
     
   
   <div class="place-self-center">
@@ -706,9 +706,9 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
+    <li><a href="#key-systems">Key Systems</a></li>
     <li><a href="#in-game-representation">In-Game Representation</a></li>
     <li><a href="#technical-spec">Technical Spec</a></li>
-    <li><a href="#key-learnings">Key Learnings</a></li>
   </ul>
 </nav>
   </div>
@@ -723,9 +723,9 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
+    <li><a href="#key-systems">Key Systems</a></li>
     <li><a href="#in-game-representation">In-Game Representation</a></li>
     <li><a href="#technical-spec">Technical Spec</a></li>
-    <li><a href="#key-learnings">Key Learnings</a></li>
   </ul>
 </nav>
   </div>
@@ -754,7 +754,22 @@
 </h2>
 <p>Project Burbank is a storytelling platform for players to immerse themselves in any narrative imaginable - it takes players&rsquo; decisions and alters the campaign at hand to create surprising, one-of-a-kind gameplay experiences. I supported this characteristic by creating a procedural interior decoration system that intakes information about the player&rsquo;s campaign at runtime and filling subsequent Levels with contextually appropriate assets, while also maintaining navigable space and realistic orientations.</p>
 <p>This system was not only instrumental in establishing the mood and feel of a Level in game, but it was also visually and mechanically obvious if there were any logical flaws. It also had to handle external systems like lighting, BP Actors in the Level, player-placed objects, cameras, and more. It was imperative that I ensured this system was able to handle not only our technical limitations, but also uplifted the player&rsquo;s experience.</p>
-<p>This system required deep understanding of a variety of Unreal systems, including <strong>Procedural Content Generation (PCG)</strong>, <strong>World Partition</strong> and <strong>Data Layers</strong>, <strong>Choosers</strong> (RandTable?), and more.</p>
+
+<h2 class="relative group">Key Systems
+    <div id="key-systems" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#key-systems" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<ul>
+<li>Procedural Content Generation (PCG)</li>
+<li>World Partition &amp; Data Layers</li>
+<li>Choosers (RandTable?)</li>
+<li>Schemas and Socket Actors</li>
+</ul>
 
 <h2 class="relative group">In-Game Representation
     <div id="in-game-representation" class="anchor"></div>
@@ -786,16 +801,6 @@
     
 </h2>
 <p>Below I&rsquo;ve condensed the official Technical Design Document I wrote for this system to give an idea of how the system worked.</p>
-
-<h2 class="relative group">Key Learnings
-    <div id="key-learnings" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#key-learnings" aria-label="Anchor">#</a>
-    </span>
-    
-</h2>
 
           
           

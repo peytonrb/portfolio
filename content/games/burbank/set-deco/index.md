@@ -11,7 +11,11 @@ Project Burbank is a storytelling platform for players to immerse themselves in 
 
 This system was not only instrumental in establishing the mood and feel of a Level in game, but it was also visually and mechanically obvious if there were any logical flaws. It also had to handle external systems like lighting, BP Actors in the Level, player-placed objects, cameras, and more. It was imperative that I ensured this system was able to handle not only our technical limitations, but also uplifted the player's experience. 
 
-This system required deep understanding of a variety of Unreal systems, including **Procedural Content Generation (PCG)**, **World Partition** and **Data Layers**, **Choosers** (RandTable?), and more.
+## Key Systems
+- Procedural Content Generation (PCG)
+- World Partition & Data Layers
+- Choosers (RandTable?)
+- Schemas and Socket Actors
 
 ## In-Game Representation
 Each Level is constructed at design-time with base 3D models as a greybox to outline the general shape and orientation of objects in space. Each Level in UE is constructed with a variety of Data Layers containing different Socket Actors to hold contextual data and act as a base in order to preserve character pathfinding and Actor Slot requirements. The Decoration system then reads the Socket Actors and the current campaign information and chooses assets to sort and where to place them accordingly.
@@ -29,5 +33,3 @@ After the Decoration system finishes placing assets on the determined base layou
 
 ## Technical Spec
 Below I've condensed the official Technical Design Document I wrote for this system to give an idea of how the system worked. 
-
-## Key Learnings
