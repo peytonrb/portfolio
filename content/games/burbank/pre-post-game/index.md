@@ -40,12 +40,12 @@ The Manager Actor and View Model manage the all of the gameplay logic and update
 ### Modular State Tree-Based Design
 Each player-facing screen was treated as its own individual State, and each State was able to have unique children States that allowed us to further customize the internal functionality of each Stage. This was exceptionally important due to the asynchronous nature of the systems in a few Stages.
 
-**New Game**
+**Pre-Game**
 <div style="display: flex; gap: 1rem;">
   <img src="/game-entry/StateTree_NewGame.png" alt="New Game State Tree"/>
 </div>
 
-**Post Game**
+**Post-Game**
 <div style="display: flex; gap: 1rem;">
   <img src="/game-entry/StateTree_PostGame.png" alt="New Game State Tree"/>
 </div>
