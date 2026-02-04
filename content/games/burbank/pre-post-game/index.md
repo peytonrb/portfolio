@@ -68,25 +68,25 @@ Asynchronous coding was heavily used during these flows because Stages were depe
 It was especially common to require multiple Actors or specs that were created asynchronously during this process. Below I've attached a pseudocode snippet of a pattern I employed heavily to manage this requirement:
 
 ```
-TSharedPtr<TPromise<TArray<ACustomCharacterActor*>>> Promise = MakeShared<TPromise<TArray<ACustomCharacterActor*>>>();
-TWeakObjectPtr<ACustomCharacterActor> WeakSelf(this);
+TSharedPtr<TPromise<TArray<ACharacterActor*>>> Promise = MakeShared<TPromise<TArray<ACharacterActor*>>>();
+TWeakObjectPtr<ACharacterActor> WeakSelf(this);
 
 CreateCharacterAsync().Next([WeakSelf, Promise](const TArray<FNewCharacterSpec>& CharacterSpecs)) --> void
 {
    if (!WeakSelf.IsValid())
 	{
-		Promise->EmplaceValue(TArray<ACustomCharacterActor*>());
+		Promise->EmplaceValue(TArray<ACharacterActor*>());
 		return;
 	}
 
-   TArray<TFuture<ACustomCharacterActor*>> Futures;
+   TArray<TFuture<ACharacterActor*>> Futures;
 	for (FInstancedStruct Spec : CharacterSpecs)
 	{
 		...
 		Futures.Add(CreateCharacterFromSpec(*Spec));
 	}
 
-	WhenAll(MoveTemp(Futures)).Next([Promise](const TArray<ACustomCharacterActor*>& Results)
+	WhenAll(MoveTemp(Futures)).Next([Promise](const TArray<ACharacterActor*>& Results)
 	{
 		Promise->EmplaceValue(Results);
 	});
@@ -96,7 +96,7 @@ return Promise->GetFuture();
 ```
 Where:
 ```
-TFuture<ACustomCharacterActor*> CreateCharacterFromSpec(const FInstancedStruct& CharacterSpec);
+TFuture<ACharacterActor*> CreateCharacterFromSpec(const FInstancedStruct& CharacterSpec);
 ```
 
-DISCUSS CODE SNIPPET HERE
+This snippet is one instance of a broader pattern that I used throughout the system. Rather than letting async work leak into gameplay-facing systems, I chained async steps together and wrapped the result in a single return value, keeping other dependent and higher-level systems clean and latent. This made the base code easier to iterate on, safer under lifecycle or loading changes, and much easier to debug as the system grew.
