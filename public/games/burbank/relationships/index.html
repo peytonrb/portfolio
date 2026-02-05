@@ -202,7 +202,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "13"
+    "wordCount": "220"
   }]
   </script>
 
@@ -706,9 +706,14 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
-    <li><a href="#in-game-representation">In-Game Representation</a></li>
-    <li><a href="#system-architecture">System Architecture</a></li>
-    <li><a href="#relationship-editor-and-tools">Relationship Editor and Tools</a></li>
+    <li><a href="#relationship-design">Relationship Design</a></li>
+    <li><a href="#system-architecture">System Architecture</a>
+      <ul>
+        <li><a href="#relationship-data-asset">Relationship Data Asset</a></li>
+        <li><a href="#relationship-state-actor">Relationship State Actor</a></li>
+      </ul>
+    </li>
+    <li><a href="#gameplay-outcome-and-learnings">Gameplay Outcome and Learnings</a></li>
   </ul>
 </nav>
   </div>
@@ -723,9 +728,14 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
-    <li><a href="#in-game-representation">In-Game Representation</a></li>
-    <li><a href="#system-architecture">System Architecture</a></li>
-    <li><a href="#relationship-editor-and-tools">Relationship Editor and Tools</a></li>
+    <li><a href="#relationship-design">Relationship Design</a></li>
+    <li><a href="#system-architecture">System Architecture</a>
+      <ul>
+        <li><a href="#relationship-data-asset">Relationship Data Asset</a></li>
+        <li><a href="#relationship-state-actor">Relationship State Actor</a></li>
+      </ul>
+    </li>
+    <li><a href="#gameplay-outcome-and-learnings">Gameplay Outcome and Learnings</a></li>
   </ul>
 </nav>
   </div>
@@ -752,16 +762,24 @@
     </span>
     
 </h2>
+<p>Relationships are at the core of Project Burbank - they drive the player to make gameplay decisions, explore parasocially, and are a vessel to experience some of Burbank&rsquo;s most emotional moments. I was responsible for creating the base Relationship system that manages all 2-character relationships and the gameplay impact of the player character&rsquo;s choices in-game. All characters started at a base &lsquo;Acquaintance&rsquo; Relationship, but were able to progress through a Map of possible relationships with any given NPC. Each Relationship affected the gameplay differently, and had different conditions to achieve.</p>
+<p>A small snippet of the Relationship Map in which the player&rsquo;s character could navigate:</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/relationships/RelationshipGraph2.png" alt="Relationship Map"/>
+</div>
 
-<h2 class="relative group">In-Game Representation
-    <div id="in-game-representation" class="anchor"></div>
+<h2 class="relative group">Relationship Design
+    <div id="relationship-design" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#in-game-representation" aria-label="Anchor">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#relationship-design" aria-label="Anchor">#</a>
     </span>
     
 </h2>
+<div style="display: flex; gap: 1rem;">
+  <img src="/relationships/RelationshipGraph1.png" alt="Graph 1"/>
+</div>
 
 <h2 class="relative group">System Architecture
     <div id="system-architecture" class="anchor"></div>
@@ -772,19 +790,34 @@
     </span>
     
 </h2>
-<div style="display: flex; gap: 1rem;">
-  <img src="/relationships/RelationshipGraph1.png" alt="Graph 1"/>
-</div>
-<div style="display: flex; gap: 1rem;">
-  <img src="/relationships/RelationshipGraph2.png" alt="Graph 2"/>
-</div>
+<p>Relationships systematically have 2 major components to them: a Relationship Data Asset and a Relationship State Actor. The team created the Relationship Data Assets during production and built them into the Relationship Map. The Relationship State Actors then navigate their character through these Relationships as the player interacts with the world and other characters. Only one StateActor is created per character-pair, and is the runtime representation of the Relationship between these two characters. The Properties defined by the Relationship Data Asset assigned to the State Actor are what dictate the relevant effects on the game.</p>
 
-<h2 class="relative group">Relationship Editor and Tools
-    <div id="relationship-editor-and-tools" class="anchor"></div>
+<h3 class="relative group">Relationship Data Asset
+    <div id="relationship-data-asset" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#relationship-editor-and-tools" aria-label="Anchor">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#relationship-data-asset" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+
+<h3 class="relative group">Relationship State Actor
+    <div id="relationship-state-actor" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#relationship-state-actor" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+
+<h2 class="relative group">Gameplay Outcome and Learnings
+    <div id="gameplay-outcome-and-learnings" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#gameplay-outcome-and-learnings" aria-label="Anchor">#</a>
     </span>
     
 </h2>
