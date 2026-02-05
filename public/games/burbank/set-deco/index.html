@@ -202,7 +202,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "314"
+    "wordCount": "1537"
   }]
   </script>
 
@@ -654,8 +654,8 @@
         width="96"
         height="96"
         alt="Peyton Bischof"
-        src="/profile_hu_35a7ffc96211dfb7.png"
-        data-zoom-src="/profile_hu_c35e6eb9279179ed.png">
+        src="/profile_hu_701db3ced3c48d20.png"
+        data-zoom-src="/profile_hu_f62d246c15ac504c.png">
     
   
   <div class="place-self-center">
@@ -706,9 +706,15 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
-    <li><a href="#key-systems">Key Systems</a></li>
     <li><a href="#in-game-representation">In-Game Representation</a></li>
-    <li><a href="#technical-spec">Technical Spec</a></li>
+    <li><a href="#technical-spec">Technical Spec</a>
+      <ul>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#custom-classes">Custom Classes</a></li>
+        <li><a href="#system-architecture">System Architecture</a></li>
+      </ul>
+    </li>
+    <li><a href="#reflection">Reflection</a></li>
   </ul>
 </nav>
   </div>
@@ -723,9 +729,15 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
-    <li><a href="#key-systems">Key Systems</a></li>
     <li><a href="#in-game-representation">In-Game Representation</a></li>
-    <li><a href="#technical-spec">Technical Spec</a></li>
+    <li><a href="#technical-spec">Technical Spec</a>
+      <ul>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#custom-classes">Custom Classes</a></li>
+        <li><a href="#system-architecture">System Architecture</a></li>
+      </ul>
+    </li>
+    <li><a href="#reflection">Reflection</a></li>
   </ul>
 </nav>
   </div>
@@ -754,22 +766,6 @@
 </h2>
 <p>Project Burbank is a storytelling platform for players to immerse themselves in any narrative imaginable - it takes players&rsquo; decisions and alters the campaign at hand to create surprising, one-of-a-kind gameplay experiences. I supported this characteristic by creating a procedural interior decoration system that intakes information about the player&rsquo;s campaign at runtime and filling subsequent Levels with contextually appropriate assets, while also maintaining navigable space and realistic orientations.</p>
 <p>This system was not only instrumental in establishing the mood and feel of a Level in game, but it was also visually and mechanically obvious if there were any logical flaws. It also had to handle external systems like lighting, BP Actors in the Level, player-placed objects, cameras, and more. It was imperative that I ensured this system was able to handle not only our technical limitations, but also uplifted the player&rsquo;s experience.</p>
-
-<h2 class="relative group">Key Systems
-    <div id="key-systems" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#key-systems" aria-label="Anchor">#</a>
-    </span>
-    
-</h2>
-<ul>
-<li>Procedural Content Generation (PCG)</li>
-<li>World Partition &amp; Data Layers</li>
-<li>Choosers (RandTable?)</li>
-<li>Schemas and Socket Actors</li>
-</ul>
 
 <h2 class="relative group">In-Game Representation
     <div id="in-game-representation" class="anchor"></div>
@@ -800,7 +796,110 @@
     </span>
     
 </h2>
-<p>Below I&rsquo;ve condensed the official Technical Design Document I wrote for this system to give an idea of how the system worked.</p>
+<p>As players progressed through their narrative campaigns, it was important that the Levels their characters spawned into visually complimented and matched the aesthetic of the story being played out. This procedural interior Level decoration system intakes data about the active Story, available Assets to populate the space, and more to produce an accurately dressed Level.</p>
+<p>Below I&rsquo;ve summarized the official Technical Design Document I wrote for this system to give an idea of how it worked.</p>
+
+<h3 class="relative group">Summary
+    <div id="summary" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#summary" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Each World Partition Level was built as a greyboxed space using templated Data Layers instead of fixed Assets. Designers constructed these Layers with Sockets, which were Assets embedded with metadata and natural language descriptions responsible for holding space for NavMesh and cinematic cameras. The Decoration system queried the Sockets in the space once it chose the most relevant Data Layer and populated them with Assets relevant to the runtime narrative. From there, designer and auto-placed Inclusion Volumes marked up where PCG spawns non-blocking decorative clutter, ensuring the space appeared engaging, immersive, and relevant to the story at the end.</p>
+<p>All of this logic exists in a <strong>Plugin</strong> and includes an <strong>Editor Module</strong> for custom property, detail, and editor customizations to support designers as they construct each Level.</p>
+
+<h3 class="relative group">Custom Classes
+    <div id="custom-classes" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#custom-classes" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p><strong>DecoDataLayer</strong></p>
+<p>The need for <strong>DecoDataLayers</strong> arose when I realized that a full procedually decorated interior space, also because the player is able to edit their space, would cause too much instability between character navigation, cinematic cameras, and more. <strong>DecoDataLayers</strong> are extended from the base <strong>DataLayerAsset</strong> class and are used to create all Data Layers that can be evaluated by the Decoration system.</p>
+<p>Some Properties include:</p>
+<ul>
+<li>A natural language FText description of the space and example use-cases</li>
+<li>Gameplay Tag container for relevant context tags</li>
+</ul>
+<p><strong>DecoSocketComponent</strong></p>
+<p>The <strong>DecoSocketComponent</strong> was added in-editor to any Actor in a DecoDataLayer to greybox the space. This component dictates what Actors and what properties about them are swappable. These Components subscribe to policies that dictate what about the Actor they are on can be affected by the system. Example policies are:</p>
+<ul>
+<li>Blueprint: the entire BP Actor can be changed</li>
+<li>Static Mesh: the Mesh of the Actor can be changed</li>
+<li>Material: certain Materials can be changed</li>
+<li>Group: the Actor is changed exactly the same as another Socket</li>
+</ul>
+<p>These Components allowed us to build more modular Data Layers because we could nest Components with varying degrees of complexity for a more unique space each playthrough (ie. a Couch with a Material Component policy could be placed by the Deco system in an Component that allows BP subtitution). These Sockets are responsible for applying their own customizations once they are given narrative details by the DecoActor. It is also possible to override query behavior on Sockets for different Assets, so not all Sockets evaluate the Asset Libraries the same as well.</p>
+<p>Some Properties on the Socket Components include:</p>
+<ul>
+<li>The policy to follow</li>
+<li>A natural language FText description of the expected object</li>
+<li>Gameplay Tag container for relevant context tags</li>
+</ul>
+<p>It is also important to note here that the Transforms and orientations of Assets is a major constraint here. To account for this, the Asset Libraries themselves reject Assets that would not fit in the expected Sockets to avoid hard-to-follow bugs down the line.</p>
+<p><strong>DecoActor</strong></p>
+<p>The <strong>DecoActor</strong> is responsible for centralizing most of the logic pertaining to the Decoration System. A single <strong>DecoActor</strong> is spawned automatically the first time a Level is loaded into a Show for a particular interior Set at runtime. It is important to mention that a Level can get used for multiple different Set types (ie. the &lsquo;Bedroom&rsquo; level could get separate Decorations for &lsquo;Character A&rsquo;s Bedroom&rsquo; and &lsquo;Chararacter B&rsquo;s Bedroom&rsquo;). Therefore, one Level may have multiple different runtime occurences of DecoActors as the player progresses in their campaign.</p>
+<p><strong>DecoActors</strong> handle the decoration of a Set when they get initialized and are also responsible for polishing existing Decorations as Sets are revisited. If the player revisits a Set with an existing <strong>DecoActor</strong>, a new one is not created and the existing one redecorates the room.</p>
+<p>Some other responsibilities include:</p>
+<ul>
+<li>Maintaining Sockets</li>
+<li>Querying Asset Libraries</li>
+<li>Activating proper Data Layers (including non-Deco Layers like Weather, etc.)</li>
+<li>Validate Decoration placements</li>
+</ul>
+<p>I also made it possible to subclass the <strong>DecoActor</strong> to customize behavior for different Level types. For example, the default Decoration logic did not satisfy outdoor Levels the way it did indoor Levels. Designers were able to configure what schema was followed during runtime. I also supported Editor-only testing by exposing <strong>DecoActor</strong> functionality to the editor, allowing designers to test the Decorations without needing to run the game.</p>
+<p><strong>DecoVolume</strong></p>
+<p>This system heavily utilized Procedural Content Generation (PCG) to decorate the space once all navigation-blocking objects have been placed. I created custom <strong>DecoVolumes</strong> for designers and marked objects to spawn, and are the area in which PCG utilizes to decorate. These Volumes get sampled and their relevant PCG Graphs complete the final layer of decoration.</p>
+<p>Designers can specify on the Volume which PCG Graphs will be used to decorate the space within. These Volumes respect existing Decorations, player-placed objects, and cameras. Multiple graphs can apply to each Volume, and a hierarchy of importance between graphs is established in order of appearance in the Property to determine which graph&rsquo;s objects are prioritized.</p>
+<p><strong>DecoLibrary</strong></p>
+<p>We utilized hierarchial, random containers built in-house similar to Unreal Choosers to store the Asset Libraries. These containers held entries that were able to be populated with the Assets and tag them with necessary metadata. Sockets queried these Libraries depending on what type of Asset they were expecting. These Libraries rejected Assets that fell outside Transform and Orientation requirements and also handled random choosing behavior.</p>
+
+<h3 class="relative group">System Architecture
+    <div id="system-architecture" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#system-architecture" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>There are two main processes that the Decoration system is responsible for: Decorating and Redecorating. The first time a Level is decorated is the most important, because Decorations persist as the Level gets reused in the same narrative, just updated.</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/set-deco/DecoDesign.png" alt="Default Data Layer"/>
+</div>
+<p>Assets are selected from the queried Libraries based on both runtime narrative context and the metadata provided by the populated Sockets. The Decoration system collects this context and passes the Socket and Asset descriptions through a proprietary embeddings subsystem, which produces similarity scores based on natural-language semantics. These scores are evaluated alongside structured metadata constraints to determine the best match for each Socket. The highest-scoring Assets are then utilized for the Sockets.</p>
+<p>Another concept that I utilized heavily in this system is the idea of <strong>Pinned</strong> objects. We did not want the system to entirely redecorate a Level every time a player revisted it. However, as to real life, it also would not make sense for a space to stay identical after the campaign and time have continued to progress. The Decoration system is responsible for systematically Pinning objects that are determined as characteristic to the scene, and these Pinned objects will persist with the Set until the campaign has finished. Pinned objects often included:</p>
+<ul>
+<li>Navigation-Blocking Furniture</li>
+<li>Narrative-important Assets</li>
+<li>Characteristic decorative pieces</li>
+<li>Player-placed Assets</li>
+</ul>
+
+<h2 class="relative group">Reflection
+    <div id="reflection" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#reflection" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>This was a fairly involved and player-facing system, and I learned a lot from the work I did. Some of my main learnings:</p>
+<ul>
+<li>policy based programming</li>
+<li>ensured everything was not dependent so we could just place and remove things as needed</li>
+<li>rejecting assets from tables early on before causing problems wsa good</li>
+<li>sockets allowed for multipass generation -&gt; sockets with blueprint swap policies could then have their material swap activate</li>
+<li>making tagging assets so that it was esy for designers to support design intent while not over-constraining and limiting variation (natrual language embeddings helped solve for)</li>
+<li>PCG and its many uses</li>
+</ul>
 
           
           
