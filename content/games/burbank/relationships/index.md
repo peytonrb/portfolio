@@ -23,6 +23,9 @@ A small snippet of the Relationship Map in which the player's character could na
 Relationships systematically have 2 major components to them: a Relationship Data Asset and a Relationship State Actor. The team created the Relationship Data Assets during production and built them into the Relationship Map. The Relationship State Actors then navigate their character through these Relationships as the player interacts with the world and other characters. Only one StateActor is created per character-pair, and is the runtime representation of the Relationship between these two characters. The Properties defined by the Relationship Data Asset assigned to the State Actor are what dictate the relevant effects on the game.
 
 ### Relationship Data Asset
+<div style="display: flex; gap: 1rem;">
+  <img src="/relationships/RelationshipInfo.png" alt="Relationship Data Asset"/>
+</div>
 
 ### Relationship State Actor
 
