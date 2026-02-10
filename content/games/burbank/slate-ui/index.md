@@ -21,7 +21,59 @@ This custom Asset Editor shows a graph visualizing the Relationship Stages that 
 [Discuss using EdGraph and other details]
 
 ```
-CreateGraph() snippet
+SRelationshipEditor::Construct(const FArguments& InArgs, TSharedPtr<FMidRelationshipEditorViewModel> InViewModel)
+{
+  RelationshipEditorViewModel = InViewModel;
+
+  GraphObj = NewObject<UEdGraph_RelationshipEditor>();
+	GraphObj->Schema = UMidRelationshipEditorSchema::StaticClass();
+	GraphObj->AddToRoot();
+	GraphObj->SetRelationshipEditor(StaticCastSharedRef<SMidRelationshipEditorWidget>(AsShared()));
+
+	GraphObj->ConstructGraph(InViewModel);
+	
+	// Create the Graph Editor
+	GraphEditorPtr = SNew(SGraphEditor)
+		.GraphToEdit(GraphObj);
+	
+	ChildSlot
+	[
+		SNew(SOverlay)
+		+ SOverlay::Slot()
+		[
+			GraphEditorPtr.ToSharedRef()
+		]
+
+		+ SOverlay::Slot()
+		.VAlign(VAlign_Top)
+		.HAlign(HAlign_Left)
+		.Padding(FMargin(10))
+		[
+			SNew(SBorder)
+			.BorderImage(FAppStyle::GetBrush("ToolPanel.GroupBorder"))
+			[
+				SAssignNew(ContextPanel, SMidRelationshipContextPanelWidget)
+				.Visibility(this, &SMidRelationshipEditorWidget::GetContextPanelVisibility)
+			]
+		]
+	];
+}
+
+UEdGraph_RelationshipEditor::ConstructGraph()
+{
+  // Use ViewModel information to determine which node is focused/should be centered
+  UEdGraphNode_Relationship* CenterNode = SpawnNode(ViewModel, FVector2D(0.0f, 0.0f));
+
+  ...
+
+  // Create incoming and outgoing Nodes based on stored Relationship in ViewModel
+  // ViewModel->GetFocusedRelationshipInfo()
+
+  ...
+  ViewModel->GraphEditor = this;
+
+}
+
 ```
 
 
