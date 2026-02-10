@@ -16,20 +16,27 @@ One of the most utilized editors I created for Project Burbank is the Relationsh
   <img src="/slate/RelationshipEditor.png" alt="Relationship Editor"/>
 </div>
 
-This graph shows _____. I based it off of the Reference Viewer built into UE, and utilized _____. 
+This custom Asset Editor shows a graph visualizing the Relationship Stages that can be progressed to from the Relationship Asset being viewed currently. I based it off of the Reference Viewer built into UE, and utilized custom **EdGraph** and **EdGraphNode** classes to build the progression Map. 
+
+[Discuss using EdGraph and other details]
 
 ```
-EdGraph
-EdGraph_Node
 CreateGraph() snippet
 ```
 
-[Discuss view model/widgets method and why it is strong]
 
-### Tools
+[Discuss view model + Slate method]. [why is this method strong]
+
+**Create New Transition Tool**
+
+I wanted it to be as easy for designers as possible to interact with and edit Relationships via the graph, so I also included tools within the editor to walk designers through setting up more complex Properties, like adding new Stages to progress to. 
+
 <div style="display: flex; gap: 1rem;">
-  <img src="/slate/TransitionTool.png" alt="Relationship Editor"/>
+  <img src="/slate/TransitionTool.png" alt="Default Data Layer" style="width: 60%;" />
+  <img src="/slate/TransitionTool2.png" alt="Watch Party Data Layer" style="width: 60%;" />
 </div>
+
+[talk about creating tool].
 
 ## Embedded Text Editor
 Another complication I had to solve working on this project was managing the amount of asynchronous processes that occured both at runtime and, more importantly here, during editor-time. These non-latent functions occasionally allowed designers to close the editor while processes were still running, which led to crashes or unsaved changes. I created a custom Property for all Assets that used the problematic interface that informed designers when their data was still processing, overrode the default Unreal Asset save behavior, and included a button to manually trigger the asynchronous process. 

@@ -202,7 +202,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "288"
+    "wordCount": "372"
   }]
   </script>
 
@@ -706,11 +706,7 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
-    <li><a href="#relationship-editor">Relationship Editor</a>
-      <ul>
-        <li><a href="#tools">Tools</a></li>
-      </ul>
-    </li>
+    <li><a href="#relationship-editor">Relationship Editor</a></li>
     <li><a href="#embedded-text-editor">Embedded Text Editor</a></li>
   </ul>
 </nav>
@@ -726,11 +722,7 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
-    <li><a href="#relationship-editor">Relationship Editor</a>
-      <ul>
-        <li><a href="#tools">Tools</a></li>
-      </ul>
-    </li>
+    <li><a href="#relationship-editor">Relationship Editor</a></li>
     <li><a href="#embedded-text-editor">Embedded Text Editor</a></li>
   </ul>
 </nav>
@@ -773,24 +765,17 @@
 <div style="display: flex; gap: 1rem;">
   <img src="/slate/RelationshipEditor.png" alt="Relationship Editor"/>
 </div>
-<p>This graph shows _____. I based it off of the Reference Viewer built into UE, and utilized _____.</p>
-<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">EdGraph
-</span></span><span class="line"><span class="cl">EdGraph_Node
-</span></span><span class="line"><span class="cl">CreateGraph() snippet</span></span></code></pre></div></div>
-<p>[Discuss view model/widgets method and why it is strong]</p>
-
-<h3 class="relative group">Tools
-    <div id="tools" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#tools" aria-label="Anchor">#</a>
-    </span>
-    
-</h3>
+<p>This custom Asset Editor shows a graph visualizing the Relationship Stages that can be progressed to from the Relationship Asset being viewed currently. I based it off of the Reference Viewer built into UE, and utilized custom <strong>EdGraph</strong> and <strong>EdGraphNode</strong> classes to build the progression Map.</p>
+<p>[Discuss using EdGraph and other details]</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">CreateGraph() snippet</span></span></code></pre></div></div>
+<p>[Discuss view model + Slate method]. [why is this method strong]</p>
+<p><strong>Create New Transition Tool</strong></p>
+<p>I wanted it to be as easy for designers as possible to interact with and edit Relationships via the graph, so I also included tools within the editor to walk designers through setting up more complex Properties, like adding new Stages to progress to.</p>
 <div style="display: flex; gap: 1rem;">
-  <img src="/slate/TransitionTool.png" alt="Relationship Editor"/>
+  <img src="/slate/TransitionTool.png" alt="Default Data Layer" style="width: 60%;" />
+  <img src="/slate/TransitionTool2.png" alt="Watch Party Data Layer" style="width: 60%;" />
 </div>
+<p>[talk about creating tool].</p>
 
 <h2 class="relative group">Embedded Text Editor
     <div id="embedded-text-editor" class="anchor"></div>
