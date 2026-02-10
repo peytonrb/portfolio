@@ -202,7 +202,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "7"
+    "wordCount": "288"
   }]
   </script>
 
@@ -654,8 +654,8 @@
         width="96"
         height="96"
         alt="Peyton Bischof"
-        src="/profile_hu_701db3ced3c48d20.png"
-        data-zoom-src="/profile_hu_f62d246c15ac504c.png">
+        src="/profile_hu_35a7ffc96211dfb7.png"
+        data-zoom-src="/profile_hu_c35e6eb9279179ed.png">
     
   
   <div class="place-self-center">
@@ -706,7 +706,12 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
-    <li><a href="#relationship-editor-and-tools">Relationship Editor and Tools</a></li>
+    <li><a href="#relationship-editor">Relationship Editor</a>
+      <ul>
+        <li><a href="#tools">Tools</a></li>
+      </ul>
+    </li>
+    <li><a href="#embedded-text-editor">Embedded Text Editor</a></li>
   </ul>
 </nav>
   </div>
@@ -721,7 +726,12 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
-    <li><a href="#relationship-editor-and-tools">Relationship Editor and Tools</a></li>
+    <li><a href="#relationship-editor">Relationship Editor</a>
+      <ul>
+        <li><a href="#tools">Tools</a></li>
+      </ul>
+    </li>
+    <li><a href="#embedded-text-editor">Embedded Text Editor</a></li>
   </ul>
 </nav>
   </div>
@@ -748,17 +758,57 @@
     </span>
     
 </h2>
+<p>Due to our small team size and rapid iteration time, it was imperative we spent the least amount of time creating and organizing Assets in mass as we were building our Levels. To support this, I integrated creating gameplay systems with Slate tools and editors as part of my regular workflow to expedite the process of asset creation and setup. This was exemplified throughout the project but I will highlight bigger editors and tools below.</p>
 
-<h2 class="relative group">Relationship Editor and Tools
-    <div id="relationship-editor-and-tools" class="anchor"></div>
+<h2 class="relative group">Relationship Editor
+    <div id="relationship-editor" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#relationship-editor-and-tools" aria-label="Anchor">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#relationship-editor" aria-label="Anchor">#</a>
     </span>
     
 </h2>
+<p>One of the most utilized editors I created for Project Burbank is the Relationship Editor and related tools. The need for this editor arose when we were building out the Relationship Map, and it became hard to keep track of how the various Relationships were able to progress. We needed a way for our designers to visualize how each Stage of the Relationship Map was able to evolve and easily compare the effects and constraints of them all.</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/slate/RelationshipEditor.png" alt="Relationship Editor"/>
+</div>
+<p>This graph shows _____. I based it off of the Reference Viewer built into UE, and utilized _____.</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">EdGraph
+</span></span><span class="line"><span class="cl">EdGraph_Node
+</span></span><span class="line"><span class="cl">CreateGraph() snippet</span></span></code></pre></div></div>
+<p>[Discuss view model/widgets method and why it is strong]</p>
 
+<h3 class="relative group">Tools
+    <div id="tools" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#tools" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<div style="display: flex; gap: 1rem;">
+  <img src="/slate/TransitionTool.png" alt="Relationship Editor"/>
+</div>
+
+<h2 class="relative group">Embedded Text Editor
+    <div id="embedded-text-editor" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#embedded-text-editor" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Another complication I had to solve working on this project was managing the amount of asynchronous processes that occured both at runtime and, more importantly here, during editor-time. These non-latent functions occasionally allowed designers to close the editor while processes were still running, which led to crashes or unsaved changes. I created a custom Property for all Assets that used the problematic interface that informed designers when their data was still processing, overrode the default Unreal Asset save behavior, and included a button to manually trigger the asynchronous process.</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/slate/Embeddings_unsaved.png" alt="Embeddings Unsaved"/>
+</div>
+<p>[discuss delayed save behavior]</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/slate/Embeddings_saved.png" alt="Embeddings Saved"/>
+</div>
           
           
           
@@ -809,7 +859,7 @@
               class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
               href="/games/burbank/relationships/">
               <span class="leading-6">
-                Relationships and Character Memories&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
+                Character Relationship System&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
               </span>
             </a>
             

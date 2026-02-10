@@ -15,8 +15,8 @@
 
   
   
-    <title>Relationships and Character Memories &middot; Peyton Bischof</title>
-    <meta name="title" content="Relationships and Character Memories &middot; Peyton Bischof">
+    <title>Character Relationship System &middot; Peyton Bischof</title>
+    <meta name="title" content="Character Relationship System &middot; Peyton Bischof">
   
 
   
@@ -36,7 +36,7 @@
   
   <meta property="og:url" content="http://localhost:1313/games/burbank/relationships/">
   <meta property="og:site_name" content="Peyton Bischof">
-  <meta property="og:title" content="Relationships and Character Memories">
+  <meta property="og:title" content="Character Relationship System">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="games">
@@ -45,7 +45,7 @@
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/games/burbank/relationships/featured.png">
-  <meta name="twitter:title" content="Relationships and Character Memories">
+  <meta name="twitter:title" content="Character Relationship System">
 
   
   
@@ -184,8 +184,8 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Games",
-    "name": "Relationships and Character Memories",
-    "headline": "Relationships and Character Memories",
+    "name": "Character Relationship System",
+    "headline": "Character Relationship System",
     
     "inLanguage": "en",
     "url" : "http://localhost:1313/games/burbank/relationships/",
@@ -202,7 +202,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "220"
+    "wordCount": "762"
   }]
   </script>
 
@@ -557,7 +557,7 @@
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        Relationships and Character Memories
+        Character Relationship System
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -654,8 +654,8 @@
         width="96"
         height="96"
         alt="Peyton Bischof"
-        src="/profile_hu_701db3ced3c48d20.png"
-        data-zoom-src="/profile_hu_f62d246c15ac504c.png">
+        src="/profile_hu_35a7ffc96211dfb7.png"
+        data-zoom-src="/profile_hu_c35e6eb9279179ed.png">
     
   
   <div class="place-self-center">
@@ -713,7 +713,8 @@
         <li><a href="#relationship-state-actor">Relationship State Actor</a></li>
       </ul>
     </li>
-    <li><a href="#gameplay-outcome-and-learnings">Gameplay Outcome and Learnings</a></li>
+    <li><a href="#in-game-representation">In-Game Representation</a></li>
+    <li><a href="#reflection">Reflection</a></li>
   </ul>
 </nav>
   </div>
@@ -735,7 +736,8 @@
         <li><a href="#relationship-state-actor">Relationship State Actor</a></li>
       </ul>
     </li>
-    <li><a href="#gameplay-outcome-and-learnings">Gameplay Outcome and Learnings</a></li>
+    <li><a href="#in-game-representation">In-Game Representation</a></li>
+    <li><a href="#reflection">Reflection</a></li>
   </ul>
 </nav>
   </div>
@@ -762,11 +764,7 @@
     </span>
     
 </h2>
-<p>Relationships are at the core of Project Burbank - they drive the player to make gameplay decisions, explore parasocially, and are a vessel to experience some of Burbank&rsquo;s most emotional moments. I was responsible for creating the base Relationship system that manages all 2-character relationships and the gameplay impact of the player character&rsquo;s choices in-game. All characters started at a base &lsquo;Acquaintance&rsquo; Relationship, but were able to progress through a Map of possible relationships with any given NPC. Each Relationship affected the gameplay differently, and had different conditions to achieve.</p>
-<p>A small snippet of the Relationship Map in which the player&rsquo;s character could navigate:</p>
-<div style="display: flex; gap: 1rem;">
-  <img src="/relationships/RelationshipGraph2.png" alt="Relationship Map"/>
-</div>
+<p>Character relationships are at the core of Burbank - they drive the player to make gameplay decisions, explore parasocially, and are a vessel to experience some of Burbank&rsquo;s most emotional moments. I was responsible for creating the base Relationship system that manages all 2-character relationships and the gameplay impact of the player character&rsquo;s choices in-game. All characters started at a base &lsquo;Acquaintance&rsquo; Relationship, but were able to progress through a Map of possible relationships with any given NPC. Each Relationship affected the gameplay differently, and had different conditions to achieve.</p>
 
 <h2 class="relative group">Relationship Design
     <div id="relationship-design" class="anchor"></div>
@@ -777,9 +775,16 @@
     </span>
     
 </h2>
+<p>As we were designing how Relationships would manifest in the game, we closely examined how people communicate in real life to pinpoint the most exciting moments to play out through our game. This led us to our current design, which involves the player character navigating through a &lsquo;Map&rsquo; of different Relationship stages. All characters start at a default Acquaintance relationship, and depending on how the player interacts with other characters and the world around them, their relationships with individual characters can progress to different pre-prescribed Relationship Stages.</p>
+<p>A small snippet of the Relationship Map in which the player&rsquo;s character could navigate:</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/relationships/RelationshipGraph2.png" alt="Relationship Map"/>
+</div>
+<p>For the player to change their character&rsquo;s Relationship with any given character in the Level, they must meet specific criteria tied to the next Stage. Each Stage requires the Player to complete certain actions or gameplay decisions in order to move forward in their relationship. For example, if the Player successfully pulls off a riskier romantic advancement on another character, their Relationship could progress straight to Dating, rather than Flirting. This created more dynamic gameplay not just between playthroughs, but also created complex inter-character relationships in game that drew the Player themselves in.</p>
 <div style="display: flex; gap: 1rem;">
   <img src="/relationships/RelationshipGraph1.png" alt="Graph 1"/>
 </div>
+<p>Relationship Stages were also associated with their own Gameplay Modifiers, Effects, and more. If the Player tried flirting with a character while actively in a Romantic relationship, other NPCs would react accordingly (for better or worse) and the Player receives gameplay buffs and debuffs depending on their runtime choices.</p>
 
 <h2 class="relative group">System Architecture
     <div id="system-architecture" class="anchor"></div>
@@ -790,7 +795,7 @@
     </span>
     
 </h2>
-<p>Relationships systematically have 2 major components to them: a Relationship Data Asset and a Relationship State Actor. The team created the Relationship Data Assets during production and built them into the Relationship Map. The Relationship State Actors then navigate their character through these Relationships as the player interacts with the world and other characters. Only one StateActor is created per character-pair, and is the runtime representation of the Relationship between these two characters. The Properties defined by the Relationship Data Asset assigned to the State Actor are what dictate the relevant effects on the game.</p>
+<p>Relationships systematically have 2 major components to them: a Relationship Data Asset and a Relationship State Actor. The team created the Data Assets during production, and they contributed to the systematic representation of the Relationship Map. Each Relationship pair has an owning State Actor, which is responsible for the involved characters and is the runtime representation of a Relationship. These State Actors keep track of which Relationship the two characters have at any given time and maintain a reference to the relevant Relationship Data Asset. The Properties defined by this Asset dictates this Relationship&rsquo;s effect on the game.</p>
 
 <h3 class="relative group">Relationship Data Asset
     <div id="relationship-data-asset" class="anchor"></div>
@@ -801,9 +806,18 @@
     </span>
     
 </h3>
+<p>We utilized custom Data Assets heavily throughout Burbank to store game states and the Relationship system is no different. The custom Relationship Asset I made is the systematic representation of a Relationship Stage, such as &lsquo;Best Friend&rsquo;, &lsquo;Married&rsquo;, &lsquo;Rival&rsquo;, etc.</p>
 <div style="display: flex; gap: 1rem;">
   <img src="/relationships/RelationshipInfo.png" alt="Relationship Data Asset"/>
 </div>
+<p>Some of this Asset&rsquo;s Properties include:</p>
+<ul>
+<li>Context to be read during runtime for the involved characters</li>
+<li>Relationships that can be progressed to from this Relationship</li>
+<li>The criteria and gameplay requirements to progress this Relationship</li>
+<li>Effects and gameplay modifiers that occur when the Player character has this Relationship active</li>
+</ul>
+<p>The Relationship State Actor holds a reference to one Relationship Data Asset at a time. It reads the Asset&rsquo;s Properties at runtime with gameplay context to determine how to progress throughout the Relationship Map.</p>
 
 <h3 class="relative group">Relationship State Actor
     <div id="relationship-state-actor" class="anchor"></div>
@@ -814,16 +828,44 @@
     </span>
     
 </h3>
+<p>Relationship State Actors are responsible for the relationship between 2 characters at runtime, and are created by the system automatically for all existing characters at a base &lsquo;Acquaintance&rsquo; relationship to start the game. They listen for game state events and delegates to trigger Relationship events as well as applying relevant modifiers and Game Effects to the campaign.</p>
+<p>[talk about code strategies for the state actor here?]</p>
+<ul>
+<li>had to deal with a lot of async processes</li>
+<li>many game systems being managed and tracked, modular programming, event bus</li>
+<li>many delegates</li>
+<li>inventory value</li>
+</ul>
 
-<h2 class="relative group">Gameplay Outcome and Learnings
-    <div id="gameplay-outcome-and-learnings" class="anchor"></div>
+<h2 class="relative group">In-Game Representation
+    <div id="in-game-representation" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#gameplay-outcome-and-learnings" aria-label="Anchor">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#in-game-representation" aria-label="Anchor">#</a>
     </span>
     
 </h2>
+<p>As Players developed their characters&rsquo; Relationships, they were able to unlock narrative and cinematic moments with the other participant. While the exact Relationship Map is not player-facing, a lot of progression criteria and other relationship state data is able to be viewed in the UI. Any information not immediately clear to the player could be deduced from interactions with characters that the Player character has relationships with passively via gameplay. Environment interactions and gameplay reactions to the player&rsquo;s choices implicitly guided them towards narrative-rich interactions.</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/relationships/RelationshipExample.png" alt="In-Game Photo"/>
+</div>
+<p>[talk more about design reflection of relationships]</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/relationships/RelationshipExample2.png" alt="In-Game Photo 2"/>
+</div>
+<p>[more relationship design]</p>
+
+<h2 class="relative group">Reflection
+    <div id="reflection" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#reflection" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>[code reflection here]</p>
 
           
           

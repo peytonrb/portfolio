@@ -100,3 +100,5 @@ TFuture<ACharacterActor*> CreateCharacterFromSpec(const FInstancedStruct& Charac
 ```
 
 This snippet is one instance of a broader pattern that I used throughout the system. Rather than letting async work leak into gameplay-facing systems, I chained async steps together and wrapped the result in a single return value, keeping other dependent and higher-level systems clean and latent. This made the base code easier to iterate on, safer under lifecycle or loading changes, and much easier to debug as the system grew.
+
+## Reflection
