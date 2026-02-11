@@ -202,7 +202,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "781"
+    "wordCount": "1015"
   }]
   </script>
 
@@ -814,7 +814,7 @@
 </span></span><span class="line"><span class="cl">  ...
 </span></span><span class="line"><span class="cl">  ViewModel-&gt;GraphEditor = this;
 </span></span><span class="line"><span class="cl">}</span></span></code></pre></div></div>
-<p>It was then possible to retrieve the View Model at any time to trigger or access data, like so:</p>
+<p>It was then possible to retrieve the View Model from any relevant editor context to trigger or access data, like so:</p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">SRelationshipNode::OnMouseButtonDown(const FGeometry&amp; Geometry, const FPointerEvent&amp; MouseEvent)
 </span></span><span class="line"><span class="cl">{
 </span></span><span class="line"><span class="cl">  UEdGraph_RelationshipEditor* Graph = GetGraph();
@@ -838,7 +838,11 @@
   <img src="/slate/TransitionTool.png" alt="Default Data Layer" style="width: 60%;" />
   <img src="/slate/TransitionTool2.png" alt="Watch Party Data Layer" style="width: 60%;" />
 </div>
-<p>[Separate slate widget overlaid over editor]. [talk about creating tool].</p>
+<p>This <strong>New Transition</strong> overlay was implemented as a standalone Tool that appeared as a popup when designers used a Button in the editor header linked to a custom UI command. This separate flow allowed designers to author each new progression stage as an explicit, state-driven process rather than ad hoc Property edits. This particular Tool consists of multiple steps that owns a narrowly scoped slice of data, so designers can set up these Transitions without leaving the workflow to hunt down related assets, contexts, or other dependencies elsewhere in the editor. Separating the process into sequential steps ensured that missing or conflicting data is identified and resolved at the point of entry, before it propogates into downstream systems and affecting other parts of the system - something that was incredibly important in such a fast-paced iteration environment.</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/slate/RelationshipEditor_warning.png" alt="Warning 1" />
+  <!-- <img src="/slate/TransitionTool2.png" alt="Watch Party Data Layer" style="width: 60%;" /> -->
+</div>
 
 <h2 class="relative group">Embedded Text Editor
     <div id="embedded-text-editor" class="anchor"></div>
@@ -853,7 +857,7 @@
 <div style="display: flex; gap: 1rem;">
   <img src="/slate/Embeddings_unsaved.png" alt="Embeddings Unsaved"/>
 </div>
-<p>[discuss delayed save behavior]</p>
+<p>To prevent Assets from being saved in an incomplete state, I intercepted and modified the default save behavior on objects implementing the Embeddings interface so the Asset remained unsaved until all data has finished processing. When designers trigger a save, the asset is marked as dirty as non-latent processes are started and registered with an editor-only subsystem that tracks pending embedded Assets. Once all data is returned and proper delegates have been broadcasted, the Asset is marked clean, cleaned from the pending queue, and saved by the system. This prevents partial data from being serialized and written to disk and reduced the number of crashes caused during this workflow.</p>
 <div style="display: flex; gap: 1rem;">
   <img src="/slate/Embeddings_saved.png" alt="Embeddings Saved"/>
 </div>

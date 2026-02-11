@@ -1,7 +1,10 @@
 ---
 title: "Shaders and VFX"
 showDate: false
-weight: 4
+weight: 2
 params:
-   displayDescription: "Shader Graph, HLSL, VFX Graph, integrating with gameplay/animation"
+   displayDescription: "Authored custom shaders, particle systems, and visual effects using Shader Graph and VFX Graph and integrated them directly with
+                        gameplay and animation systems."
 ---
+
+## Overview

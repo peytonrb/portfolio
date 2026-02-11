@@ -74,10 +74,10 @@ I wanted it to be as easy as possible for designers to interact with and edit Re
   <img src="/slate/TransitionTool2.png" alt="Watch Party Data Layer" style="width: 60%;" />
 </div>
 
-This **New Transition** overlay was implemented as a standalone Tool that appeared as a popup when designers used a Button in the editor header linked to a custom UI command. This separate flow allowed designers to author each new progression stage as an explicit, state-driven process rather than ad hoc Property edits. This particular Tool consists of multiple steps that owns a narrowly scoped slice of data, so designers can set up these Transitions without leaving the workflow to hunt down related assets, contexts, or other dependencies elsewhere in the editor. Separating the process into sequential steps ensured that missing or conflicting data is identified and resolved at the point of entry, before it propogates into downstream systems and affecting other parts of the system - something that was incredible important in such a fast-paced iteration environment.
+This **New Transition** overlay was implemented as a standalone Tool that appeared as a popup when designers used a Button in the editor header linked to a custom UI command. This separate flow allowed designers to author each new progression stage as an explicit, state-driven process rather than ad hoc Property edits. This particular Tool consists of multiple steps that owns a narrowly scoped slice of data, so designers can set up these Transitions without leaving the workflow to hunt down related assets, contexts, or other dependencies elsewhere in the editor. Separating the process into sequential steps ensured that missing or conflicting data is identified and resolved at the point of entry, before it propogates into downstream systems and affecting other parts of the system - something that was incredibly important in such a fast-paced iteration environment.
 
 <div style="display: flex; gap: 1rem;">
-  <img src="/slate/RelationshipEditor_warning.png" alt="Warning 1" style="width: 60%;" />
+  <img src="/slate/RelationshipEditor_warning.png" alt="Warning 1" />
   <!-- <img src="/slate/TransitionTool2.png" alt="Watch Party Data Layer" style="width: 60%;" /> -->
 </div>
 

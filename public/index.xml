@@ -10,13 +10,13 @@
     <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Creative Vision &amp; Concepts</title>
-      <link>http://localhost:1313/games/interweaver/concept/</link>
+      <title>Player Mechanics</title>
+      <link>http://localhost:1313/games/interweaver/player-mechanics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/games/interweaver/concept/</guid>
+      <guid>http://localhost:1313/games/interweaver/player-mechanics/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/interweaver/concept/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/interweaver/player-mechanics/featured.png" />
     </item>
     
     <item>
@@ -30,16 +30,6 @@
     </item>
     
     <item>
-      <title>Player Mechanics</title>
-      <link>http://localhost:1313/games/interweaver/player-mechanics/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/games/interweaver/player-mechanics/</guid>
-      <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/interweaver/player-mechanics/featured.jpg" />
-    </item>
-    
-    <item>
       <title>Procedural Interior Decoration</title>
       <link>http://localhost:1313/games/burbank/set-deco/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -47,6 +37,16 @@
       <guid>http://localhost:1313/games/burbank/set-deco/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/burbank/set-deco/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Shaders and VFX</title>
+      <link>http://localhost:1313/games/interweaver/shaders-vfx/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/games/interweaver/shaders-vfx/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/interweaver/shaders-vfx/featured.gif" />
     </item>
     
     <item>
@@ -66,17 +66,17 @@
       
       <guid>http://localhost:1313/games/interweaver/puzzles/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/interweaver/puzzles/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/interweaver/puzzles/featured.png" />
     </item>
     
     <item>
-      <title>Shaders and VFX</title>
-      <link>http://localhost:1313/games/interweaver/shaders-vfx/</link>
+      <title>Creative Vision &amp; Concepts</title>
+      <link>http://localhost:1313/games/interweaver/concept/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/games/interweaver/shaders-vfx/</guid>
+      <guid>http://localhost:1313/games/interweaver/concept/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/interweaver/shaders-vfx/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/interweaver/concept/featured.png" />
     </item>
     
     <item>
