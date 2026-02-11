@@ -54,7 +54,7 @@ UEdGraph_RelationshipEditor::ConstructGraph()
 }
 
 ```
-It was then possible to retrieve the View Model at any time to trigger or access data, like so:
+It was then possible to retrieve the View Model from any relevant editor context to trigger or access data, like so:
 ```
 SRelationshipNode::OnMouseButtonDown(const FGeometry& Geometry, const FPointerEvent& MouseEvent)
 {
@@ -74,7 +74,12 @@ I wanted it to be as easy as possible for designers to interact with and edit Re
   <img src="/slate/TransitionTool2.png" alt="Watch Party Data Layer" style="width: 60%;" />
 </div>
 
-[Separate slate widget overlaid over editor]. [talk about creating tool].
+This **New Transition** overlay was implemented as a standalone Tool that appeared as a popup when designers used a Button in the editor header linked to a custom UI command. This separate flow allowed designers to author each new progression stage as an explicit, state-driven process rather than ad hoc Property edits. This particular Tool consists of multiple steps that owns a narrowly scoped slice of data, so designers can set up these Transitions without leaving the workflow to hunt down related assets, contexts, or other dependencies elsewhere in the editor. Separating the process into sequential steps ensured that missing or conflicting data is identified and resolved at the point of entry, before it propogates into downstream systems and affecting other parts of the system - something that was incredible important in such a fast-paced iteration environment.
+
+<div style="display: flex; gap: 1rem;">
+  <img src="/slate/RelationshipEditor_warning.png" alt="Warning 1" style="width: 60%;" />
+  <!-- <img src="/slate/TransitionTool2.png" alt="Watch Party Data Layer" style="width: 60%;" /> -->
+</div>
 
 ## Embedded Text Editor
 Another complication I had to solve working on this project was managing the amount of asynchronous processes that occured both at runtime and, more importantly here, during editor-time. These non-latent functions occasionally allowed designers to close the editor while processes were still running, which led to crashes or unsaved changes. I created a custom Property for all Assets that used the problematic interface that informed designers when their data was still processing, overrode the default Unreal Asset save behavior, and included a button to manually trigger the asynchronous process. 
@@ -83,7 +88,7 @@ Another complication I had to solve working on this project was managing the amo
   <img src="/slate/Embeddings_unsaved.png" alt="Embeddings Unsaved"/>
 </div>
 
-[discuss delayed save behavior]
+To prevent Assets from being saved in an incomplete state, I intercepted and modified the default save behavior on objects implementing the Embeddings interface so the Asset remained unsaved until all data has finished processing. When designers trigger a save, the asset is marked as dirty as non-latent processes are started and registered with an editor-only subsystem that tracks pending embedded Assets. Once all data is returned and proper delegates have been broadcasted, the Asset is marked clean, cleaned from the pending queue, and saved by the system. This prevents partial data from being serialized and written to disk and reduced the number of crashes caused during this workflow. 
 
 <div style="display: flex; gap: 1rem;">
   <img src="/slate/Embeddings_saved.png" alt="Embeddings Saved"/>
