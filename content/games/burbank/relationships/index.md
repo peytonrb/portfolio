@@ -46,11 +46,12 @@ The Relationship State Actor holds a reference to one Relationship Data Asset at
 ### Relationship State Actor
 Relationship State Actors are responsible for the relationship between 2 characters at runtime, and are created by the system automatically for all existing characters at a base 'Acquaintance' relationship to start the game. They listen for game state events and delegates to trigger Relationship events as well as applying relevant modifiers and Game Effects to the campaign. 
 
-[talk about code strategies for the state actor here?]
-- had to deal with a lot of async processes
-- many game systems being managed and tracked, modular programming, event bus
-- many delegates
-- inventory value
+These State Actors were responsible for managing a variety of data at runtime efficiently and visually elegantly, such as:
+- handling asynchronous processes to ensure non-blocking gameplay
+- tracking and managing a variety of game systems using modular design principles, ensuring flexibility as we continued to update system designs
+    - subscribed to the Event Bus system used throughout the game to listen for game events to facilitate clean communication across systems and reducing direct dependencies between systems
+- integrating various game state delegates to handle gameplay interactions
+- maintaining an Inventory system to cleanly track and manage the Player's Relationship progression
 
 ## In-Game Representation
 As Players developed their characters' Relationships, they were able to unlock narrative and cinematic moments with the other participant. While the exact Relationship Map is not player-facing, a lot of progression criteria and other relationship state data is able to be viewed in the UI. Any information not immediately clear to the player could be deduced from interactions with characters that the Player character has relationships with passively via gameplay. Environment interactions and gameplay reactions to the player's choices implicitly guided them towards narrative-rich interactions.
@@ -59,13 +60,11 @@ As Players developed their characters' Relationships, they were able to unlock n
   <img src="/relationships/RelationshipExample.png" alt="In-Game Photo"/>
 </div>
 
-[talk more about design reflection of relationships]
+Much like how strengthening relationships in real life leads to more meaningful moments and impacts your day to day more, building stronger bonds with other characters unlock richer gameplay opportunities. Burbank's characters had a dynamic memory system, allowing them to recall significant moments from the player's campaign to help shape their relationships based on both the player's intentional and passive choices throughout the world.
 
 <div style="display: flex; gap: 1rem;">
   <img src="/relationships/RelationshipExample2.png" alt="In-Game Photo 2"/>
 </div>
-
-[more relationship design]
 
 ## Reflection
 [code reflection here]

@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:1313/games/interweaver/player-mechanics/</loc>
+    <loc>http://localhost:1313/games/interweaver/concept/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -13,17 +13,22 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://localhost:1313/games/interweaver/player-mechanics/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/games/burbank/set-deco/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/games/interweaver/puzzles/</loc>
+    <loc>http://localhost:1313/games/burbank/relationships/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/games/burbank/relationships/</loc>
+    <loc>http://localhost:1313/games/interweaver/puzzles/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
