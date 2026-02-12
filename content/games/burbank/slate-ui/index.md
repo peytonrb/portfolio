@@ -13,7 +13,7 @@ Due to our small team size and rapid iteration time, it was imperative we spent 
 One of the most utilized editors I created for Project Burbank is the Relationship Editor and related tools. The need for this editor arose when we were building out the Relationship Map, and it became hard to keep track of how the various Relationships were able to progress. We needed a way for our designers to visualize how each Stage of the Relationship Map was able to evolve and easily compare the effects and constraints of them all. 
 
 <div style="display: flex; gap: 1rem;">
-  <img src="/slate/RelationshipEditor.png" alt="Relationship Editor"/>
+  <img src="/burbank/slate/RelationshipEditor.png" alt="Relationship Editor"/>
 </div>
 
 This custom Asset Editor shows a graph visualizing the Relationship Stages that can be progressed to from the Relationship Asset being viewed currently. I based it off of the Reference Viewer built into UE, and utilized custom **EdGraph** and **EdGraphNode** classes to build the progression Map. The editor also includes custom tools to walk designers through setting up complex Properties and a Context Panel that appears to help focus the information shown at once.
@@ -70,14 +70,14 @@ Using a ViewModel to manage the connection between the editor's Slate UI and gam
 I wanted it to be as easy as possible for designers to interact with and edit Relationships via the graph, so I also included tools within the editor to walk designers through setting up more complex Properties, like adding new Stages to progress to. Because this system was so complex as well, it was easy to create duplicates, forget to assign data to Properties, or make various other mistakes. This tool was also responsible for throwing errors should any information be inputted wrong to further expedite updating the Map.
 
 <div style="display: flex; gap: 1rem;">
-  <img src="/slate/TransitionTool.png" alt="Default Data Layer" style="width: 60%;" />
-  <img src="/slate/TransitionTool2.png" alt="Watch Party Data Layer" style="width: 60%;" />
+  <img src="/burbank/slate/TransitionTool.png" alt="Default Data Layer" style="width: 60%;" />
+  <img src="/burbank/slate/TransitionTool2.png" alt="Watch Party Data Layer" style="width: 60%;" />
 </div>
 
 This **New Transition** overlay was implemented as a standalone Tool that appeared as a popup when designers used a Button in the editor header linked to a custom UI command. This separate flow allowed designers to author each new progression stage as an explicit, state-driven process rather than ad hoc Property edits. This particular Tool consists of multiple steps that owns a narrowly scoped slice of data, so designers can set up these Transitions without leaving the workflow to hunt down related assets, contexts, or other dependencies elsewhere in the editor. Separating the process into sequential steps ensured that missing or conflicting data is identified and resolved at the point of entry, before it propogates into downstream systems and affecting other parts of the system - something that was incredibly important in such a fast-paced iteration environment.
 
 <div style="display: flex; gap: 1rem;">
-  <img src="/slate/RelationshipEditor_warning.png" alt="Warning 1" />
+  <img src="/burbank/slate/RelationshipEditor_warning.png" alt="Warning 1" />
   <!-- <img src="/slate/TransitionTool2.png" alt="Watch Party Data Layer" style="width: 60%;" /> -->
 </div>
 
@@ -85,11 +85,11 @@ This **New Transition** overlay was implemented as a standalone Tool that appear
 Another complication I had to solve working on this project was managing the amount of asynchronous processes that occured both at runtime and, more importantly here, during editor-time. These non-latent functions occasionally allowed designers to close the editor while processes were still running, which led to crashes or unsaved changes. I created a custom Property for all Assets that used the problematic interface that informed designers when their data was still processing, overrode the default Unreal Asset save behavior, and included a button to manually trigger the asynchronous process. 
 
 <div style="display: flex; gap: 1rem;">
-  <img src="/slate/Embeddings_unsaved.png" alt="Embeddings Unsaved"/>
+  <img src="/burbank/slate/Embeddings_unsaved.png" alt="Embeddings Unsaved"/>
 </div>
 
 To prevent Assets from being saved in an incomplete state, I intercepted and modified the default save behavior on objects implementing the Embeddings interface so the Asset remained unsaved until all data has finished processing. When designers trigger a save, the asset is marked as dirty as non-latent processes are started and registered with an editor-only subsystem that tracks pending embedded Assets. Once all data is returned and proper delegates have been broadcasted, the Asset is marked clean, cleaned from the pending queue, and saved by the system. This prevents partial data from being serialized and written to disk and reduced the number of crashes caused during this workflow. 
 
 <div style="display: flex; gap: 1rem;">
-  <img src="/slate/Embeddings_saved.png" alt="Embeddings Saved"/>
+  <img src="/burbank/slate/Embeddings_saved.png" alt="Embeddings Saved"/>
 </div>

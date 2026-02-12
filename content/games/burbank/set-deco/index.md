@@ -18,13 +18,13 @@ Each Level is constructed at design-time with base 3D models as a greybox to out
 
 You can see 2 base Layout examples from our Apartment Level below: 
 <div style="display: flex; gap: 1rem;">
-  <img src="/set-deco/SocketLayer1.png" alt="Default Data Layer" style="width: 60%;" />
-  <img src="/set-deco/SocketLayer2.png" alt="Watch Party Data Layer" style="width: 60%;" />
+  <img src="/burbank/set-deco/SocketLayer1.png" alt="Default Data Layer" style="width: 60%;" />
+  <img src="/burbank/set-deco/SocketLayer2.png" alt="Watch Party Data Layer" style="width: 60%;" />
 </div>
 
 After the Decoration system finishes placing assets on the determined base layout, the final in-game Level now contextually fits the unique story being played out and also furthers player immersion:
 <div style="display: flex; gap: 1rem;">
-  <img src="/set-deco/DecoratedLevel.png" alt="Default Data Layer"/>
+  <img src="/burbank/set-deco/DecoratedLevel.png" alt="Default Data Layer"/>
 </div>
 
 ## Technical Spec
@@ -91,7 +91,7 @@ We utilized hierarchial, random containers built in-house similar to Unreal Choo
 There are two main processes that the Decoration system is responsible for: Decorating and Redecorating. The first time a Level is decorated is the most important, because Decorations persist as the Level gets reused in the same narrative, just updated. 
 
 <div style="display: flex; gap: 1rem;">
-  <img src="/set-deco/DecoDesign.png" alt="Default Data Layer"/>
+  <img src="/burbank/set-deco/DecoDesign.png" alt="Default Data Layer"/>
 </div>
 
 Assets are selected from the queried Libraries based on both runtime narrative context and the metadata provided by the populated Sockets. The Decoration system collects this context and passes the Socket and Asset descriptions through a proprietary embeddings subsystem, which produces similarity scores based on natural-language semantics. These scores are evaluated alongside structured metadata constraints to determine the best match for each Socket. The highest-scoring Assets are then utilized for the Sockets.

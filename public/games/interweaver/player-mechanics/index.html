@@ -202,7 +202,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "2"
+    "wordCount": "350"
   }]
   </script>
 
@@ -706,6 +706,11 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
+    <li><a href="#weave-ability">Weave Ability</a>
+      <ul>
+        <li><a href="#system-architecture">System Architecture</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -720,6 +725,11 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
+    <li><a href="#weave-ability">Weave Ability</a>
+      <ul>
+        <li><a href="#system-architecture">System Architecture</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -746,6 +756,39 @@
     </span>
     
 </h2>
+<p>Interweaver&rsquo;s gameplay was unique in that the player&rsquo;s main character swapped between two different characters with unique mechanics per level: the Weaver, our main character, and a Familar that was unique to each Level. The Weaver has two core player mechanics that were the root of all gameplay and drove the majority of interactions, a <strong>Weave</strong> ability and a <strong>Possession</strong> ability.</p>
+<p>As part of my role as an Engineer, I was responsible for developing the entire <strong>Weave</strong> ability and its components. This involved a game system that allowed the Player to manipulate objects in the game world by translating, rotating, and linking other objects together to solve physics-based puzzles and platforming challenges. I also was responsible for a variety of features relating to both the Weaver and the Familiars, which will also be discussed below.</p>
+
+<h2 class="relative group">Weave Ability
+    <div id="weave-ability" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#weave-ability" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>The Weaver&rsquo;s <strong>Weave</strong> ability is a physics-based interaction mechanic that allows players to manipulate objects in game space using the mouse. Weaving has two main functions: moving objects around the space and combining multiple to solve puzzles or progress through platforming sections. Players were also allowed to rotate objects as needed when Weaving.</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/interweaver/player-mechanics/weave-demo.gif" alt="Weave Ability Demonstration Temp"/>
+</div>
+
+<h3 class="relative group">System Architecture
+    <div id="system-architecture" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#system-architecture" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Weaving was managed through a <strong>Weaveable Manager</strong>, a <strong>custom GameObject</strong> for all Weaveable objects, and a <strong>Controller</strong> script on the Weaver, separating logic to keep the system modular, easy to iterate on, and debug.</p>
+<p>I want to call out a few aspects of this system that presented notable technical and design challenges, and discuss how they were resolved.</p>
+<p><strong>Mouse-To-World Space Mapping</strong></p>
+<p>The core challenge wasn&rsquo;t just mapping the mouse to world space - it was ensuring that every interaction made sense in both the player&rsquo;s and the Weaver&rsquo;s perspectives in an isometric environment, and was consistent across input devices. I accomplished this using a combination of raycasting and precise physics handling to achieve smooth and intuitive movement, and also ensure interactions with the environment were visually and functionally consistent.</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"></code></pre></div></div>
+<p><strong>Snapping Points on Weaveables</strong></p>
+<p>[dealt with snapping points on objects and setting them by default to make easy for designers, even on organically shaped objects]</p>
 
           
           
@@ -794,7 +837,7 @@
               class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
               href="/games/interweaver/shaders-vfx/">
               <span class="leading-6">
-                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;Shaders and VFX
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;Shaders & VFX
               </span>
             </a>
             

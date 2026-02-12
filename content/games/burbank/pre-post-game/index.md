@@ -17,11 +17,11 @@ The Pre-Game flow was responsible for guiding the player through character and c
 
 Some examples of Pre-Game Stages:
 <div style="display: flex; gap: 1rem;">
-  <img src="/game-entry/CharacterCreator.png" alt="Cast Creator Screenshot"/>
+  <img src="/burbank/game-entry/CharacterCreator.png" alt="Cast Creator Screenshot"/>
 </div>
 
 <div style="display: flex; gap: 1rem;">
-  <img src="/game-entry/CastCreator.png" alt="Cast Creator Screenshot"/>
+  <img src="/burbank/game-entry/CastCreator.png" alt="Cast Creator Screenshot"/>
 </div>
 
 ### Post-Game
@@ -29,7 +29,7 @@ There are many unique and interesting ways to display game stats at the end of a
 
 Some examples of Post-Game Stages:
 <div style="display: flex; gap: 1rem;">
-  <img src="/game-entry/StudioNotes.png" alt="Cast Creator Screenshot"/>
+  <img src="/burbank/game-entry/StudioNotes.png" alt="Cast Creator Screenshot"/>
 </div>
 
 ## System Architecture
@@ -42,12 +42,12 @@ Each player-facing screen was treated as its own individual State, and each Stat
 
 **Pre-Game**
 <div style="display: flex; gap: 1rem;">
-  <img src="/game-entry/StateTree_NewGame.png" alt="New Game State Tree"/>
+  <img src="/burbank/game-entry/StateTree_NewGame.png" alt="New Game State Tree"/>
 </div>
 
 **Post-Game**
 <div style="display: flex; gap: 1rem;">
-  <img src="/game-entry/StateTree_PostGame.png" alt="New Game State Tree"/>
+  <img src="/burbank/game-entry/StateTree_PostGame.png" alt="New Game State Tree"/>
 </div>
 
 In Stages where the player is not able to progress until internal asynchronous background logic is processed, I utilized 'In Progress' child stages to stop progression until the Manager Actor broadcasts a delegate to flag that all asynchronous processes have fully finished and it is safe to transition. This modular design also makes it easy to swap out or add in screens without editing any 'Back' or 'Next' functionality by hand.
@@ -57,7 +57,7 @@ To manage the UI widgets per stage and the game state itself, I utilized **MVVM*
 
 Below is an example of the View Model on the Character Creator Stage:
 <div style="display: flex; gap: 1rem;">
-  <img src="/game-entry/ViewModel.png" alt="New Game State Tree"/>
+  <img src="/burbank/game-entry/ViewModel.png" alt="New Game State Tree"/>
 </div>
 
 Since the View Model references the Manager Actor and vice versa, making changes or running logic for the UI from C++ becomes very simple. View Models are heavily used on all Stages during these flows, and handled a variety of tasks from updating UI, processing player-inputted data, and customizing each individual playthrough. The base Manager Actor and View Model classes set this functionality up by default for ease of creating new Stages in the future.

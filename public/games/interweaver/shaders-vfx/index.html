@@ -15,8 +15,8 @@
 
   
   
-    <title>Shaders and VFX &middot; Peyton Bischof</title>
-    <meta name="title" content="Shaders and VFX &middot; Peyton Bischof">
+    <title>Shaders & VFX &middot; Peyton Bischof</title>
+    <meta name="title" content="Shaders & VFX &middot; Peyton Bischof">
   
 
   
@@ -36,7 +36,7 @@
   
   <meta property="og:url" content="http://localhost:1313/games/interweaver/shaders-vfx/">
   <meta property="og:site_name" content="Peyton Bischof">
-  <meta property="og:title" content="Shaders and VFX">
+  <meta property="og:title" content="Shaders & VFX">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="games">
@@ -45,7 +45,7 @@
   
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="http://localhost:1313/games/interweaver/shaders-vfx/featured.gif">
-  <meta name="twitter:title" content="Shaders and VFX">
+  <meta name="twitter:title" content="Shaders & VFX">
 
   
   
@@ -184,8 +184,8 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Games",
-    "name": "Shaders and VFX",
-    "headline": "Shaders and VFX",
+    "name": "Shaders \u0026 VFX",
+    "headline": "Shaders \u0026 VFX",
     
     "inLanguage": "en",
     "url" : "http://localhost:1313/games/interweaver/shaders-vfx/",
@@ -202,7 +202,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "2"
+    "wordCount": "147"
   }]
   </script>
 
@@ -557,7 +557,7 @@
     <header id="single_header" class="mt-5 max-w-prose">
       
       <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        Shaders and VFX
+        Shaders & VFX
       </h1>
       <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
         
@@ -706,6 +706,18 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
+    <li><a href="#shadershlsl">Shaders/HLSL</a>
+      <ul>
+        <li><a href="#game-shader">Game Shader</a></li>
+        <li><a href="#water-shader">Water Shader</a>
+          <ul>
+            <li><a href="#ripple-shader">Ripple Shader</a></li>
+          </ul>
+        </li>
+        <li><a href="#vfx-shaders">VFX Shaders</a></li>
+      </ul>
+    </li>
+    <li><a href="#vfx-showcase">VFX Showcase</a></li>
   </ul>
 </nav>
   </div>
@@ -720,6 +732,18 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#overview">Overview</a></li>
+    <li><a href="#shadershlsl">Shaders/HLSL</a>
+      <ul>
+        <li><a href="#game-shader">Game Shader</a></li>
+        <li><a href="#water-shader">Water Shader</a>
+          <ul>
+            <li><a href="#ripple-shader">Ripple Shader</a></li>
+          </ul>
+        </li>
+        <li><a href="#vfx-shaders">VFX Shaders</a></li>
+      </ul>
+    </li>
+    <li><a href="#vfx-showcase">VFX Showcase</a></li>
   </ul>
 </nav>
   </div>
@@ -743,6 +767,68 @@
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
         <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#overview" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>A main goal that I had as Creative Director was to deliver an experience that was both fun to play but also visually appealing and whimsical, which immersed the player in the magical world Interweaver took place in. The Art Team and I settled on a stylized, almost hand-drawn aesthetic early into production, which was ideal for our smaller team of emerging artists.</p>
+<p>I personally played a key role in this initiative as the main Technical Artist, and was responsible for the majority of shaders, VFX, and post-production effects that shipped with the final product and helped define the game&rsquo;s visual identity. I was also responsible for ensuring they were seamlessly integrated into the game&rsquo;s systems and animations without causing any performance issues, including lag or frame drops.</p>
+
+<h2 class="relative group">Shaders/HLSL
+    <div id="shadershlsl" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#shadershlsl" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+
+<h3 class="relative group">Game Shader
+    <div id="game-shader" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#game-shader" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+
+<h3 class="relative group">Water Shader
+    <div id="water-shader" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#water-shader" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+
+<h4 class="relative group">Ripple Shader
+    <div id="ripple-shader" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#ripple-shader" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+
+<h3 class="relative group">VFX Shaders
+    <div id="vfx-shaders" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#vfx-shaders" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+
+<h2 class="relative group">VFX Showcase
+    <div id="vfx-showcase" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#vfx-showcase" aria-label="Anchor">#</a>
     </span>
     
 </h2>
@@ -794,7 +880,7 @@
               class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
               href="/games/interweaver/puzzles/">
               <span class="leading-6">
-                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;Puzzles
+                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;Puzzle Systems
               </span>
             </a>
             
