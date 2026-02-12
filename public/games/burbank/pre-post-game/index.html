@@ -202,7 +202,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "906"
+    "wordCount": "1076"
   }]
   </script>
 
@@ -917,6 +917,13 @@
     </span>
     
 </h2>
+<p>These systems are foundational to how players understand, build, and reviewed their campaigns, meaning it was essential they were as fun and reliable as the core game itself. Building them reinforced the importance of structure and pacing for these supporting experiences, and evolved my approach to designing these UI-driven systems:</p>
+<ul>
+<li><strong>State-driven architecture</strong> allowed each screen to exist as an independent stage, making it easy to add, remove, or reoder Stages as needed without rewriting UI navigation logic, introducing dependencies, and more.</li>
+<li>Pairing <strong>Manager Actors</strong> with <strong>ViewModels</strong> created a clear separation of gameplay logic and UI presentation, keeping it easy to debug and author as well as giving space to designers and UI artists.</li>
+<li>Having each screen as a <strong>self-contained system</strong> with shared base behavior made it easy to iterate upon each individual Stage without impacting downstream screens.</li>
+<li>Encapsulating asynchronous code with <strong>TFutures</strong> and <strong>TPromises</strong> prevents timing complexities from leaking into gameplay-facing code, which minimizes the risk of race conditions and improves code maintainability - an important quality during rapid iteration.</li>
+</ul>
 
           
           

@@ -103,10 +103,8 @@ Another concept that I utilized heavily in this system is the idea of **Pinned**
 - Player-placed Assets
 
 ## Reflection
-This was a fairly involved and player-facing system, and I learned a lot from the work I did. Some of my main learnings:
-- policy based programming 
-- ensured everything was not dependent so we could just place and remove things as needed 
-- rejecting assets from tables early on before causing problems wsa good 
-- sockets allowed for multipass generation -> sockets with blueprint swap policies could then have their material swap activate 
-- making tagging assets so that it was esy for designers to support design intent while not over-constraining and limiting variation (natrual language embeddings helped solve for)
-- PCG and its many uses
+This system was both technically involved and highly visible to players, which made correctness, flexibility, and iteration speed equally important. Building it shaped how I approach large-scale, player facing systems, and taught me some of these key learnings:
+- **Policy-based design** decoupled configurations and schemas from core decoration logic, allowing the system to remain modular and free of dependencies.
+- **Early Asset validation** at the library level prevented subtle runtime issues and shifted focus from many small, reactive fixes and towards a more proactive, intentional approach to data authoring. 
+- Implementing Sockets using **component-based architecture** allowed us to build Levels with layered policies, creating more complex and varied results while still respecting gameplay requirements and narrative accuracy.
+- **Tag-driven Pipelines** streamlined Asset management and filtering, allowing designers to mark up assets as needed while integrating cleanly with the code backend without limiting variation.

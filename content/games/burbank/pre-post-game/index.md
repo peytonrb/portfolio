@@ -102,3 +102,8 @@ TFuture<ACharacterActor*> CreateCharacterFromSpec(const FInstancedStruct& Charac
 This snippet is one instance of a broader pattern that I used throughout the system. Rather than letting async work leak into gameplay-facing systems, I chained async steps together and wrapped the result in a single return value, keeping other dependent and higher-level systems clean and latent. This made the base code easier to iterate on, safer under lifecycle or loading changes, and much easier to debug as the system grew.
 
 ## Reflection
+These systems are foundational to how players understand, build, and reviewed their campaigns, meaning it was essential they were as fun and reliable as the core game itself. Building them reinforced the importance of structure and pacing for these supporting experiences, and evolved my approach to designing these UI-driven systems:
+- **State-driven architecture** allowed each screen to exist as an independent stage, making it easy to add, remove, or reoder Stages as needed without rewriting UI navigation logic, introducing dependencies, and more.
+- Pairing **Manager Actors** with **ViewModels** created a clear separation of gameplay logic and UI presentation, keeping it easy to debug and author as well as giving space to designers and UI artists.
+- Having each screen as a **self-contained system** with shared base behavior made it easy to iterate upon each individual Stage without impacting downstream screens.
+- Encapsulating asynchronous code with **TFutures** and **TPromises** prevents timing complexities from leaking into gameplay-facing code, which minimizes the risk of race conditions and improves code maintainability - an important quality during rapid iteration. 

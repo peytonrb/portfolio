@@ -67,4 +67,4 @@ Much like how strengthening relationships in real life leads to more meaningful 
 </div>
 
 ## Reflection
-[code reflection here]
+This system scaled across narrative, game state, and player choices, making it central and impactful to the game's overall experience. Designing it made me analyze turning organic real-world experiences into structured, state-driven systems, and _______:
