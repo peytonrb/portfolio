@@ -202,7 +202,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "325"
+    "wordCount": "500"
   }]
   </script>
 
@@ -708,12 +708,12 @@
     <li><a href="#overview">Overview</a></li>
     <li><a href="#shadershlsl">Shaders/HLSL</a>
       <ul>
-        <li><a href="#environment-and-character-shader">Environment and Character Shader</a></li>
         <li><a href="#water-shader">Water Shader</a>
           <ul>
             <li><a href="#ripple-shader">Ripple Shader</a></li>
           </ul>
         </li>
+        <li><a href="#environment-and-character-cel-shader">Environment and Character Cel Shader</a></li>
       </ul>
     </li>
     <li><a href="#vfx-showcase">VFX Showcase</a></li>
@@ -733,12 +733,12 @@
     <li><a href="#overview">Overview</a></li>
     <li><a href="#shadershlsl">Shaders/HLSL</a>
       <ul>
-        <li><a href="#environment-and-character-shader">Environment and Character Shader</a></li>
         <li><a href="#water-shader">Water Shader</a>
           <ul>
             <li><a href="#ripple-shader">Ripple Shader</a></li>
           </ul>
         </li>
+        <li><a href="#environment-and-character-cel-shader">Environment and Character Cel Shader</a></li>
       </ul>
     </li>
     <li><a href="#vfx-showcase">VFX Showcase</a></li>
@@ -782,17 +782,6 @@
 </h2>
 <p>I was responsible for authoring the vast majority of shaders used throughout Interweaver, which were applied to objects, the game environment, and supplemented visual effects. These shaders were crucial in defining the game&rsquo;s distinct visual aesthetic. I created most of my shadersk using <strong>ShaderGraph</strong> in Unity, with a few coupled with <strong>HLSL</strong> for more advanced effects and to optimize performance when necessary.</p>
 
-<h3 class="relative group">Environment and Character Shader
-    <div id="environment-and-character-shader" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#environment-and-character-shader" aria-label="Anchor">#</a>
-    </span>
-    
-</h3>
-<p>[Had to create an overall shader to make the game fit the desired hand-painted stylized aesthetic]. It was really important that the shader lowered contrast, applied a painted look, and [gave it a __ look].</p>
-
 <h3 class="relative group">Water Shader
     <div id="water-shader" class="anchor"></div>
     
@@ -802,6 +791,9 @@
     </span>
     
 </h3>
+<p>One of the most challenging shaders I created for this project was our Water Shader. This involved a combination of <strong>ShaderGraph</strong> and <strong>HLSL</strong> and was not only challenging to conceptualize, but to translate into a functional shader that met both aesthetic and performance requirements.</p>
+<p>[water shader photo here]</p>
+<p>[water shader snippet here]</p>
 
 <h4 class="relative group">Ripple Shader
     <div id="ripple-shader" class="anchor"></div>
@@ -812,6 +804,27 @@
     </span>
     
 </h4>
+<p>To compliment the Water Shader and to ensure the player&rsquo;s movement felt natural as they moved through the water, I created an accompanying Ripple shader that trailed the player in water. This was different because it [was not a light based shader and instead dealt with ___]. It also had to deal with the [water shader which was transparent and had oscillation in waves, which made layering anything on top difficult].</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/interweaver/vfx/temp/ripple.gif" alt="Temp Ripple"/>
+</div>
+<p>[ripple shader snippet here]</p>
+<p>This shader is essentially a [custom Render Target]</p>
+
+<h3 class="relative group">Environment and Character Cel Shader
+    <div id="environment-and-character-cel-shader" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#environment-and-character-cel-shader" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>To achieve the intended hand-painted, stylized aesthetic, I created a csutom cel shader that defined the visual style of the game. It was really important that the shader _______.</p>
+<p>[cel shader before and after]</p>
+<p>[in game image]</p>
+<p>[snippet here]</p>
+<p>[While cel shaders are a fairly basic concept, we uniquely dealt with the challenge of _____].</p>
 
 <h2 class="relative group">VFX Showcase
     <div id="vfx-showcase" class="anchor"></div>
@@ -822,8 +835,31 @@
     </span>
     
 </h2>
-<p>Along with the Shaders, I created 30+ VFX and particle systems for Interweaver to supporting the game&rsquo;s visual direction and providing players with meaningful feedback as they used mechanics and progressed through the game. These were mainly done in Unity&rsquo;s <strong>VFX Graph</strong> and involved custom 3D models, textures, and [many calculations].</p>
+<p>Along with the Shaders, I created 30+ VFX and particle systems for Interweaver to supporting the game&rsquo;s visual direction and providing players with meaningful feedback as they used mechanics and progressed through the game. These were mainly done in Unity&rsquo;s <strong>VFX Graph</strong> and involved custom 3D models, textures, and calculations for particle behavior.</p>
 <p>Here I will showcase most of the effects I made for Interweaver below. I tried to include the software used to create the effects as well as any additional interesting information:</p>
+<p>(all of these are temp until i can grab better images tehe :)</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/interweaver/vfx/temp/orb.gif" alt="Temp Orb"/>
+</div>
+<div style="display: flex; gap: 1rem;">
+  <img src="/interweaver/vfx/temp/teleport.gif" alt="Teleport Temp" style="width: 60%;" />
+  <img src="/interweaver/vfx/temp/teleport-ingame.gif" alt="Teleport In-Game Temp" style="width: 60%;" />
+</div>
+<div style="display: flex; gap: 1rem;">
+  <img src="/interweaver/vfx/temp/butterflies.gif" alt="Temp Butterflies"/>
+</div>
+<div style="display: flex; gap: 1rem;">
+  <img src="/interweaver/vfx/temp/dash.gif" alt="Temp Dash"/>
+</div>
+<div style="display: flex; gap: 1rem;">
+  <img src="/interweaver/vfx/temp/stag-smash.gif" alt="Stag Smash Temp" style="width: 60%;" />
+  <img src="/interweaver/vfx/temp/stag-smash-ingame.gif" alt="Stag Smash In-Game Temp" style="width: 60%;" />
+</div>
+<div style="display: flex; gap: 1rem;">
+  <img src="/interweaver/vfx/temp/lightbeam.gif" alt="Temp Light Beam"/>
+</div>
+<p>[stag teleport effect]</p>
+<p>[clouds]</p>
 
           
           

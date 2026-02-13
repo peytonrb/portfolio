@@ -202,7 +202,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "911"
+    "wordCount": "1037"
   }]
   </script>
 
@@ -868,7 +868,13 @@
     </span>
     
 </h2>
-<p>This system scaled across narrative, game state, and player choices, making it central and impactful to the game&rsquo;s overall experience. Designing it made me analyze turning organic real-world experiences into structured, state-driven systems, and _______:</p>
+<p>This system scaled across narrative, game state, and player choices, making it central and impactful to the game&rsquo;s overall experience. Designing it made me analyze turning organic real-world experiences into structured, state-driven systems, and taught me several key lessons about building systemic, player-facing gameplay architecture:</p>
+<ul>
+<li><strong>State-driven design</strong> formalized each Relationship stage as a Data Asset and separated authored intent from runtime execution. This allowed designers to iterate on the Relationship Map without rewriting code or heavily editing dependent Assets.</li>
+<li>By subscribing to the global <strong>Event Bus, scene events</strong>, and <strong>campaign Quests</strong>, the system avoided directly querying other systems and ensured reliability as new gameplay and narrative features were added.</li>
+<li>Representing <strong>progress as inventory</strong> allowed in-game events and choices to naturally contribute toward relationship advancement rather than requiring custom logic for every possible interaction.</li>
+<li><strong>Transition flexibility</strong> allowed relationship changes to be triggered through different types of gameplay while still running through the same core system, preserving both cinematic pacing and technical reliability.</li>
+</ul>
 
           
           
