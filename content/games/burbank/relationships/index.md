@@ -67,4 +67,8 @@ Much like how strengthening relationships in real life leads to more meaningful 
 </div>
 
 ## Reflection
-This system scaled across narrative, game state, and player choices, making it central and impactful to the game's overall experience. Designing it made me analyze turning organic real-world experiences into structured, state-driven systems, and _______:
+This system scaled across narrative, game state, and player choices, making it central and impactful to the game's overall experience. Designing it made me analyze turning organic real-world experiences into structured, state-driven systems, and taught me several key lessons about building systemic, player-facing gameplay architecture:
+- **State-driven design** formalized each Relationship stage as a Data Asset and separated authored intent from runtime execution. This allowed designers to iterate on the Relationship Map without rewriting code or heavily editing dependent Assets.  
+- By subscribing to the global **Event Bus, scene events**, and **campaign Quests**, the system avoided directly querying other systems and ensured reliability as new gameplay and narrative features were added. 
+- Representing **progress as inventory** allowed in-game events and choices to naturally contribute toward relationship advancement rather than requiring custom logic for every possible interaction. 
+- **Transition flexibility** allowed relationship changes to be triggered through different types of gameplay while still running through the same core system, preserving both cinematic pacing and technical reliability.
