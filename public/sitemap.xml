@@ -3,76 +3,76 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:1313/portfolio/games/interweaver/player-mechanics/</loc>
+    <loc>http://localhost:1313/games/interweaver/player-mechanics/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/portfolio/games/burbank/pre-post-game/</loc>
+    <loc>http://localhost:1313/games/burbank/pre-post-game/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/portfolio/games/burbank/set-deco/</loc>
+    <loc>http://localhost:1313/games/burbank/set-deco/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/portfolio/games/interweaver/shaders-vfx/</loc>
+    <loc>http://localhost:1313/games/interweaver/shaders-vfx/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/portfolio/games/burbank/relationships/</loc>
+    <loc>http://localhost:1313/games/burbank/relationships/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/portfolio/games/interweaver/puzzles/</loc>
+    <loc>http://localhost:1313/games/interweaver/puzzles/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/portfolio/games/interweaver/concept/</loc>
+    <loc>http://localhost:1313/games/interweaver/concept/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/portfolio/games/burbank/slate-ui/</loc>
+    <loc>http://localhost:1313/games/burbank/slate-ui/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/portfolio/games/</loc>
+    <loc>http://localhost:1313/games/</loc>
     <lastmod>2025-05-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/portfolio/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2025-05-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/portfolio/games/burbank/</loc>
+    <loc>http://localhost:1313/games/burbank/</loc>
     <lastmod>2025-05-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/portfolio/games/interweaver/</loc>
+    <loc>http://localhost:1313/games/interweaver/</loc>
     <lastmod>2024-05-20T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/portfolio/contact/</loc>
+    <loc>http://localhost:1313/contact/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:1313/portfolio/resume/</loc>
+    <loc>http://localhost:1313/resume/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
