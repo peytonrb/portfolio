@@ -67,8 +67,10 @@ Using a ViewModel to manage the connection between the editor's Slate UI and gam
 ### Relationship Editor Tools
 I wanted it to be as easy as possible for designers to interact with and edit Relationships via the graph, so I also included tools within the editor to walk designers through setting up more complex Properties, like adding new Stages to progress to. Because this system was so complex as well, it was easy to create duplicates, forget to assign data to Properties, or make various other mistakes. This tool was also responsible for throwing errors should any information be inputted wrong to further expedite updating the Map.
 
-![Default Data Layer](/images/TransitionTool.png)
-![Watch Party Data Layer](/images/TransitionTool2.png)
+{{< gallery >}}
+  <img src="/images/TransitionTool.png" alt="Transition Tool 1" class="grid-w50" />
+  <img src="/images/TransitionTool2.png" alt="Transition Tool 2" class="grid-w50" />
+{{< /gallery >}}
 
 This **New Transition** overlay was implemented as a standalone Tool that appeared as a popup when designers used a Button in the editor header linked to a custom UI command. This separate flow allowed designers to author each new progression stage as an explicit, state-driven process rather than ad hoc Property edits. This particular Tool consists of multiple steps that owns a narrowly scoped slice of data, so designers can set up these Transitions without leaving the workflow to hunt down related assets, contexts, or other dependencies elsewhere in the editor. Separating the process into sequential steps ensured that missing or conflicting data is identified and resolved at the point of entry, before it propogates into downstream systems and affecting other parts of the system - something that was incredibly important in such a fast-paced iteration environment.
 

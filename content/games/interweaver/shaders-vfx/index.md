@@ -127,14 +127,18 @@ Here I will showcase most of the effects I made for Interweaver below. I tried t
 
 ![Temp Orb](/images/temp/orb.gif)
 
-![Temp Teleport](/images/temp/teleport.gif)
-![Teleport In-Game Temp](/images/temp/teleport-ingame.gif)
+{{< gallery >}}
+  <img src="/images/temp/teleport.gif" alt="Temp Teleport" class="grid-w50" />
+  <img src="/images/temp/teleport-ingame.gif" alt="Teleport In-Game Temp" class="grid-w50" />
+{{< /gallery >}}
 
 ![Temp Butterflies](/images/temp/butterflies.gif)
 ![Temp Dash](/images/temp/dash.gif)
 
-![Stag Smash Temp](/images/temp/stag-smash.gif)
-![Stag Smash In-Game Temp](/images/temp/stag-smash-ingame.gif)
+{{< gallery >}}
+  <img src="/images/temp/stag-smash.gif" alt="Stag Smash Temp" class="grid-w50" />
+  <img src="/images/temp/stag-smash-ingame.gif" alt="Stag Smash In-Game Temp" class="grid-w50" />
+{{< /gallery >}}
 
 ![Temp Light Beam](/images/temp/lightbeam.gif)
 

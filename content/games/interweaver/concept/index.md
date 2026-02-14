@@ -52,8 +52,10 @@ Early Concepts
 ![Familiars Concept](/images/familiars-concept.png)
 
 Final Concept Art
-![Mole Concept](/images/mole.png)
-![Stag](/images/stag.png)
+{{< gallery >}}
+  <img src="/images/mole.png" alt="Mole Concept" class="grid-w50"/>
+  <img src="/images/stag.png" alt="Stag Concept" class="grid-w50"/>
+{{< /gallery >}}
 (I couldn't find the owl ;-;)
 
 Rendered Snapshots
@@ -66,14 +68,18 @@ Rendered Snapshots
 **The Bosses**
 
 Early Concepts
-![Early Boss Concept 1](/images/the_devil.png)
-![Early Boss Concept 2](/images/the_emperor.png)
-![Early Boss Concept 3](/images/the_empress.png)
+{{< gallery >}}
+  <img src="/images/the_devil.png" alt="Early Boss Concept 1" class="grid-w33"/>
+  <img src="/images/the_emperor.png" alt="Early Boss Concept 2" class="grid-w33"/>
+  <img src="/images/the_empress.png" alt="Early Boss Concept 3" class="grid-w33"/>
+{{< /gallery >}}
 
 Final Concept Art
-![Boss Concept 1](/images/hawk.png)
-![Boss Concept 2](/images/spider.png)
-![Boss Concept 3](/images/dragon.png)
+{{< gallery >}}
+  <img src="/images/hawk.png" alt="Boss Concept 1" class="grid-w50"/>
+  <img src="/images/spider.png" alt="Boss Concept 2" class="grid-w30"/>
+  <img src="/images/dragon.png" alt="Boss Concept 3" class="grid-w60"/>
+{{< /gallery >}}
 
 Rendered Snapshots
 

@@ -145,6 +145,28 @@
 
 
 
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/components/gallery.2f8155f09ac98e7976256679e6de2b19ac12f396437b2043dcfd60125f963c03fd794b2177d2347d48590c023603c4f9320824855f39cb79c5ac705ff4757be1.css"
+    integrity="sha512-L4FV8JrJjnl2JWZ55t4rGawS85ZDeyBD3P1gEl&#43;WPAP9eUshd9I0fUhZDAI2A8T5MggkhV85y3nFrHBf9HV74Q==">
+  
+  
+  <script
+    defer
+    type="text/javascript"
+    src="/lib/packery/packery.pkgd.min.9585cace1625034afd5d5fa8fba7086ef5c66d6e898c2257b48f1b7b998bbdd07e8f5722939dbfba21819fc03ecda0fe6bef23fc562719676aa0206ffacab8bc.js"
+    integrity="sha512-lYXKzhYlA0r9XV&#43;o&#43;6cIbvXGbW6JjCJXtI8be5mLvdB&#43;j1cik52/uiGBn8A&#43;zaD&#43;a&#43;8j/FYnGWdqoCBv&#43;sq4vA=="></script>
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/shortcodes/gallery.min.066f04f8dacc3930df93010e4f91004c55c8971379324510b9703d5f02dcb9c0379e0d9be24c4da79e2a004cdf006f5d2990ef8899c528459515d1833b5c9459.js"
+    integrity="sha512-Bm8E&#43;NrMOTDfkwEOT5EATFXIlxN5MkUQuXA9XwLcucA3ng2b4kxNp54qAEzfAG9dKZDviJnFKEWVFdGDO1yUWQ=="></script>
+
 
 
 
@@ -843,32 +865,16 @@
     
 </h3>
 <p>I wanted it to be as easy as possible for designers to interact with and edit Relationships via the graph, so I also included tools within the editor to walk designers through setting up more complex Properties, like adding new Stages to progress to. Because this system was so complex as well, it was easy to create duplicates, forget to assign data to Properties, or make various other mistakes. This tool was also responsible for throwing errors should any information be inputted wrong to further expedite updating the Map.</p>
-<p><figure><img
-    class="my-0 rounded-md"
-    loading="lazy"
-    decoding="async"
-    fetchpriority="auto"
-    alt="Default Data Layer"
-    width="758"
-    height="672"
-    src="/games/burbank/slate-ui/images/TransitionTool.png"
-    srcset="/games/burbank/slate-ui/images/TransitionTool.png 800w, /games/burbank/slate-ui/images/TransitionTool.png 1280w"
-    sizes="(min-width: 768px) 50vw, 65vw"
-    data-zoom-src="/games/burbank/slate-ui/images/TransitionTool.png"></figure>
 
-<figure><img
-    class="my-0 rounded-md"
-    loading="lazy"
-    decoding="async"
-    fetchpriority="auto"
-    alt="Watch Party Data Layer"
-    width="741"
-    height="668"
-    src="/games/burbank/slate-ui/images/TransitionTool2.png"
-    srcset="/games/burbank/slate-ui/images/TransitionTool2.png 800w, /games/burbank/slate-ui/images/TransitionTool2.png 1280w"
-    sizes="(min-width: 768px) 50vw, 65vw"
-    data-zoom-src="/games/burbank/slate-ui/images/TransitionTool2.png"></figure>
-</p>
+
+  
+  <div class="width-patch"></div>
+<div id="gallery-8faf97e1f845a3f1d57c1597fd4cc805" class="gallery">
+  
+  <img src="/games/burbank/slate-ui/images/TransitionTool.png" alt="Transition Tool 1" class="grid-w50" />
+  <img src="/games/burbank/slate-ui/images/TransitionTool2.png" alt="Transition Tool 2" class="grid-w50" />
+</div>
+
 <p>This <strong>New Transition</strong> overlay was implemented as a standalone Tool that appeared as a popup when designers used a Button in the editor header linked to a custom UI command. This separate flow allowed designers to author each new progression stage as an explicit, state-driven process rather than ad hoc Property edits. This particular Tool consists of multiple steps that owns a narrowly scoped slice of data, so designers can set up these Transitions without leaving the workflow to hunt down related assets, contexts, or other dependencies elsewhere in the editor. Separating the process into sequential steps ensured that missing or conflicting data is identified and resolved at the point of entry, before it propogates into downstream systems and affecting other parts of the system - something that was incredibly important in such a fast-paced iteration environment.</p>
 <figure><img
     class="my-0 rounded-md"

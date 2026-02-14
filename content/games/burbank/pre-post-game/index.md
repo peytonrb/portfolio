@@ -46,9 +46,6 @@ To manage the UI widgets per stage and the game state itself, I utilized **MVVM*
 
 Below is an example of the View Model on the Character Creator Stage:
 ![MVVM](/images/ViewModel.png)
-<div style="display: flex; gap: 1rem;">
-  <img src="/burbank/game-entry/ViewModel.png" alt="New Game State Tree"/>
-</div>
 
 Since the View Model references the Manager Actor and vice versa, making changes or running logic for the UI from C++ becomes very simple. View Models are heavily used on all Stages during these flows, and handled a variety of tasks from updating UI, processing player-inputted data, and customizing each individual playthrough. The base Manager Actor and View Model classes set this functionality up by default for ease of creating new Stages in the future.
 
