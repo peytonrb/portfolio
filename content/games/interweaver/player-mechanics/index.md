@@ -19,6 +19,7 @@ The Weaver's **Weave** ability is a physics-based interaction mechanic that allo
   <img src="/images/weave-demo.gif" alt="Weave Ability Demonstration Temp"/>
 </div>
 
+![Weave Ability Demonstration Temp](/images/weave-demo.gif)
 
 ### System Architecture
 Weaving was managed through a **Weaveable Manager**, a **custom GameObject** for all Weaveable objects, and a **Controller** script on the Weaver, separating logic to keep the system modular, easy to iterate on, and debug.

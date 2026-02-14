@@ -2,51 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Interweaver on Peyton Bischof</title>
-    <link>http://localhost:1313/games/interweaver/</link>
+    <link>http://localhost:58826/portfolio/games/interweaver/</link>
     <description>Recent content in Interweaver on Peyton Bischof</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; 2026 Peyton Bischof</copyright>
-    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/games/interweaver/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:58826/portfolio/games/interweaver/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Player Mechanics</title>
-      <link>http://localhost:1313/games/interweaver/player-mechanics/</link>
+      <link>http://localhost:58826/portfolio/games/interweaver/player-mechanics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/games/interweaver/player-mechanics/</guid>
+      <guid>http://localhost:58826/portfolio/games/interweaver/player-mechanics/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/interweaver/player-mechanics/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:58826/portfolio/games/interweaver/player-mechanics/featured.png" />
     </item>
     
     <item>
       <title>Shaders &amp; VFX</title>
-      <link>http://localhost:1313/games/interweaver/shaders-vfx/</link>
+      <link>http://localhost:58826/portfolio/games/interweaver/shaders-vfx/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/games/interweaver/shaders-vfx/</guid>
+      <guid>http://localhost:58826/portfolio/games/interweaver/shaders-vfx/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/interweaver/shaders-vfx/featured.gif" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:58826/portfolio/games/interweaver/shaders-vfx/featured.gif" />
     </item>
     
     <item>
       <title>Puzzle Systems</title>
-      <link>http://localhost:1313/games/interweaver/puzzles/</link>
+      <link>http://localhost:58826/portfolio/games/interweaver/puzzles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/games/interweaver/puzzles/</guid>
+      <guid>http://localhost:58826/portfolio/games/interweaver/puzzles/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/interweaver/puzzles/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:58826/portfolio/games/interweaver/puzzles/featured.png" />
     </item>
     
     <item>
       <title>Creative Vision &amp; Concepts</title>
-      <link>http://localhost:1313/games/interweaver/concept/</link>
+      <link>http://localhost:58826/portfolio/games/interweaver/concept/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/games/interweaver/concept/</guid>
+      <guid>http://localhost:58826/portfolio/games/interweaver/concept/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/interweaver/concept/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:58826/portfolio/games/interweaver/concept/featured.png" />
     </item>
     
   </channel>
