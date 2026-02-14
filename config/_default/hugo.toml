@@ -3,7 +3,7 @@
 # https://blowfish.page/docs/getting-started/
 
 theme = "blowfish"
-# baseURL = "https://your_domain.com/" # ONCE YOU GET A DOMAIN, PUT IT HERE.
+baseURL = "https://peytonrb.github.io/portfolio/"
 defaultContentLanguage = "en"
 
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
@@ -37,10 +37,6 @@ enableEmoji = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
-
-[caches]
-  [caches.images]
-    dir = ':cacheDir/images'
 
 [related]
   threshold = 0

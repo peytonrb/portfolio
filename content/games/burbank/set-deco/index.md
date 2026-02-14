@@ -17,15 +17,11 @@ This system was built in **C++** with **Blueprint**, and utilized **World Partit
 Each Level is constructed at design-time with base 3D models as a greybox to outline the general shape and orientation of objects in space. Each Level in UE is constructed with a variety of Data Layers containing different Socket Actors to hold contextual data and act as a base in order to preserve character pathfinding and Actor Slot requirements. The Decoration system then reads the Socket Actors and the current campaign information and chooses assets to sort and where to place them accordingly.
 
 You can see 2 base Layout examples from our Apartment Level below: 
-<div style="display: flex; gap: 1rem;">
-  <img src="/burbank/set-deco/SocketLayer1.png" alt="Default Data Layer" style="width: 60%;" />
-  <img src="/burbank/set-deco/SocketLayer2.png" alt="Watch Party Data Layer" style="width: 60%;" />
-</div>
+![Default Data Layer](/images/SocketLayer1.png)
+![Watch Party Data Layer](/images/SocketLayer2.png)
 
 After the Decoration system finishes placing assets on the determined base layout, the final in-game Level now contextually fits the unique story being played out and also furthers player immersion:
-<div style="display: flex; gap: 1rem;">
-  <img src="/burbank/set-deco/DecoratedLevel.png" alt="Default Data Layer"/>
-</div>
+![Default Data Layer](/images/DecoratedLevel.png)
 
 ## Technical Spec
 As players progressed through their narrative campaigns, it was important that the Levels their characters spawned into visually complimented and matched the aesthetic of the story being played out. This procedural interior Level decoration system intakes data about the active Story, available Assets to populate the space, and more to produce an accurately dressed Level.
@@ -90,9 +86,7 @@ We utilized hierarchial, random containers built in-house similar to Unreal Choo
 ### System Architecture
 There are two main processes that the Decoration system is responsible for: Decorating and Redecorating. The first time a Level is decorated is the most important, because Decorations persist as the Level gets reused in the same narrative, just updated. 
 
-<div style="display: flex; gap: 1rem;">
-  <img src="/burbank/set-deco/DecoDesign.png" alt="Default Data Layer"/>
-</div>
+![Default Data Layer](/images/DecoDesign.png)
 
 Assets are selected from the queried Libraries based on both runtime narrative context and the metadata provided by the populated Sockets. The Decoration system collects this context and passes the Socket and Asset descriptions through a proprietary embeddings subsystem, which produces similarity scores based on natural-language semantics. These scores are evaluated alongside structured metadata constraints to determine the best match for each Socket. The highest-scoring Assets are then utilized for the Sockets.
 
