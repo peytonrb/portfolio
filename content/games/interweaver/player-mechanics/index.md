@@ -16,7 +16,7 @@ As part of my role as an Engineer, I was responsible for developing the entire *
 The Weaver's **Weave** ability is a physics-based interaction mechanic that allows players to manipulate objects in game space using the mouse. Weaving has two main functions: moving objects around the space and combining multiple to solve puzzles or progress through platforming sections. Players were also allowed to rotate objects as needed when Weaving.
 
 <div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/player-mechanics/weave-demo.gif" alt="Weave Ability Demonstration Temp"/>
+  <img src="interweaver/player-mechanics/weave-demo.gif" alt="Weave Ability Demonstration Temp"/>
 </div>
 
 ### System Architecture
