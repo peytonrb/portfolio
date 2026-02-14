@@ -202,7 +202,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "500"
+    "wordCount": "1067"
   }]
   </script>
 
@@ -713,7 +713,8 @@
             <li><a href="#ripple-shader">Ripple Shader</a></li>
           </ul>
         </li>
-        <li><a href="#environment-and-character-cel-shader">Environment and Character Cel Shader</a></li>
+        <li><a href="#overall-game-shader">Overall Game Shader</a></li>
+        <li><a href="#cloud-shader">Cloud Shader</a></li>
       </ul>
     </li>
     <li><a href="#vfx-showcase">VFX Showcase</a></li>
@@ -738,7 +739,8 @@
             <li><a href="#ripple-shader">Ripple Shader</a></li>
           </ul>
         </li>
-        <li><a href="#environment-and-character-cel-shader">Environment and Character Cel Shader</a></li>
+        <li><a href="#overall-game-shader">Overall Game Shader</a></li>
+        <li><a href="#cloud-shader">Cloud Shader</a></li>
       </ul>
     </li>
     <li><a href="#vfx-showcase">VFX Showcase</a></li>
@@ -791,9 +793,22 @@
     </span>
     
 </h3>
-<p>One of the most challenging shaders I created for this project was our Water Shader. This involved a combination of <strong>ShaderGraph</strong> and <strong>HLSL</strong> and was not only challenging to conceptualize, but to translate into a functional shader that met both aesthetic and performance requirements.</p>
+<p>One of the most challenging shaders I created for this project was our Water Shader. This involved a <strong>ShaderGraph</strong> with multiple Subgraphs and was not only challenging to conceptualize, but to translate into a functional shader that met both aesthetic and performance requirements.</p>
 <p>[water shader photo here]</p>
-<p>[water shader snippet here]</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/interweaver/vfx/watershader.png" alt="Water ShaderGraph"/>
+</div>
+<p><strong>Development Process</strong></p>
+<p>First Iteration</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/interweaver/vfx/water-shader-process.gif" alt="Water Shader Process 1"/>
+</div>
+<p>Second Iteration</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/interweaver/vfx/water-shader-process-2.gif" alt="Water Shader Process 2"/>
+</div>
+<p>This shader involved many different components, including wave distortion, depth fade, reflections, refraction, ripple texture, and foam. It was also performant due to favoring calculated effects over expensive texture sampling, and utilized shared ShaderGraph subgraphs to avoid unnecessary shader variants. This allowed the shader to scale across many scenes and water volumees without increasing draw calls or shader complexity.</p>
+<p>The shader worked by using the camera plane to project scene color onto the water surface, enabling dynamic reflection and distortion effects. While the effect looked great from a static camera angle, it introduced a challenge at times when one water volume could be viewed from varying heights or angles. Each piece was created with multiple exposed variables to tweak per instance so it was highly reusable.</p>
 
 <h4 class="relative group">Ripple Shader
     <div id="ripple-shader" class="anchor"></div>
@@ -804,27 +819,100 @@
     </span>
     
 </h4>
-<p>To compliment the Water Shader and to ensure the player&rsquo;s movement felt natural as they moved through the water, I created an accompanying Ripple shader that trailed the player in water. This was different because it [was not a light based shader and instead dealt with ___]. It also had to deal with the [water shader which was transparent and had oscillation in waves, which made layering anything on top difficult].</p>
+<p>To compliment the Water Shader and to ensure the player&rsquo;s movement felt natural as they moved through the water, I created an accompanying Ripple shader that dynamically trailed the player through water.</p>
+<p>[make into final ripple shader video]</p>
 <div style="display: flex; gap: 1rem;">
   <img src="/interweaver/vfx/temp/ripple.gif" alt="Temp Ripple"/>
 </div>
-<p>[ripple shader snippet here]</p>
-<p>This shader is essentially a [custom Render Target]</p>
+<p>Unlike the Water Shader, which was built in ShaderGraph with various subgraphs, the Ripple shader was implemented as a custom <strong>.shader</strong> written in <strong>HLSL</strong> and driven through <strong>C#</strong>. It operated using RenderTextures that updated each frame with the player&rsquo;s position to simulate ripple propogation. The existing waves from the Water Shader presented a technical challenge for this effect, so I implemented this shader to sample neighboring pixels from the current and previous frames to simulate natural wave propogation without introducting additional vertex displacement, as the surface motion was being handled by the primary Water shader.</p>
+<p>I included a bit of the implementation below:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">IEnumerator ripples()
+</span></span><span class="line"><span class="cl">{
+</span></span><span class="line"><span class="cl">   AddMat.SetTexture(&#34;_ObjectsRenderTexture&#34;, ObjectsRenderTexture);
+</span></span><span class="line"><span class="cl">   AddMat.SetTexture(&#34;_CurrentRenderTexture&#34;, CurrRenderTexture);
+</span></span><span class="line"><span class="cl">   Graphics.Blit(null, TempRenderTexture, AddMat);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   RenderTexture renderTexture = TempRenderTexture;
+</span></span><span class="line"><span class="cl">   TempRenderTexture = CurrRenderTexture;
+</span></span><span class="line"><span class="cl">   CurrRenderTexture = renderTexture;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   // Calculate the ripple animation using ripple shader.
+</span></span><span class="line"><span class="cl">   RippleMat.SetTexture(&#34;_PrevRenderTexture&#34;, PrevRenderTexture);
+</span></span><span class="line"><span class="cl">   RippleMat.SetTexture(&#34;_CurrentRenderTexture&#34;, CurrRenderTexture);
+</span></span><span class="line"><span class="cl">   Graphics.Blit(null, TempRenderTexture, RippleMat);
+</span></span><span class="line"><span class="cl">   Graphics.Blit(TempRenderTexture, PrevRenderTexture);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   // Calculate the result for the next frame.
+</span></span><span class="line"><span class="cl">   RenderTexture rt = PrevRenderTexture;
+</span></span><span class="line"><span class="cl">   PrevRenderTexture = CurrRenderTexture;
+</span></span><span class="line"><span class="cl">   CurrRenderTexture = rt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   yield return null;
+</span></span><span class="line"><span class="cl">   StartCoroutine(ripples());
+</span></span><span class="line"><span class="cl">}</span></span></code></pre></div></div>
+<div style="display: flex; gap: 1rem;">
+  <img src="/interweaver/vfx/rippleshader.png" alt="Ripple ShaderGraph"/>
+</div>
 
-<h3 class="relative group">Environment and Character Cel Shader
-    <div id="environment-and-character-cel-shader" class="anchor"></div>
+<h3 class="relative group">Overall Game Shader
+    <div id="overall-game-shader" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#environment-and-character-cel-shader" aria-label="Anchor">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#overall-game-shader" aria-label="Anchor">#</a>
     </span>
     
 </h3>
-<p>To achieve the intended hand-painted, stylized aesthetic, I created a csutom cel shader that defined the visual style of the game. It was really important that the shader _______.</p>
-<p>[cel shader before and after]</p>
-<p>[in game image]</p>
-<p>[snippet here]</p>
-<p>[While cel shaders are a fairly basic concept, we uniquely dealt with the challenge of _____].</p>
+<p>To achieve the intended hand-painted, stylized aesthetic, I created a csutom shader that defined the visual style of the game. It uses techniques from cel and subsurface scattering shaders to create a the soft, painted vibe I wanted. It was important that the shader simplified lighting, controlled shadow thresholds, and preserved color vibrancy to support our stylized, hand-painted aesthetic.</p>
+<p>[shader before and after]</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/interweaver/vfx/environmentshader.png" alt="Environment ShaderGraph"/>
+</div>
+
+<h3 class="relative group">Cloud Shader
+    <div id="cloud-shader" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#cloud-shader" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>One of our levels was took place partially high up in the clouds on floating islands. To give the effect of being high in the sky and control player visibility across certain areas of the level, we incorporated volumetric clouds in this section. This created the need for a custom shader because we needed a way to support player movement through the clouds while also preserving their volumetric depth, wispiness, and transparency.</p>
+<div style="display: flex; gap: 1rem;">
+  <img src="/interweaver/vfx/cloud.png" alt="Cloud"/>
+</div>
+<p>To solve this, I implemented a raymarching technique to render volumetric clouds in 3D space that maintained depth and transparency to allow the camera to pass physically through them and maintain visual fidelity. You can see a snippet below explaining how the shader raymarches through a 3D density field while performing secondary light sampling to approximate scattering and shadowing inside the cloud volume.</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">for (int i = 0; i &lt; numSteps; i++) {
+</span></span><span class="line"><span class="cl">	rayOrigin += (rayDirection * stepSize);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	// The blue dot position
+</span></span><span class="line"><span class="cl">	float3 samplePos = rayOrigin + offset;
+</span></span><span class="line"><span class="cl">	float sampledDensity = SAMPLE_TEXTURE3D(volumeTex, volumeSampler, samplePos).r;
+</span></span><span class="line"><span class="cl">	density += sampledDensity * densityScale;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	float3 lightRayOrigin = samplePos;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	for (int j = 0; j &lt; numLightSteps; j++) {
+</span></span><span class="line"><span class="cl">		// The red dot position
+</span></span><span class="line"><span class="cl">		lightRayOrigin += -lightDir * lightStepSize;
+</span></span><span class="line"><span class="cl">		float lightDensity = SAMPLE_TEXTURE3D(volumeTex, volumeSampler, lightRayOrigin).r;
+</span></span><span class="line"><span class="cl">		// The accumulated density from samplePos to the light - the higher this value the less light reaches samplePos
+</span></span><span class="line"><span class="cl">		lightAccumulation += lightDensity;
+</span></span><span class="line"><span class="cl">	}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	// The amount of light received along the ray from param rayOrigin in the direction rayDirection
+</span></span><span class="line"><span class="cl">	float lightTransmission = exp(-lightAccumulation);
+</span></span><span class="line"><span class="cl">	float shadow = darknessThreshold + lightTransmission * (1.0 - darknessThreshold);
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	// The final light value is accumulated based on the current density, transmittance value and the calculated shadow value 
+</span></span><span class="line"><span class="cl">	finalLight += density * transmittance * shadow;
+</span></span><span class="line"><span class="cl">	// Its value is updated at each step by lightAbsorb, this sets the light lost by scattering
+</span></span><span class="line"><span class="cl">	transmittance *= exp(-density * lightAbsorb);
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">transmission = exp(-density);
+</span></span><span class="line"><span class="cl">result = float3(finalLight, transmission, transmittance);</span></span></code></pre></div></div>
 
 <h2 class="relative group">VFX Showcase
     <div id="vfx-showcase" class="anchor"></div>
@@ -852,7 +940,7 @@
   <img src="/interweaver/vfx/temp/dash.gif" alt="Temp Dash"/>
 </div>
 <div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/temp/stag-smash.gif" alt="Stag Smash Temp" style="width: 60%;" />
+  <img src="/interweaver/vfx/stag-smash.gif" alt="Stag Smash Temp" style="width: 60%;" />
   <img src="/interweaver/vfx/temp/stag-smash-ingame.gif" alt="Stag Smash In-Game Temp" style="width: 60%;" />
 </div>
 <div style="display: flex; gap: 1rem;">
@@ -860,6 +948,7 @@
 </div>
 <p>[stag teleport effect]</p>
 <p>[clouds]</p>
+<p>[etc]</p>
 
           
           

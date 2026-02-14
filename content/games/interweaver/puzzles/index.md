@@ -62,4 +62,4 @@ Activated crystals emitted focused light beams that detected and powered other c
   <img src="/interweaver/puzzles/sensor-and-light.gif" alt="Light Demo"/>
 </div>
 
-[Last insightful thoughts]
+This system supported our design policy of scaling puzzle complexity without increasing engineer workloads, using a small set of flexible mechanics that could be composed in a wide variety of ways. I personally enjoyed designing and coding this mechanic because of its endless potential in puzzle or other gameplay systems, and I wish we had the scope for all of the ideas we had for this mechanic come to life.
