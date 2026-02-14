@@ -2,109 +2,109 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Peyton Bischof</title>
-    <link>http://localhost:62824/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Peyton Bischof</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; 2026 Peyton Bischof</copyright>
-    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:62824/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Player Mechanics</title>
-      <link>http://localhost:62824/games/interweaver/player-mechanics/</link>
+      <link>http://localhost:1313/games/interweaver/player-mechanics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:62824/games/interweaver/player-mechanics/</guid>
+      <guid>http://localhost:1313/games/interweaver/player-mechanics/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:62824/games/interweaver/player-mechanics/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/interweaver/player-mechanics/featured.png" />
     </item>
     
     <item>
       <title>Pre- and Post-Game Flow</title>
-      <link>http://localhost:62824/games/burbank/pre-post-game/</link>
+      <link>http://localhost:1313/games/burbank/pre-post-game/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:62824/games/burbank/pre-post-game/</guid>
+      <guid>http://localhost:1313/games/burbank/pre-post-game/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:62824/games/burbank/pre-post-game/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/burbank/pre-post-game/featured.png" />
     </item>
     
     <item>
       <title>Procedural Interior Decoration</title>
-      <link>http://localhost:62824/games/burbank/set-deco/</link>
+      <link>http://localhost:1313/games/burbank/set-deco/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:62824/games/burbank/set-deco/</guid>
+      <guid>http://localhost:1313/games/burbank/set-deco/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:62824/games/burbank/set-deco/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/burbank/set-deco/featured.jpg" />
     </item>
     
     <item>
       <title>Shaders &amp; VFX</title>
-      <link>http://localhost:62824/games/interweaver/shaders-vfx/</link>
+      <link>http://localhost:1313/games/interweaver/shaders-vfx/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:62824/games/interweaver/shaders-vfx/</guid>
+      <guid>http://localhost:1313/games/interweaver/shaders-vfx/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:62824/games/interweaver/shaders-vfx/featured.gif" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/interweaver/shaders-vfx/featured.gif" />
     </item>
     
     <item>
       <title>Character Relationship System</title>
-      <link>http://localhost:62824/games/burbank/relationships/</link>
+      <link>http://localhost:1313/games/burbank/relationships/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:62824/games/burbank/relationships/</guid>
+      <guid>http://localhost:1313/games/burbank/relationships/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:62824/games/burbank/relationships/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/burbank/relationships/featured.png" />
     </item>
     
     <item>
       <title>Puzzle Systems</title>
-      <link>http://localhost:62824/games/interweaver/puzzles/</link>
+      <link>http://localhost:1313/games/interweaver/puzzles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:62824/games/interweaver/puzzles/</guid>
+      <guid>http://localhost:1313/games/interweaver/puzzles/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:62824/games/interweaver/puzzles/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/interweaver/puzzles/featured.png" />
     </item>
     
     <item>
       <title>Creative Vision &amp; Concepts</title>
-      <link>http://localhost:62824/games/interweaver/concept/</link>
+      <link>http://localhost:1313/games/interweaver/concept/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:62824/games/interweaver/concept/</guid>
+      <guid>http://localhost:1313/games/interweaver/concept/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:62824/games/interweaver/concept/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/interweaver/concept/featured.png" />
     </item>
     
     <item>
       <title>Slate Tooling</title>
-      <link>http://localhost:62824/games/burbank/slate-ui/</link>
+      <link>http://localhost:1313/games/burbank/slate-ui/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:62824/games/burbank/slate-ui/</guid>
+      <guid>http://localhost:1313/games/burbank/slate-ui/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:62824/games/burbank/slate-ui/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/games/burbank/slate-ui/featured.png" />
     </item>
     
     <item>
       <title>About</title>
-      <link>http://localhost:62824/contact/</link>
+      <link>http://localhost:1313/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:62824/contact/</guid>
+      <guid>http://localhost:1313/contact/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Resume</title>
-      <link>http://localhost:62824/resume/</link>
+      <link>http://localhost:1313/resume/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:62824/resume/</guid>
+      <guid>http://localhost:1313/resume/</guid>
       <description></description>
       
     </item>
