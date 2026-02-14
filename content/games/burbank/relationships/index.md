@@ -13,15 +13,11 @@ Character relationships are at the core of Burbank - they drive the player to ma
 As we were designing how Relationships would manifest in the game, we closely examined how people communicate in real life to pinpoint the most exciting moments to play out through our game. This led us to our current design, which involves the player character navigating through a 'Map' of different Relationship stages. All characters start at a default Acquaintance relationship, and depending on how the player interacts with other characters and the world around them, their relationships with individual characters can progress to different pre-prescribed Relationship Stages.
 
 A small snippet of the Relationship Map in which the player's character could navigate:
-<div style="display: flex; gap: 1rem;">
-  <img src="/burbank/relationships/RelationshipGraph2.png" alt="Relationship Map"/>
-</div>
+![Relationship Map](/images/RelationshipGraph2.png)
 
 For the player to change their character's Relationship with any given character in the Level, they must meet specific criteria tied to the next Stage. Each Stage requires the Player to complete certain actions or gameplay decisions in order to move forward in their relationship. For example, if the Player successfully pulls off a riskier romantic advancement on another character, their Relationship could progress straight to Dating, rather than Flirting. This created more dynamic gameplay not just between playthroughs, but also created complex inter-character relationships in game that drew the Player themselves in.
 
-<div style="display: flex; gap: 1rem;">
-  <img src="/burbank/relationships/RelationshipGraph1.png" alt="Graph 1"/>
-</div>
+![Graph 1](/images/RelationshipGraph1.png)
 
 Relationship Stages were also associated with their own Gameplay Modifiers, Effects, and more. If the Player tried flirting with a character while actively in a Romantic relationship, other NPCs would react accordingly (for better or worse) and the Player receives gameplay buffs and debuffs depending on their runtime choices.
 
@@ -31,9 +27,7 @@ Relationships systematically have 2 major components to them: a Relationship Dat
 ### Relationship Data Asset
 We utilized custom Data Assets heavily throughout Burbank to store game states and the Relationship system is no different. The custom Relationship Asset I made is the systematic representation of a Relationship Stage, such as 'Best Friend', 'Married', 'Rival', etc.  
 
-<div style="display: flex; gap: 1rem;">
-  <img src="/burbank/relationships/RelationshipInfo.png" alt="Relationship Data Asset"/>
-</div>
+![Relationship Data Asset](/images/RelationshipInfo.png)
 
 Some of this Asset's Properties include:
 - Context to be read during runtime for the involved characters
@@ -56,15 +50,11 @@ These State Actors were responsible for managing a variety of data at runtime ef
 ## In-Game Representation
 As Players developed their characters' Relationships, they were able to unlock narrative and cinematic moments with the other participant. While the exact Relationship Map is not player-facing, a lot of progression criteria and other relationship state data is able to be viewed in the UI. Any information not immediately clear to the player could be deduced from interactions with characters that the Player character has relationships with passively via gameplay. Environment interactions and gameplay reactions to the player's choices implicitly guided them towards narrative-rich interactions.
 
-<div style="display: flex; gap: 1rem;">
-  <img src="/burbank/relationships/RelationshipExample.png" alt="In-Game Photo"/>
-</div>
+![In-Game Photo](/images/RelationshipExample.png)
 
 Much like how strengthening relationships in real life leads to more meaningful moments and impacts your day to day more, building stronger bonds with other characters unlock richer gameplay opportunities. Burbank's characters had a dynamic memory system, allowing them to recall significant moments from the player's campaign to help shape their relationships based on both the player's intentional and passive choices throughout the world.
 
-<div style="display: flex; gap: 1rem;">
-  <img src="/burbank/relationships/RelationshipExample2.png" alt="In-Game Photo 2"/>
-</div>
+![In-Game Photo 2](/images/RelationshipExample2.png)
 
 ## Reflection
 This system scaled across narrative, game state, and player choices, making it central and impactful to the game's overall experience. Designing it made me analyze turning organic real-world experiences into structured, state-driven systems, and taught me several key lessons about building systemic, player-facing gameplay architecture:

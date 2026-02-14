@@ -2,51 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Project Burbank on Peyton Bischof</title>
-    <link>http://localhost:58826/portfolio/games/burbank/</link>
+    <link>http://localhost:1313/portfolio/games/burbank/</link>
     <description>Recent content in Project Burbank on Peyton Bischof</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; 2026 Peyton Bischof</copyright>
-    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:58826/portfolio/games/burbank/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/portfolio/games/burbank/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Pre- and Post-Game Flow</title>
-      <link>http://localhost:58826/portfolio/games/burbank/pre-post-game/</link>
+      <link>http://localhost:1313/portfolio/games/burbank/pre-post-game/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:58826/portfolio/games/burbank/pre-post-game/</guid>
+      <guid>http://localhost:1313/portfolio/games/burbank/pre-post-game/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:58826/portfolio/games/burbank/pre-post-game/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/portfolio/games/burbank/pre-post-game/featured.png" />
     </item>
     
     <item>
       <title>Procedural Interior Decoration</title>
-      <link>http://localhost:58826/portfolio/games/burbank/set-deco/</link>
+      <link>http://localhost:1313/portfolio/games/burbank/set-deco/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:58826/portfolio/games/burbank/set-deco/</guid>
+      <guid>http://localhost:1313/portfolio/games/burbank/set-deco/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:58826/portfolio/games/burbank/set-deco/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/portfolio/games/burbank/set-deco/featured.jpg" />
     </item>
     
     <item>
       <title>Character Relationship System</title>
-      <link>http://localhost:58826/portfolio/games/burbank/relationships/</link>
+      <link>http://localhost:1313/portfolio/games/burbank/relationships/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:58826/portfolio/games/burbank/relationships/</guid>
+      <guid>http://localhost:1313/portfolio/games/burbank/relationships/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:58826/portfolio/games/burbank/relationships/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/portfolio/games/burbank/relationships/featured.png" />
     </item>
     
     <item>
       <title>Slate Tooling</title>
-      <link>http://localhost:58826/portfolio/games/burbank/slate-ui/</link>
+      <link>http://localhost:1313/portfolio/games/burbank/slate-ui/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:58826/portfolio/games/burbank/slate-ui/</guid>
+      <guid>http://localhost:1313/portfolio/games/burbank/slate-ui/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:58826/portfolio/games/burbank/slate-ui/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/portfolio/games/burbank/slate-ui/featured.png" />
     </item>
     
   </channel>

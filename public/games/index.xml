@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Games on Peyton Bischof</title>
-    <link>http://localhost:58826/portfolio/games/</link>
+    <link>http://localhost:1313/portfolio/games/</link>
     <description>Recent content in Games on Peyton Bischof</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; 2026 Peyton Bischof</copyright>
-    <lastBuildDate></lastBuildDate><atom:link href="http://localhost:58826/portfolio/games/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate><atom:link href="http://localhost:1313/portfolio/games/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>

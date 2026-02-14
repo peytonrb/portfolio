@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="dark"
-  data-auto-appearance="false"><head><script src="/portfolio/livereload.js?mindelay=10&amp;v=2&amp;port=58826&amp;path=portfolio/livereload" data-no-instant defer></script>
+  data-auto-appearance="false"><head><script src="/portfolio/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=portfolio/livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="en">
@@ -24,7 +24,7 @@
   
   
   
-  <link rel="canonical" href="http://localhost:58826/portfolio/games/interweaver/shaders-vfx/">
+  <link rel="canonical" href="http://localhost:1313/portfolio/games/interweaver/shaders-vfx/">
   
 
   
@@ -34,17 +34,17 @@
   
 
   
-  <meta property="og:url" content="http://localhost:58826/portfolio/games/interweaver/shaders-vfx/">
+  <meta property="og:url" content="http://localhost:1313/portfolio/games/interweaver/shaders-vfx/">
   <meta property="og:site_name" content="Peyton Bischof">
   <meta property="og:title" content="Shaders & VFX">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="games">
-    <meta property="og:image" content="http://localhost:58826/portfolio/games/interweaver/shaders-vfx/featured.gif">
+    <meta property="og:image" content="http://localhost:1313/portfolio/games/interweaver/shaders-vfx/featured.gif">
 
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://localhost:58826/portfolio/games/interweaver/shaders-vfx/featured.gif">
+  <meta name="twitter:image" content="http://localhost:1313/portfolio/games/interweaver/shaders-vfx/featured.gif">
   <meta name="twitter:title" content="Shaders & VFX">
 
   
@@ -188,7 +188,7 @@
     "headline": "Shaders \u0026 VFX",
     
     "inLanguage": "en",
-    "url" : "http://localhost:58826/portfolio/games/interweaver/shaders-vfx/",
+    "url" : "http://localhost:1313/portfolio/games/interweaver/shaders-vfx/",
     "author" : {
       "@type": "Person",
       "name": "Peyton Bischof"
@@ -795,18 +795,47 @@
 </h3>
 <p>One of the most challenging shaders I created for this project was our Water Shader. This involved a <strong>ShaderGraph</strong> with multiple Subgraphs and was not only challenging to conceptualize, but to translate into a functional shader that met both aesthetic and performance requirements.</p>
 <p>[water shader photo here]</p>
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/watershader.png" alt="Water ShaderGraph"/>
-</div>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Water ShaderGraph"
+    width="1783"
+    height="1168"
+    src="/portfolio/games/interweaver/shaders-vfx/images/watershader_hu_f6ad22a796b3bc75.png"
+    srcset="/portfolio/games/interweaver/shaders-vfx/images/watershader_hu_f6ad22a796b3bc75.png 800w, /portfolio/games/interweaver/shaders-vfx/images/watershader_hu_88a4dbf396b39b61.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/portfolio/games/interweaver/shaders-vfx/images/watershader.png"></figure>
 <p><strong>Development Process</strong></p>
-<p>First Iteration</p>
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/water-shader-process.gif" alt="Water Shader Process 1"/>
-</div>
-<p>Second Iteration</p>
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/water-shader-process-2.gif" alt="Water Shader Process 2"/>
-</div>
+<p>First Iteration
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Water Shader Process 1"
+    width="600"
+    height="364"
+    src="/portfolio/games/interweaver/shaders-vfx/images/water-shader-process.gif"
+    srcset="/portfolio/games/interweaver/shaders-vfx/images/water-shader-process.gif 800w, /portfolio/games/interweaver/shaders-vfx/images/water-shader-process.gif 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/portfolio/games/interweaver/shaders-vfx/images/water-shader-process.gif"></figure>
+</p>
+<p>Second Iteration
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Water Shader Process 2"
+    width="600"
+    height="364"
+    src="/portfolio/games/interweaver/shaders-vfx/images/water-shader-process-2.gif"
+    srcset="/portfolio/games/interweaver/shaders-vfx/images/water-shader-process-2.gif 800w, /portfolio/games/interweaver/shaders-vfx/images/water-shader-process-2.gif 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/portfolio/games/interweaver/shaders-vfx/images/water-shader-process-2.gif"></figure>
+</p>
 <p>This shader involved many different components, including wave distortion, depth fade, reflections, refraction, ripple texture, and foam. It was also performant due to favoring calculated effects over expensive texture sampling, and utilized shared ShaderGraph subgraphs to avoid unnecessary shader variants. This allowed the shader to scale across many scenes and water volumees without increasing draw calls or shader complexity.</p>
 <p>The shader worked by using the camera plane to project scene color onto the water surface, enabling dynamic reflection and distortion effects. While the effect looked great from a static camera angle, it introduced a challenge at times when one water volume could be viewed from varying heights or angles. Each piece was created with multiple exposed variables to tweak per instance so it was highly reusable.</p>
 
@@ -820,10 +849,20 @@
     
 </h4>
 <p>To compliment the Water Shader and to ensure the player&rsquo;s movement felt natural as they moved through the water, I created an accompanying Ripple shader that dynamically trailed the player through water.</p>
-<p>[make into final ripple shader video]</p>
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/temp/ripple.gif" alt="Temp Ripple"/>
-</div>
+<p>[make into final ripple shader video]
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Temp Ripple"
+    width="600"
+    height="322"
+    src="/portfolio/games/interweaver/shaders-vfx/images/temp/ripple.gif"
+    srcset="/portfolio/games/interweaver/shaders-vfx/images/temp/ripple.gif 800w, /portfolio/games/interweaver/shaders-vfx/images/temp/ripple.gif 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/portfolio/games/interweaver/shaders-vfx/images/temp/ripple.gif"></figure>
+</p>
 <p>Unlike the Water Shader, which was built in ShaderGraph with various subgraphs, the Ripple shader was implemented as a custom <strong>.shader</strong> written in <strong>HLSL</strong> and driven through <strong>C#</strong>. It operated using RenderTextures that updated each frame with the player&rsquo;s position to simulate ripple propogation. The existing waves from the Water Shader presented a technical challenge for this effect, so I implemented this shader to sample neighboring pixels from the current and previous frames to simulate natural wave propogation without introducting additional vertex displacement, as the surface motion was being handled by the primary Water shader.</p>
 <p>I included a bit of the implementation below:</p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">IEnumerator ripples()
@@ -850,9 +889,18 @@
 </span></span><span class="line"><span class="cl">   yield return null;
 </span></span><span class="line"><span class="cl">   StartCoroutine(ripples());
 </span></span><span class="line"><span class="cl">}</span></span></code></pre></div></div>
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/rippleshader.png" alt="Ripple ShaderGraph"/>
-</div>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Ripple ShaderGraph"
+    width="1501"
+    height="865"
+    src="/portfolio/games/interweaver/shaders-vfx/images/rippleshader_hu_d9134739d4dfb877.png"
+    srcset="/portfolio/games/interweaver/shaders-vfx/images/rippleshader_hu_d9134739d4dfb877.png 800w, /portfolio/games/interweaver/shaders-vfx/images/rippleshader_hu_83f4356905126e03.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/portfolio/games/interweaver/shaders-vfx/images/rippleshader.png"></figure>
 
 <h3 class="relative group">Overall Game Shader
     <div id="overall-game-shader" class="anchor"></div>
@@ -865,9 +913,18 @@
 </h3>
 <p>To achieve the intended hand-painted, stylized aesthetic, I created a csutom shader that defined the visual style of the game. It uses techniques from cel and subsurface scattering shaders to create a the soft, painted vibe I wanted. It was important that the shader simplified lighting, controlled shadow thresholds, and preserved color vibrancy to support our stylized, hand-painted aesthetic.</p>
 <p>[shader before and after]</p>
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/environmentshader.png" alt="Environment ShaderGraph"/>
-</div>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Environment ShaderGraph"
+    width="1510"
+    height="781"
+    src="/portfolio/games/interweaver/shaders-vfx/images/environmentshader_hu_5490a8ef25d34b71.png"
+    srcset="/portfolio/games/interweaver/shaders-vfx/images/environmentshader_hu_5490a8ef25d34b71.png 800w, /portfolio/games/interweaver/shaders-vfx/images/environmentshader_hu_df2866ef41671aab.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/portfolio/games/interweaver/shaders-vfx/images/environmentshader.png"></figure>
 
 <h3 class="relative group">Cloud Shader
     <div id="cloud-shader" class="anchor"></div>
@@ -879,9 +936,18 @@
     
 </h3>
 <p>One of our levels was took place partially high up in the clouds on floating islands. To give the effect of being high in the sky and control player visibility across certain areas of the level, we incorporated volumetric clouds in this section. This created the need for a custom shader because we needed a way to support player movement through the clouds while also preserving their volumetric depth, wispiness, and transparency.</p>
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/cloud.png" alt="Cloud"/>
-</div>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Cloud"
+    width="2073"
+    height="1439"
+    src="/portfolio/games/interweaver/shaders-vfx/images/cloud_hu_933922e01c8da64e.png"
+    srcset="/portfolio/games/interweaver/shaders-vfx/images/cloud_hu_933922e01c8da64e.png 800w, /portfolio/games/interweaver/shaders-vfx/images/cloud_hu_c60b2b9695e705be.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/portfolio/games/interweaver/shaders-vfx/images/cloud.png"></figure>
 <p>To solve this, I implemented a raymarching technique to render volumetric clouds in 3D space that maintained depth and transparency to allow the camera to pass physically through them and maintain visual fidelity. You can see a snippet below explaining how the shader raymarches through a 3D density field while performing secondary light sampling to approximate scattering and shadowing inside the cloud volume.</p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">for (int i = 0; i &lt; numSteps; i++) {
 </span></span><span class="line"><span class="cl">	rayOrigin += (rayDirection * stepSize);
@@ -926,26 +992,108 @@
 <p>Along with the Shaders, I created 30+ VFX and particle systems for Interweaver to supporting the game&rsquo;s visual direction and providing players with meaningful feedback as they used mechanics and progressed through the game. These were mainly done in Unity&rsquo;s <strong>VFX Graph</strong> and involved custom 3D models, textures, and calculations for particle behavior.</p>
 <p>Here I will showcase most of the effects I made for Interweaver below. I tried to include the software used to create the effects as well as any additional interesting information:</p>
 <p>(all of these are temp until i can grab better images tehe :)</p>
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/temp/orb.gif" alt="Temp Orb"/>
-</div>
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/temp/teleport.gif" alt="Teleport Temp" style="width: 60%;" />
-  <img src="/interweaver/vfx/temp/teleport-ingame.gif" alt="Teleport In-Game Temp" style="width: 60%;" />
-</div>
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/temp/butterflies.gif" alt="Temp Butterflies"/>
-</div>
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/temp/dash.gif" alt="Temp Dash"/>
-</div>
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/stag-smash.gif" alt="Stag Smash Temp" style="width: 60%;" />
-  <img src="/interweaver/vfx/temp/stag-smash-ingame.gif" alt="Stag Smash In-Game Temp" style="width: 60%;" />
-</div>
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/temp/lightbeam.gif" alt="Temp Light Beam"/>
-</div>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Temp Orb"
+    width="600"
+    height="371"
+    src="/portfolio/games/interweaver/shaders-vfx/images/temp/orb.gif"
+    srcset="/portfolio/games/interweaver/shaders-vfx/images/temp/orb.gif 800w, /portfolio/games/interweaver/shaders-vfx/images/temp/orb.gif 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/portfolio/games/interweaver/shaders-vfx/images/temp/orb.gif"></figure>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Temp Teleport"
+    width="600"
+    height="303"
+    src="/portfolio/games/interweaver/shaders-vfx/images/temp/teleport.gif"
+    srcset="/portfolio/games/interweaver/shaders-vfx/images/temp/teleport.gif 800w, /portfolio/games/interweaver/shaders-vfx/images/temp/teleport.gif 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/portfolio/games/interweaver/shaders-vfx/images/temp/teleport.gif"></figure>
+
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Teleport In-Game Temp"
+    width="600"
+    height="334"
+    src="/portfolio/games/interweaver/shaders-vfx/images/temp/teleport-ingame.gif"
+    srcset="/portfolio/games/interweaver/shaders-vfx/images/temp/teleport-ingame.gif 800w, /portfolio/games/interweaver/shaders-vfx/images/temp/teleport-ingame.gif 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/portfolio/games/interweaver/shaders-vfx/images/temp/teleport-ingame.gif"></figure>
+</p>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Temp Butterflies"
+    width="600"
+    height="364"
+    src="/portfolio/games/interweaver/shaders-vfx/images/temp/butterflies.gif"
+    srcset="/portfolio/games/interweaver/shaders-vfx/images/temp/butterflies.gif 800w, /portfolio/games/interweaver/shaders-vfx/images/temp/butterflies.gif 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/portfolio/games/interweaver/shaders-vfx/images/temp/butterflies.gif"></figure>
+
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Temp Dash"
+    width="600"
+    height="392"
+    src="/portfolio/games/interweaver/shaders-vfx/images/temp/dash.gif"
+    srcset="/portfolio/games/interweaver/shaders-vfx/images/temp/dash.gif 800w, /portfolio/games/interweaver/shaders-vfx/images/temp/dash.gif 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/portfolio/games/interweaver/shaders-vfx/images/temp/dash.gif"></figure>
+</p>
+<p><figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Stag Smash Temp"
+    width="600"
+    height="338"
+    src="/portfolio/games/interweaver/shaders-vfx/images/temp/stag-smash.gif"
+    srcset="/portfolio/games/interweaver/shaders-vfx/images/temp/stag-smash.gif 800w, /portfolio/games/interweaver/shaders-vfx/images/temp/stag-smash.gif 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/portfolio/games/interweaver/shaders-vfx/images/temp/stag-smash.gif"></figure>
+
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Stag Smash In-Game Temp"
+    width="600"
+    height="340"
+    src="/portfolio/games/interweaver/shaders-vfx/images/temp/stag-smash-ingame.gif"
+    srcset="/portfolio/games/interweaver/shaders-vfx/images/temp/stag-smash-ingame.gif 800w, /portfolio/games/interweaver/shaders-vfx/images/temp/stag-smash-ingame.gif 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/portfolio/games/interweaver/shaders-vfx/images/temp/stag-smash-ingame.gif"></figure>
+</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Temp Light Beam"
+    width="446"
+    height="380"
+    src="/portfolio/games/interweaver/shaders-vfx/images/temp/lightbeam.gif"
+    srcset="/portfolio/games/interweaver/shaders-vfx/images/temp/lightbeam.gif 800w, /portfolio/games/interweaver/shaders-vfx/images/temp/lightbeam.gif 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/portfolio/games/interweaver/shaders-vfx/images/temp/lightbeam.gif"></figure>
 <p>[stag teleport effect]</p>
 <p>[clouds]</p>
 <p>[etc]</p>

@@ -19,99 +19,66 @@ I wanted to illustrate some of the early concepts that I had for Interweaver to 
 **The Weaver**
 
 Early Concept
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/concepts/weaver-concept-1.png" alt="Early Weaver Concept"/>
-</div>
+![Early Weaver Concept](/images/weaver-concept-1.png)
 
 Character Look-Dev
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/concepts/weaver-concept-2.png" alt="Weaver Look-Dev" style="width: 60%;"/>
-  <img src="/interweaver/concepts/weaver-concept-3.png" alt="Weaver Look-Dev 2" style="width: 80%;"/>
-</div>
+![Weaver Look-Dev](/images/weaver-concept-2.png)
+![Weaver Look-Dev 2](/images/weaver-concept-3.png)
 
 Weave Ability
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/concepts/weave.png" alt="Weave Concept"/>
-</div>
+![Weave Concept](/images/weave.png)
 
 Initial Character Model
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/concepts/weaver-3d.png" alt="Weaver 3D model" style="width: 60%;"/>
-</div>
+![Weaver 3D model](/images/weaver-3d.png)
 
 Rendered Snapshot
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/concepts/weaver.gif" alt="Weaver Render"/>
-</div>
+![Weaver Render](/images/weaver.gif)
 
 **The main antagonist, The Rival**
 
 Early Concept
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/concepts/rival-concept.png" alt="Early Rival Concept"/>
-</div>
+![Early Rival Concept](/images/rival-concept.png)
 
 Character Look-Dev
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/concepts/rival.png" alt="Early Weaver Concept" style="width: 80%;"/>
-  <img src="/interweaver/concepts/rival-2.png" alt="Early Weaver Concept" style="width: 60%;"/>
-</div>
+![Rival Concept Art](/images/rival.png)
+![Rival Concept Art](/images/rival-2.png)
 
 Initial Character Model
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/concepts/rival-rendered.png" alt="Rival 3D model" style="width: 70%;"/>
-</div>
+![Rival 3D model](/images/rival-rendered.png)
 
 **The Familiars**
 
 Early Concepts
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/concepts/familiars-concept.png" alt="Familiars Concept"/>
-</div>
+![Familiars Concept](/images/familiars-concept.png)
 
 Final Concept Art
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/concepts/mole.png" alt="Mole Concept" style="width: 60%;"/>
-  <img src="/interweaver/concepts/stag.png" alt="Stag Concept" style="width: 60%;"/>
-</div>
+![Mole Concept](/images/mole.png)
+![Stag](/images/stag.png)
 (I couldn't find the owl ;-;)
 
 Rendered Snapshots
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/concepts/owl.gif" alt="Owl Snapshot"/>
-</div>
+![Owl Snapshot](/images/owl.gif)
 
 [mole snapshot]
 
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/stag-smash.gif" alt="Stag Snapshot"/>
-</div>
+![Stag](/images/stag-smash.gif)
 
 **The Bosses**
 
 Early Concepts
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/concepts/the_devil.png" alt="Early Boss Concept 1" style="width: 30%;"/>
-  <img src="/interweaver/concepts/the_emperor.png" alt="Early Boss Concept 2" style="width: 30%;"/>
-  <img src="/interweaver/concepts/the_empress.png" alt="Early Boss Concept 3" style="width: 30%;"/>
-</div>
+![Early Boss Concept 1](/images/the_devil.png)
+![Early Boss Concept 2](/images/the_emperor.png)
+![Early Boss Concept 3](/images/the_empress.png)
 
 Final Concept Art
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/concepts/hawk.png" alt="Boss Concept 1" style="width: 80%;"/>
-  <img src="/interweaver/concepts/spider.png" alt="Boss Concept 2" style="width: 60%;"/>
-</div>
-
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/concepts/dragon.png" alt="Boss Concept 3"/>
-</div>
+![Boss Concept 1](/images/hawk.png)
+![Boss Concept 2](/images/spider.png)
+![Boss Concept 3](/images/dragon.png)
 
 Rendered Snapshots
 
 [hawk snapshot]
 
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/concepts/spider.gif" alt="Spider Snapshot"/>
-</div>
+![Spider Snapshot](/images/spider.gif)
 
 [dragon snapshot]

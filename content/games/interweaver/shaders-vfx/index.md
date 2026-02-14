@@ -20,21 +20,15 @@ One of the most challenging shaders I created for this project was our Water Sha
 
 [water shader photo here]
 
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/watershader.png" alt="Water ShaderGraph"/>
-</div>
+![Water ShaderGraph](/images/watershader.png)
 
 **Development Process**
 
 First Iteration
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/water-shader-process.gif" alt="Water Shader Process 1"/>
-</div>
+![Water Shader Process 1](/images/water-shader-process.gif)
 
 Second Iteration
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/water-shader-process-2.gif" alt="Water Shader Process 2"/>
-</div>
+![Water Shader Process 2](/images/water-shader-process-2.gif)
 
 This shader involved many different components, including wave distortion, depth fade, reflections, refraction, ripple texture, and foam. It was also performant due to favoring calculated effects over expensive texture sampling, and utilized shared ShaderGraph subgraphs to avoid unnecessary shader variants. This allowed the shader to scale across many scenes and water volumees without increasing draw calls or shader complexity.
 
@@ -44,9 +38,7 @@ The shader worked by using the camera plane to project scene color onto the wate
 To compliment the Water Shader and to ensure the player's movement felt natural as they moved through the water, I created an accompanying Ripple shader that dynamically trailed the player through water. 
 
 [make into final ripple shader video]
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/temp/ripple.gif" alt="Temp Ripple"/>
-</div>
+![Temp Ripple](/images/temp/ripple.gif)
 
 Unlike the Water Shader, which was built in ShaderGraph with various subgraphs, the Ripple shader was implemented as a custom **.shader** written in **HLSL** and driven through **C#**. It operated using RenderTextures that updated each frame with the player's position to simulate ripple propogation. The existing waves from the Water Shader presented a technical challenge for this effect, so I implemented this shader to sample neighboring pixels from the current and previous frames to simulate natural wave propogation without introducting additional vertex displacement, as the surface motion was being handled by the primary Water shader.
 
@@ -78,25 +70,19 @@ IEnumerator ripples()
    StartCoroutine(ripples());
 }
 ```
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/rippleshader.png" alt="Ripple ShaderGraph"/>
-</div>
+![Ripple ShaderGraph](/images/rippleshader.png)
 
 ### Overall Game Shader
 To achieve the intended hand-painted, stylized aesthetic, I created a csutom shader that defined the visual style of the game. It uses techniques from cel and subsurface scattering shaders to create a the soft, painted vibe I wanted. It was important that the shader simplified lighting, controlled shadow thresholds, and preserved color vibrancy to support our stylized, hand-painted aesthetic.
 
 [shader before and after]
 
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/environmentshader.png" alt="Environment ShaderGraph"/>
-</div>
+![Environment ShaderGraph](/images/environmentshader.png)
 
 ### Cloud Shader
 One of our levels was took place partially high up in the clouds on floating islands. To give the effect of being high in the sky and control player visibility across certain areas of the level, we incorporated volumetric clouds in this section. This created the need for a custom shader because we needed a way to support player movement through the clouds while also preserving their volumetric depth, wispiness, and transparency. 
 
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/cloud.png" alt="Cloud"/>
-</div>
+![Cloud](/images/cloud.png)
 
 To solve this, I implemented a raymarching technique to render volumetric clouds in 3D space that maintained depth and transparency to allow the camera to pass physically through them and maintain visual fidelity. You can see a snippet below explaining how the shader raymarches through a 3D density field while performing secondary light sampling to approximate scattering and shadowing inside the cloud volume.
 
@@ -139,31 +125,18 @@ Here I will showcase most of the effects I made for Interweaver below. I tried t
 
 (all of these are temp until i can grab better images tehe :)
 
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/temp/orb.gif" alt="Temp Orb"/>
-</div>
+![Temp Orb](/images/temp/orb.gif)
 
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/temp/teleport.gif" alt="Teleport Temp" style="width: 60%;" />
-  <img src="/interweaver/vfx/temp/teleport-ingame.gif" alt="Teleport In-Game Temp" style="width: 60%;" />
-</div>
+![Temp Teleport](/images/temp/teleport.gif)
+![Teleport In-Game Temp](/images/temp/teleport-ingame.gif)
 
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/temp/butterflies.gif" alt="Temp Butterflies"/>
-</div>
+![Temp Butterflies](/images/temp/butterflies.gif)
+![Temp Dash](/images/temp/dash.gif)
 
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/temp/dash.gif" alt="Temp Dash"/>
-</div>
+![Stag Smash Temp](/images/temp/stag-smash.gif)
+![Stag Smash In-Game Temp](/images/temp/stag-smash-ingame.gif)
 
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/stag-smash.gif" alt="Stag Smash Temp" style="width: 60%;" />
-  <img src="/interweaver/vfx/temp/stag-smash-ingame.gif" alt="Stag Smash In-Game Temp" style="width: 60%;" />
-</div>
-
-<div style="display: flex; gap: 1rem;">
-  <img src="/interweaver/vfx/temp/lightbeam.gif" alt="Temp Light Beam"/>
-</div>
+![Temp Light Beam](/images/temp/lightbeam.gif)
 
 [stag teleport effect]
 

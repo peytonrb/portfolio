@@ -16,21 +16,14 @@ These systems were instrumental in establishing the core experience for the play
 The Pre-Game flow was responsible for guiding the player through character and campaign customziations, and had Stages like **Character Customization**, **Cast Customization**, **Campaign** and **Story Setup**. It was essential that Pre-Game not only introduced players to all the system-defining customization options, but was also a creative outlet and fun in its own right. 
 
 Some examples of Pre-Game Stages:
-<div style="display: flex; gap: 1rem;">
-  <img src="/burbank/game-entry/CharacterCreator.png" alt="Cast Creator Screenshot"/>
-</div>
-
-<div style="display: flex; gap: 1rem;">
-  <img src="/burbank/game-entry/CastCreator.png" alt="Cast Creator Screenshot"/>
-</div>
+![Character Creator Screenshot](/images/CharacterCreator.png)
+![Cast Creator Screenshot](/images/CastCreator.png)
 
 ### Post-Game
 There are many unique and interesting ways to display game stats at the end of a campaign, which made designing this system even more fun. The Post-Game flow consisted of **Studio Notes** (our recap screen), **Level Up**, and the **Next Scene Chooser**. Because each playthrough was so interactive and unique to itself, it was important that we encapsulated the nuances of each playthrough in this flow.
 
 Some examples of Post-Game Stages:
-<div style="display: flex; gap: 1rem;">
-  <img src="/burbank/game-entry/StudioNotes.png" alt="Cast Creator Screenshot"/>
-</div>
+![Studio Notes Screenshot](/images/StudioNotes.png)
 
 ## System Architecture
 Each Stage of the Pre- and Post-Game flows were treated as individual entities, though they existed in the same world and were pre-loaded to avoid any additional buffer. A State Tree managed the entirety of the flow due to its modular nature, and each player-facing step was treated as a State. Each State followed the same general pattern: A custom C++ Manager Actor was spawned as it entered the State and gets assigned the associated UI's View Model. 
@@ -41,14 +34,10 @@ The Manager Actor and View Model manage the all of the gameplay logic and update
 Each player-facing screen was treated as its own individual State, and each State was able to have unique children States that allowed us to further customize the internal functionality of each Stage. This was exceptionally important due to the asynchronous nature of the systems in a few Stages.
 
 **Pre-Game**
-<div style="display: flex; gap: 1rem;">
-  <img src="/burbank/game-entry/StateTree_NewGame.png" alt="New Game State Tree"/>
-</div>
+![New Game State Tree](/images/StateTree_NewGame.png)
 
 **Post-Game**
-<div style="display: flex; gap: 1rem;">
-  <img src="/burbank/game-entry/StateTree_PostGame.png" alt="New Game State Tree"/>
-</div>
+![Post Game State Tree](/images/StateTree_PostGame.png)
 
 In Stages where the player is not able to progress until internal asynchronous background logic is processed, I utilized 'In Progress' child stages to stop progression until the Manager Actor broadcasts a delegate to flag that all asynchronous processes have fully finished and it is safe to transition. This modular design also makes it easy to swap out or add in screens without editing any 'Back' or 'Next' functionality by hand.
 
@@ -56,6 +45,7 @@ In Stages where the player is not able to progress until internal asynchronous b
 To manage the UI widgets per stage and the game state itself, I utilized **MVVM** to connect player-inputted data to internal gameplay systems to dynamically generate new narrative campaigns and to collect and record campaign state data in these two systems.
 
 Below is an example of the View Model on the Character Creator Stage:
+![MVVM](/images/ViewModel.png)
 <div style="display: flex; gap: 1rem;">
   <img src="/burbank/game-entry/ViewModel.png" alt="New Game State Tree"/>
 </div>

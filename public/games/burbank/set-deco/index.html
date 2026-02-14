@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="dark"
-  data-auto-appearance="false"><head><script src="/portfolio/livereload.js?mindelay=10&amp;v=2&amp;port=58826&amp;path=portfolio/livereload" data-no-instant defer></script>
+  data-auto-appearance="false"><head><script src="/portfolio/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=portfolio/livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="en">
@@ -24,7 +24,7 @@
   
   
   
-  <link rel="canonical" href="http://localhost:58826/portfolio/games/burbank/set-deco/">
+  <link rel="canonical" href="http://localhost:1313/portfolio/games/burbank/set-deco/">
   
 
   
@@ -34,17 +34,17 @@
   
 
   
-  <meta property="og:url" content="http://localhost:58826/portfolio/games/burbank/set-deco/">
+  <meta property="og:url" content="http://localhost:1313/portfolio/games/burbank/set-deco/">
   <meta property="og:site_name" content="Peyton Bischof">
   <meta property="og:title" content="Procedural Interior Decoration">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="games">
-    <meta property="og:image" content="http://localhost:58826/portfolio/games/burbank/set-deco/featured.jpg">
+    <meta property="og:image" content="http://localhost:1313/portfolio/games/burbank/set-deco/featured.jpg">
 
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://localhost:58826/portfolio/games/burbank/set-deco/featured.jpg">
+  <meta name="twitter:image" content="http://localhost:1313/portfolio/games/burbank/set-deco/featured.jpg">
   <meta name="twitter:title" content="Procedural Interior Decoration">
 
   
@@ -188,7 +188,7 @@
     "headline": "Procedural Interior Decoration",
     
     "inLanguage": "en",
-    "url" : "http://localhost:58826/portfolio/games/burbank/set-deco/",
+    "url" : "http://localhost:1313/portfolio/games/burbank/set-deco/",
     "author" : {
       "@type": "Person",
       "name": "Peyton Bischof"
@@ -778,15 +778,47 @@
     
 </h2>
 <p>Each Level is constructed at design-time with base 3D models as a greybox to outline the general shape and orientation of objects in space. Each Level in UE is constructed with a variety of Data Layers containing different Socket Actors to hold contextual data and act as a base in order to preserve character pathfinding and Actor Slot requirements. The Decoration system then reads the Socket Actors and the current campaign information and chooses assets to sort and where to place them accordingly.</p>
-<p>You can see 2 base Layout examples from our Apartment Level below:</p>
-<div style="display: flex; gap: 1rem;">
-  <img src="/burbank/set-deco/SocketLayer1.png" alt="Default Data Layer" style="width: 60%;" />
-  <img src="/burbank/set-deco/SocketLayer2.png" alt="Watch Party Data Layer" style="width: 60%;" />
-</div>
-<p>After the Decoration system finishes placing assets on the determined base layout, the final in-game Level now contextually fits the unique story being played out and also furthers player immersion:</p>
-<div style="display: flex; gap: 1rem;">
-  <img src="/burbank/set-deco/DecoratedLevel.png" alt="Default Data Layer"/>
-</div>
+<p>You can see 2 base Layout examples from our Apartment Level below:
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Default Data Layer"
+    width="1387"
+    height="559"
+    src="/portfolio/games/burbank/set-deco/images/SocketLayer1_hu_4b59a77d1bcd3309.png"
+    srcset="/portfolio/games/burbank/set-deco/images/SocketLayer1_hu_4b59a77d1bcd3309.png 800w, /portfolio/games/burbank/set-deco/images/SocketLayer1_hu_ef2aec3895823685.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/portfolio/games/burbank/set-deco/images/SocketLayer1.png"></figure>
+
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Watch Party Data Layer"
+    width="1394"
+    height="532"
+    src="/portfolio/games/burbank/set-deco/images/SocketLayer2_hu_79da1ae9958d5237.png"
+    srcset="/portfolio/games/burbank/set-deco/images/SocketLayer2_hu_79da1ae9958d5237.png 800w, /portfolio/games/burbank/set-deco/images/SocketLayer2_hu_cefdf3ce7db2a3b1.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/portfolio/games/burbank/set-deco/images/SocketLayer2.png"></figure>
+</p>
+<p>After the Decoration system finishes placing assets on the determined base layout, the final in-game Level now contextually fits the unique story being played out and also furthers player immersion:
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Default Data Layer"
+    width="1879"
+    height="906"
+    src="/portfolio/games/burbank/set-deco/images/DecoratedLevel_hu_74d5daa5ad33d357.png"
+    srcset="/portfolio/games/burbank/set-deco/images/DecoratedLevel_hu_74d5daa5ad33d357.png 800w, /portfolio/games/burbank/set-deco/images/DecoratedLevel_hu_b392fa899f396aad.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/portfolio/games/burbank/set-deco/images/DecoratedLevel.png"></figure>
+</p>
 
 <h2 class="relative group">Technical Spec
     <div id="technical-spec" class="anchor"></div>
@@ -871,9 +903,18 @@
     
 </h3>
 <p>There are two main processes that the Decoration system is responsible for: Decorating and Redecorating. The first time a Level is decorated is the most important, because Decorations persist as the Level gets reused in the same narrative, just updated.</p>
-<div style="display: flex; gap: 1rem;">
-  <img src="/burbank/set-deco/DecoDesign.png" alt="Default Data Layer"/>
-</div>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Default Data Layer"
+    width="639"
+    height="738"
+    src="/portfolio/games/burbank/set-deco/images/DecoDesign.png"
+    srcset="/portfolio/games/burbank/set-deco/images/DecoDesign.png 800w, /portfolio/games/burbank/set-deco/images/DecoDesign.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/portfolio/games/burbank/set-deco/images/DecoDesign.png"></figure>
 <p>Assets are selected from the queried Libraries based on both runtime narrative context and the metadata provided by the populated Sockets. The Decoration system collects this context and passes the Socket and Asset descriptions through a proprietary embeddings subsystem, which produces similarity scores based on natural-language semantics. These scores are evaluated alongside structured metadata constraints to determine the best match for each Socket. The highest-scoring Assets are then utilized for the Sockets.</p>
 <p>Another concept that I utilized heavily in this system is the idea of <strong>Pinned</strong> objects. We did not want the system to entirely redecorate a Level every time a player revisted it. However, as to real life, it also would not make sense for a space to stay identical after the campaign and time have continued to progress. The Decoration system is responsible for systematically Pinning objects that are determined as characteristic to the scene, and these Pinned objects will persist with the Set until the campaign has finished. Pinned objects often included:</p>
 <ul>
