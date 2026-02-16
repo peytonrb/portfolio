@@ -12,10 +12,12 @@ Interweaver's gameplay was unique in that the player's main character swapped be
 
 As part of my role as an Engineer, I was responsible for developing the entire **Weave** ability and its components. This involved a game system that allowed the Player to manipulate objects in the game world by translating, rotating, and linking other objects together to solve physics-based puzzles and platforming challenges. I also was responsible for a variety of features relating to both the Weaver and the Familiars, which will also be discussed below.
 
+![Weave Ability](/images/weaving.png)
+
 ## Weave Ability
 The Weaver's **Weave** ability is a physics-based interaction mechanic that allows players to manipulate objects in game space using the mouse. Weaving has two main functions: moving objects around the space and combining multiple to solve puzzles or progress through platforming sections. Players were also allowed to rotate objects as needed when Weaving.
 
-![Weave Ability](/images/weaving.png)
+![Weave Demo](/images/uncombine.gif)
 
 ### System Architecture
 Weaving was managed through a **Weaveable Manager**, a **custom GameObject** for all Weaveable objects, and a **Weave Controller** script on the Weaver, separating logic to keep the system modular, easy to iterate on, and debug. The Weave Controller handles player input, targeting, and moment-to-moment gameplay experiences, while the Weaveable Manager owned all shared state, grouping, and combination logic. Individual Weaveable objects remained largely self-contained, exposing clear hooks for selection, combination, and reset, which allowed complex interactions (like Combining and Uncombining objects) to be coordinated centrally without tightly coupling gameplay logic to player input or VFX timing.

@@ -30,7 +30,7 @@
     </header>
 
     {{/* Body */}}
-    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert">
       {{ $enableToc := site.Params.article.showTableOfContents | default false }}
       {{ $enableToc = .Params.showTableOfContents | default $enableToc }}
       {{ $showToc := and $enableToc (in .TableOfContents "<ul") }}
@@ -43,10 +43,17 @@
         </div>
       {{ end }}
 
+      <div class="min-w-0 min-h-0 max-w-fit">
+        {{ if .Params.content }}
+        <div class="mt-8 text-base text-neutral-700 dark:text-neutral-300" style="text-align: left;">
+          {{ .Params.content }}
+        </div>
+        {{ end }}
+      </div>
 
-      <div class="min-w-0 min-h-0 w-full flex justify-center">
+      <div class="min-w-0 min-h-0 w-full flex justify-center p-5">
         {{ partial "series/series.html" . }}
-        <div class="article-content max-w-prose mb-20">
+        <div class="article-content w-full mb-20">
           {{ .Content }}
           {{ $defaultReplyByEmail := site.Params.replyByEmail }}
           {{ $replyByEmail := default $defaultReplyByEmail .Params.replyByEmail }}

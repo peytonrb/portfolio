@@ -3,6 +3,7 @@ title: "Resume"
 showDate: false
 showAuthor: false
 layout: centered-simple
+content: You can view or download my resume below :)
 ---
 
 ![Resume](/PeytonBischof.jpg)
