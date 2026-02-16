@@ -24,28 +24,24 @@
   name = "Art"
   pageRef = "art"
   weight = 3
-
-[[main]]
-  name = "About"
-  pageRef = "contact"
-  weight = 4
   
 [[main]]
   identifier = "linkedin"
   pre = "linkedin"
   url = "https://www.linkedin.com/in/peytonbischof/"
-  weight = 5
+  weight = 4
 
 [[main]]
   identifier = "github"
   pre = "github"
   url = "https://github.com/peytonrb"
-  weight = 6
+  weight = 5
 
-#[[main]]
-#  name = "Example URL"
-#  url = "https://google.com"
-#  weight = 20
+[[main]]
+  identifier = "mail"
+  pre = "envelope"
+  url = "mailto:peytonbischof@outlook.com"
+  weight = 6
 
 #[[main]]
 #  name = "Parent"

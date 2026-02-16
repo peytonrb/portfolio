@@ -13,6 +13,7 @@ title = "Peyton Bischof"
   # secondaryLogo = "img/secondary-logo.png"
   # description = "My awesome website"
   copyright = "&copy; 2026 Peyton Bischof"
+  headerTitle = "**Peyton Bischof** | Game Developer and Technical Artist"
 
  [params.author]
    name = "Peyton Bischof"
