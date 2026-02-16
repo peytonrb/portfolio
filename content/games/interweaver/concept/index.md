@@ -31,8 +31,11 @@ Weave Ability
 Initial Character Model
 ![Weaver 3D model](/images/weaver-3d.png)
 
-Rendered Snapshot
-![Weaver Render](/images/weaver.gif)
+In-Game
+{{< gallery >}}
+  <img src="/images/weaver-1.png" alt="Weaver 1" class="grid-w50" />
+  <img src="/images/weaver-2.png" alt="Weaver 2" class="grid-w50" />
+{{< /gallery >}}
 
 **The main antagonist, The Rival**
 
@@ -46,6 +49,9 @@ Character Look-Dev
 Initial Character Model
 ![Rival 3D model](/images/rival-rendered.png)
 
+In-Game
+![Rival](/images/rival-ingame.png)
+
 **The Familiars**
 
 Early Concepts
@@ -58,12 +64,12 @@ Final Concept Art
 {{< /gallery >}}
 (I couldn't find the owl ;-;)
 
-Rendered Snapshots
-![Owl Snapshot](/images/owl.gif)
-
-[mole snapshot]
-
-![Stag](/images/stag-smash.gif)
+In-Game
+{{< gallery >}}
+  <img src="/images/owl-ingame.png" alt="Owl In-Game" class="grid-w33"/>
+  <img src="/images/mole-ingame.png" alt="Mole In-Game" class="grid-w33"/>
+  <img src="/images/stag-ingame.png" alt="Stag In-Game" class="grid-w33"/>
+{{< /gallery >}}
 
 **The Bosses**
 
@@ -81,10 +87,9 @@ Final Concept Art
   <img src="/images/dragon.png" alt="Boss Concept 3" class="grid-w60"/>
 {{< /gallery >}}
 
-Rendered Snapshots
-
-[hawk snapshot]
-
-![Spider Snapshot](/images/spider.gif)
-
-[dragon snapshot]
+In-Game
+{{< gallery >}}
+  <img src="/images/hawk-ingame.gif" alt="Hawk" class="grid-w50"/>
+  <img src="/images/spider.gif" alt="Spider" class="grid-w50"/>
+  <img src="/images/wyvern.png" alt="Wyvern" class="grid-w60"/>
+{{< /gallery >}}

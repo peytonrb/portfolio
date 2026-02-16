@@ -118,6 +118,9 @@ for (int i = 0; i < numSteps; i++) {
 transmission = exp(-density);
 result = float3(finalLight, transmission, transmittance);
 ```
+
+![Clouds](/images/clouds.png "Alpine Level")
+
 ## VFX Showcase
 Along with the Shaders, I created 30+ VFX and particle systems for Interweaver to supporting the game's visual direction and providing players with meaningful feedback as they used mechanics and progressed through the game. These were mainly done in Unity's **VFX Graph** and involved custom 3D models, textures, and calculations for particle behavior. 
 
@@ -142,8 +145,6 @@ Here I will showcase most of the effects I made for Interweaver below. I tried t
 
 ![Temp Light Beam](/images/temp/lightbeam.gif)
 
-[stag teleport effect]
-
-[clouds]
+![Temp Stag Swap](/images/temp/stag-swap-temp.gif)
 
 [etc]
