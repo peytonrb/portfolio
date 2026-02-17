@@ -91,5 +91,5 @@ In-Game
 {{< gallery >}}
   <img src="/images/hawk-ingame.gif" alt="Hawk" class="grid-w50"/>
   <img src="/images/spider.gif" alt="Spider" class="grid-w50"/>
-  <img src="/images/wyvern.png" alt="Wyvern" class="grid-w60"/>
+  <img src="/images/wyvern.gif" alt="Wyvern" class="grid-w60"/>
 {{< /gallery >}}

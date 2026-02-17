@@ -224,7 +224,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "1065"
+    "wordCount": "1067"
   }]
   </script>
 
@@ -834,8 +834,7 @@
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/games/interweaver/shaders-vfx/images/watershader.png"></figure>
 <p><strong>Development Process</strong></p>
-<p>First Iteration
-<figure><img
+<p><figure><img
     class="my-0 rounded-md"
     loading="lazy"
     decoding="async"
@@ -846,9 +845,8 @@
     src="/games/interweaver/shaders-vfx/images/water-shader-process.gif"
     srcset="/games/interweaver/shaders-vfx/images/water-shader-process.gif 800w, /games/interweaver/shaders-vfx/images/water-shader-process.gif 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
-    data-zoom-src="/games/interweaver/shaders-vfx/images/water-shader-process.gif"></figure>
-</p>
-<p>Second Iteration
+    data-zoom-src="/games/interweaver/shaders-vfx/images/water-shader-process.gif"><figcaption>First Iteration</figcaption></figure>
+
 <figure><img
     class="my-0 rounded-md"
     loading="lazy"
@@ -860,10 +858,22 @@
     src="/games/interweaver/shaders-vfx/images/water-shader-process-2.gif"
     srcset="/games/interweaver/shaders-vfx/images/water-shader-process-2.gif 800w, /games/interweaver/shaders-vfx/images/water-shader-process-2.gif 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
-    data-zoom-src="/games/interweaver/shaders-vfx/images/water-shader-process-2.gif"></figure>
+    data-zoom-src="/games/interweaver/shaders-vfx/images/water-shader-process-2.gif"><figcaption>Second Iteration</figcaption></figure>
 </p>
 <p>This shader involved many different components, including wave distortion, depth fade, reflections, refraction, ripple texture, and foam. It was also performant due to favoring calculated effects over expensive texture sampling, and utilized shared ShaderGraph subgraphs to avoid unnecessary shader variants. This allowed the shader to scale across many scenes and water volumees without increasing draw calls or shader complexity.</p>
 <p>The shader worked by using the camera plane to project scene color onto the water surface, enabling dynamic reflection and distortion effects. While the effect looked great from a static camera angle, it introduced a challenge at times when one water volume could be viewed from varying heights or angles. Each piece was created with multiple exposed variables to tweak per instance so it was highly reusable.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Water In-Game"
+    width="1576"
+    height="942"
+    src="/games/interweaver/shaders-vfx/images/water-inengine_hu_729c2c3aae21732f.png"
+    srcset="/games/interweaver/shaders-vfx/images/water-inengine_hu_729c2c3aae21732f.png 800w, /games/interweaver/shaders-vfx/images/water-inengine_hu_fa97bf20015f7f08.png 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/games/interweaver/shaders-vfx/images/water-inengine.png"><figcaption>In-Game Screenshot</figcaption></figure>
 
 <h4 class="relative group">Ripple Shader
     <div id="ripple-shader" class="anchor"></div>
@@ -1112,6 +1122,18 @@
     srcset="/games/interweaver/shaders-vfx/images/temp/stag-swap-temp.gif 800w, /games/interweaver/shaders-vfx/images/temp/stag-swap-temp.gif 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/games/interweaver/shaders-vfx/images/temp/stag-swap-temp.gif"></figure>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Wall Fade"
+    width="1662"
+    height="942"
+    src="/games/interweaver/shaders-vfx/images/wall-fade_hu_adf7965a0ceb8e45.gif"
+    srcset="/games/interweaver/shaders-vfx/images/wall-fade_hu_adf7965a0ceb8e45.gif 800w, /games/interweaver/shaders-vfx/images/wall-fade_hu_4cc8749a8da2a6e8.gif 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/games/interweaver/shaders-vfx/images/wall-fade.gif"></figure>
 <p>[etc]</p>
 
           

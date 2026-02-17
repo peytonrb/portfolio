@@ -24,15 +24,14 @@ One of the most challenging shaders I created for this project was our Water Sha
 
 **Development Process**
 
-First Iteration
-![Water Shader Process 1](/images/water-shader-process.gif)
-
-Second Iteration
-![Water Shader Process 2](/images/water-shader-process-2.gif)
+![Water Shader Process 1](/images/water-shader-process.gif "First Iteration")
+![Water Shader Process 2](/images/water-shader-process-2.gif "Second Iteration")
 
 This shader involved many different components, including wave distortion, depth fade, reflections, refraction, ripple texture, and foam. It was also performant due to favoring calculated effects over expensive texture sampling, and utilized shared ShaderGraph subgraphs to avoid unnecessary shader variants. This allowed the shader to scale across many scenes and water volumees without increasing draw calls or shader complexity.
 
 The shader worked by using the camera plane to project scene color onto the water surface, enabling dynamic reflection and distortion effects. While the effect looked great from a static camera angle, it introduced a challenge at times when one water volume could be viewed from varying heights or angles. Each piece was created with multiple exposed variables to tweak per instance so it was highly reusable. 
+
+![Water In-Game](/images/water-inengine.png "In-Game Screenshot")
 
 #### Ripple Shader
 To compliment the Water Shader and to ensure the player's movement felt natural as they moved through the water, I created an accompanying Ripple shader that dynamically trailed the player through water. 
@@ -146,5 +145,7 @@ Here I will showcase most of the effects I made for Interweaver below. I tried t
 ![Temp Light Beam](/images/temp/lightbeam.gif)
 
 ![Temp Stag Swap](/images/temp/stag-swap-temp.gif)
+
+![Wall Fade](/images/wall-fade.gif)
 
 [etc]

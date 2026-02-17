@@ -202,7 +202,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "753"
+    "wordCount": "739"
   }]
   </script>
 
@@ -767,8 +767,19 @@
     
 </h2>
 <p>To avoid overcomplicating puzzles with excessive mechanics, we relied on reusable systems that could be layered and combined in ways to increase difficulty, complexity, and create more fun puzzles. One of the biggest components of this mindset is the <strong>Sensor System</strong>, a system that relied on pressure plates and other sensors that triggered or activated different puzzle elements.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Sensors In-Game"
+    width="1636"
+    height="912"
+    src="/games/interweaver/puzzles/images/sensors-1_hu_8f2a855b55e627d0.gif"
+    srcset="/games/interweaver/puzzles/images/sensors-1_hu_8f2a855b55e627d0.gif 800w, /games/interweaver/puzzles/images/sensors-1_hu_3498b2ea90bcd3ec.gif 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/games/interweaver/puzzles/images/sensors-1.gif"></figure>
 <p>It is used heavily in all levels, mainly for driving puzzle logic and platforming progression. It solved the need for one-off mechanics with bespoke logic needing maintenance, and allowed us to build a wide range of puzzles using a single, consistent system.</p>
-<p>[make into image of in game]
 <figure><img
     class="my-0 rounded-md"
     loading="lazy"
@@ -781,7 +792,6 @@
     srcset="/games/interweaver/puzzles/images/sensor.gif 800w, /games/interweaver/puzzles/images/sensor.gif 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/games/interweaver/puzzles/images/sensor.gif"></figure>
-</p>
 <p>This system was built around a centralized, event-driven <strong>Controller</strong> that decoupled the sensor state from individual object behavior. This allowed any gameplay elemeny to subscribe to sensor state changes without bespoke logic, which allowed designers to create complex puzzles using these systems as a basis to avoid backend dependency issues as we iterated. This separation kept puzzle logic readable, reduced maintenance overhead, and supported scalable puzzle design across the entire game.</p>
 <p>Some examples of gameplay elements that were triggered with sensors include:</p>
 <ul>
@@ -827,8 +837,19 @@
     
 </h2>
 <p>To compliment the aforementioned Sensor system, Light became an important concept in the later Levels and was our way of building upon the more intuitive sensors. Light was a way to power other sensors and trigger energy beams, and occasionally even protected the player from hazards. The Light system heavily influenced how we built our later puzzles and platforming challenges as we were able to explore this venue of difficulty through our more intuitive/simple/average mechanic of sensors.</p>
+<figure><img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="auto"
+    alt="Beams In-Game"
+    width="800"
+    height="449"
+    src="/games/interweaver/puzzles/images/sensors-2.gif"
+    srcset="/games/interweaver/puzzles/images/sensors-2.gif 800w, /games/interweaver/puzzles/images/sensors-2.gif 1280w"
+    sizes="(min-width: 768px) 50vw, 65vw"
+    data-zoom-src="/games/interweaver/puzzles/images/sensors-2.gif"></figure>
 <p>This system also includes crystals that could refract or redirect light beams when activated, creating chained interactions that powered other crystals and created layered puzzles. When a crystal became active, its beam activates nearby crystals or sensors by updating centralized light state and triggering activation logic.</p>
-<p>[get in-game screenshot of beams to put here]
 <figure><img
     class="my-0 rounded-md"
     loading="lazy"
@@ -841,7 +862,6 @@
     srcset="/games/interweaver/puzzles/images/light.gif 800w, /games/interweaver/puzzles/images/light.gif 1280w"
     sizes="(min-width: 768px) 50vw, 65vw"
     data-zoom-src="/games/interweaver/puzzles/images/light.gif"></figure>
-</p>
 <p>The system worked as a state-driven extension of the Sensor system, and worked in tandem with the sensors and other light crystals to create unique, collision-based puzzle interactions. Light crystals and beams communicated through a centralized state and via activation flags, which allowed light to power multiple systems, including itself.</p>
 <p>Activated crystals emitted focused light beams that detected and powered other crystals and sensors through ray-based collision checks and their shared light state. This allowed light to chain and bounce across multiple objects at runtime, forming dynamic power paths without hard-coded connections. This made light a flexible extension of the Sensor System, supporting more complex puzzles while remaining deterministic and easy to reason about.</p>
 <figure><img
