@@ -53,7 +53,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 [homepage]
   layout = "custom" # valid options: page, profile, hero, card, background, custom
   # homepageImage = "homepage-background.png"
-  aboutMe = "Hi, I'm Peyton! I'm a game developer and artist from Seattle, WA. I'm passionate about bringing new worlds to life and exploring our own through games :) <br><br> I currently work as a Gameplay Engineer at Midsummer Studios. I graduated from the University of Central Florida with a Game Design and Computer Science major in 2024, and have contributed to games for AAA studios, venture-backed startups, and countless passion projects."
+  aboutMe = "Hi, I’m Peyton! I’m a Gameplay Engineer who thrives where Art and Code come together, and is passionate about bringing new worlds to life and exploring our own through games :) <br><br> I’m educated in both Game Design & Computer Science and I enjoy turning creative ideas into playable, reliable experiences. I currently work at Midsummer Studios, and have contributed to games for AAA studios, venture-backed startups, and countless passion projects."
   showRecent = true
   showRecentItems = 3
   showMoreLink = false
