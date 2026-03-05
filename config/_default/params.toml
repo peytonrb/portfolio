@@ -53,7 +53,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"
 [homepage]
   layout = "custom" # valid options: page, profile, hero, card, background, custom
   # homepageImage = "homepage-background.png"
-  aboutMe = "Hi, I’m Peyton! I’m a Gameplay Engineer who thrives where Art and Code come together, and is passionate about bringing new worlds to life and exploring our own through games :) <br><br> I’m educated in both Game Design & Computer Science and I enjoy turning creative ideas into playable, reliable experiences. I currently work at Midsummer Studios, and have contributed to games for AAA studios, venture-backed startups, and countless passion projects."
+  aboutMe = "Hi! I'm a Gameplay Engineer who thrives where Code and Art come together, and deeply values human-crafted experiences. I am passionate about bringing new worlds to life and creating experiences that make our own world feel a little more vibrant. <br><br> With an education in both Game Design & Computer Science, I turn creative ideas into playable, reliable experiences. Use the tabs above to view my work, which can be seen in games by AAA studios, venture-backed startups, and countless passion projects alike! glhf :)"
   showRecent = true
   showRecentItems = 3
   showMoreLink = false
